@@ -83,6 +83,59 @@ function sixthman_content_width() {
 }
 add_action( 'after_setup_theme', 'sixthman_content_width', 0 );
 
+
+
+/**
+ * Register custom fonts.
+ */
+function sixthman_fonts_url() {
+	$fonts_url = '';
+	/**
+	 * Translators: If there are characters in your language that are not
+	 * supported by Source Sans Pro and PT Serif, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$titillium_web = _x( 'on', 'Titillium Web font: on or off', 'sixthman' );
+	$work_sans = _x( 'on', 'Work Sans font: on or off', 'sixthman' );
+	$font_families = array();
+	if ( 'off' !== $titillium_web ) {
+		$font_families[] = 'Titillium Web:400,400i,700,900';
+	}
+	if ( 'off' !== $work_sans ) {
+		$font_families[] = 'Work Sans:800';
+	}
+	if ( in_array( 'on', array($titillium_web, $work_sans) ) ) {
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+	return esc_url_raw( $fonts_url );
+}
+
+
+
+/**
+ * Add preconnect for Google Fonts.
+ *
+ * @since Twenty Seventeen 1.0
+ *
+ * @param array  $urls           URLs to print for resource hints.
+ * @param string $relation_type  The relation type the URLs are printed.
+ * @return array $urls           URLs to print for resource hints.
+ */
+function sixthman_resource_hints( $urls, $relation_type ) {
+	if ( wp_style_is( 'sixthman-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+		$urls[] = array(
+			'href' => 'https://fonts.gstatic.com',
+			'crossorigin',
+		);
+	}
+	return $urls;
+}
+add_filter( 'wp_resource_hints', 'sixthman_resource_hints', 10, 2 );
+
 /**
  * Register widget area.
  *
@@ -105,6 +158,10 @@ add_action( 'widgets_init', 'sixthman_widgets_init' );
  * Enqueue scripts and styles.
  */
 function sixthman_scripts() {
+
+	// Enqueue Google Fonts: Source Sans Pro and PT Serif
+	wp_enqueue_style( 'sixthman-fonts', sixthman_fonts_url() );
+
 	wp_enqueue_style( 'sixthman-style', get_stylesheet_uri(), array(), '201706192017', '');
 
 	// wp_enqueue_script( 'sixthman-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
