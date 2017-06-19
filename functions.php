@@ -105,11 +105,14 @@ add_action( 'widgets_init', 'sixthman_widgets_init' );
  * Enqueue scripts and styles.
  */
 function sixthman_scripts() {
-	wp_enqueue_style( 'sixthman-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'sixthman-style', get_stylesheet_uri(), array(), '201706192017', '');
 
 	// wp_enqueue_script( 'sixthman-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+	//  Enqueue Font Awesome
+	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 	wp_enqueue_script( 'sixthman-skip-link-focus-fix', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), '20151215', true );
 

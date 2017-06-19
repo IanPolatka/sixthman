@@ -13,6 +13,8 @@
 
 	</div><!-- #content -->
 
+	<i class="fa fa-free-code-camp" aria-hidden="true"></i>
+
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'sixthman' ) ); ?>"><?php
