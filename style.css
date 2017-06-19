@@ -7480,3 +7480,12 @@ button.close {
     display: none !important;
   }
 }
+/* line 3, sass/sixthman/_headings.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Work Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+}
+
+/* line 1, sass/sixthman/_base.scss */
+body {
+  font-family: "Titillium Web", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+}

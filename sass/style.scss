@@ -21,3 +21,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
 
 @import "bootstrap";
+
+// Core CSS
+@import "sixthman/fonts";
+@import "sixthman/headings";
+@import "sixthman/buttons";
+@import "sixthman/colors";
+@import "sixthman/forms";
+@import "sixthman/tables";
+@import "sixthman/base";
