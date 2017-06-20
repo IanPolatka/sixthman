@@ -44,7 +44,7 @@ function sixthman_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'sixthman' ),
+        'primary' => __( 'Primary Menu', 'sixthman' ),
 	) );
 
 	/*
@@ -203,3 +203,7 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+// Register Custom Navigation Walker
+require_once('wp-bootstrap-navwalker.php');
