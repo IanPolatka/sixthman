@@ -70,3 +70,15 @@
 	</header>
 
 	<div id="content" class="site-content">
+
+		<div class="container">
+
+			<div class="alert breaking">
+				<span>Alert</span>
+				<p>DATES AND REGISTRATION INFORMATION FOR ALL 2017 CAMEL SUMMER SPORTS CAMPS ARE NOW POSTED. CLICK THE BUTTON BELOW TO DOWNLOAD THE BROCHURE.</p>
+			</div><!--  Alert  -->
+
+			<div class="alert info">
+				<span>Information</span>
+				<p>DATES AND REGISTRATION INFORMATION FOR ALL 2017 CAMEL SUMMER SPORTS CAMPS ARE NOW POSTED. CLICK THE BUTTON BELOW TO DOWNLOAD THE BROCHURE.</p>
+			</div><!--  Alert  -->

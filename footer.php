@@ -11,6 +11,8 @@
 
 ?>
 
+	</div><!--  Container  -->
+
 	</div><!-- #content -->
 
 	<i class="fa fa-free-code-camp" aria-hidden="true"></i>
