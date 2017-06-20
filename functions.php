@@ -99,7 +99,7 @@ function sixthman_fonts_url() {
 	$work_sans = _x( 'on', 'Work Sans font: on or off', 'sixthman' );
 	$font_families = array();
 	if ( 'off' !== $titillium_web ) {
-		$font_families[] = 'Titillium Web:400,400i,700,900';
+		$font_families[] = 'Titillium Web:400,400i,700,800,900';
 	}
 	if ( 'off' !== $work_sans ) {
 		$font_families[] = 'Work Sans:800';

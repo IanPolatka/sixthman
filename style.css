@@ -7483,9 +7483,168 @@ button.close {
 /* line 3, sass/sixthman/_headings.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Work Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+  margin: 0 0 20px 0;
 }
 
 /* line 1, sass/sixthman/_base.scss */
 body {
   font-family: "Titillium Web", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* line 1, sass/sixthman/_header.scss */
+.site-header {
+  padding: 0px;
+  margin-bottom: 20px;
+  background: #eee;
+}
+/* line 5, sass/sixthman/_header.scss */
+.site-header h2 {
+  line-height: 1;
+}
+
+/* line 10, sass/sixthman/_header.scss */
+.site-branding {
+  padding: 10px;
+}
+
+/* line 14, sass/sixthman/_header.scss */
+.site-title {
+  margin: 0;
+  font-family: "Titillium Web", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0;
+  text-align: center;
+}
+
+/* line 23, sass/sixthman/_header.scss */
+.site-description {
+  display: none;
+}
+
+/* line 30, sass/sixthman/_header.scss */
+.navbar-default {
+  background: #ddd;
+  border: none;
+}
+
+/* line 35, sass/sixthman/_header.scss */
+.navbar-toggle {
+  position: relative;
+  float: none;
+  margin-right: 15px;
+  padding: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 52, sass/sixthman/_header.scss */
+  .navbar {
+    margin-bottom: 0;
+    min-height: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 62, sass/sixthman/_header.scss */
+  .site-header {
+    padding: 0px;
+  }
+
+  /* line 66, sass/sixthman/_header.scss */
+  .site-branding {
+    padding: 10px;
+  }
+
+  /* line 70, sass/sixthman/_header.scss */
+  .site-title {
+    padding: 0;
+    text-align: left;
+  }
+
+  /* line 75, sass/sixthman/_header.scss */
+  .site-description {
+    display: block;
+    font-size: .9em;
+    font-style: italic;
+    margin: 0;
+  }
+
+  /* line 82, sass/sixthman/_header.scss */
+  .navbar-collapse {
+    padding: 0;
+    font-size: .9em;
+  }
+
+  /* line 87, sass/sixthman/_header.scss */
+  .dropdown-menu {
+    padding: 0;
+  }
+
+  /* line 91, sass/sixthman/_header.scss */
+  .dropdown-menu > li > a {
+    padding: 10px;
+  }
+}
+@media screen and (min-width: 900px) {
+  /* line 100, sass/sixthman/_header.scss */
+  .site-header {
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* line 105, sass/sixthman/_header.scss */
+  .site-title {
+    padding: 0;
+  }
+
+  /* line 109, sass/sixthman/_header.scss */
+  .site-branding {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    color: #ggg;
+    margin-right: auto;
+  }
+
+  /* line 117, sass/sixthman/_header.scss */
+  .navbar-collapse {
+    align-self: center;
+    padding: 0;
+    font-size: .85em;
+    text-transform: uppercase;
+  }
+
+  /* line 124, sass/sixthman/_header.scss */
+  .navbar-default {
+    background: transparent;
+    border: none;
+    align-self: center;
+  }
+
+  /* line 130, sass/sixthman/_header.scss */
+  .navbar {
+    margin: 0;
+    height: 1px;
+  }
+
+  /* line 135, sass/sixthman/_header.scss */
+  .nav > li > a {
+    padding: 15px 10px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 899px) {
+  /* line 142, sass/sixthman/_header.scss */
+  .site-header {
+    display: block;
+    flex-direction: column;
+  }
 }
