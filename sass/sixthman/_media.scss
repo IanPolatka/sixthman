@@ -1,0 +1,34 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 20px 20px 0;
+}
+
+.aligncenter {
+	display: block;
+	margin: 0 auto 20px auto;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 20px 20px;
+}
+
+figure {
+	max-width: 100%;
+}
+
+
+
+//  Caption
+.wp-caption-text {
+	background: #eee;
+	color: #333;
+	padding: 10px;
+	font-size: .8em;
+	font-style: italic;
+}

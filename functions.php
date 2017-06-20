@@ -162,9 +162,9 @@ function sixthman_scripts() {
 	// Enqueue Google Fonts: Source Sans Pro and PT Serif
 	wp_enqueue_style( 'sixthman-fonts', sixthman_fonts_url() );
 
-	wp_enqueue_style( 'sixthman-style', get_stylesheet_uri(), array(), '20170619', '');
+	//  wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '20170619', '');
 
-	// wp_enqueue_script( 'sixthman-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_style( 'sixthman-style', get_stylesheet_uri(), array(), '20170619', '');
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
