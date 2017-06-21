@@ -1,0 +1,149 @@
+.comment-navigation,
+.posts-navigation,
+.post-navigation,
+.paging-navigation {
+	padding: 2em 0;
+	text-align: left;
+	overflow: hidden;
+	
+	a {
+		display: block;
+		width: 100%;
+		text-decoration: none;
+		padding: 1em;
+		border: 1px solid #ddd;
+		color: black;
+		
+		&:hover,
+		&:focus {
+			background: #ddd;
+		}
+	}
+	
+}
+
+
+.nav-links {
+	margin: 0 auto;
+	padding: 0;
+
+		.post-title {
+			
+		}
+}
+
+.nav-previous {
+	padding-bottom: 1em;
+}
+
+.nav-next .meta-nav h3 {
+	padding-right: 16px;
+	float: right;
+	border-bottom: 3px solid #ddd;
+	margin: 0 -16px 0 0;
+}
+
+.nav-next .meta-nav .post-title {
+	float: right;
+}
+
+.nav-previous .meta-nav h3 {
+	padding-left: 16px;
+	float: left;
+	border-bottom: 3px solid #ddd;
+	margin: 0 0 0 -16px;
+}
+
+@media screen and (min-width: 768px) {
+
+	.nav-links {
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+		padding: 0;
+	}
+
+	.comment-navigation,
+	.posts-navigation,
+	.post-navigation {
+		
+		.nav-previous,
+		.nav-next {
+			float: left;
+			display: flex;
+			align-items: stretch;
+			width: 48%;
+		}
+		
+		.nav-next {
+			float: right;
+			text-align: right;
+		}
+	}
+
+	.nav-previous {
+		padding-bottom: 0;
+	}
+
+
+}
+
+.post-navigation {
+	
+	.meta-nav {
+		display: block;
+	}
+	
+	@media screen and (min-width: 30em) {
+		padding-bottom: 1em;
+	}
+	
+	.post-title {
+		font-size: 1.2em;
+		font-weight: 700;
+	}
+	
+	a:hover .post-title,
+	a:focus .post-title{
+		border-bottom-color: white;
+	}
+	
+} 
+
+.pagination {
+	
+	.nav-links {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	
+	a,
+	span {
+		padding: .5em 1em;
+		background: white;
+	}
+	
+	a {
+		text-decoration: none;
+		
+		&:focus,
+		&:hover {
+			color: white;
+			background: #000;
+		}
+	}
+	
+	.current {
+		font-weight: 600;
+		color: #000;
+	}
+	
+	.prev .icon {
+		margin-right: 1em;
+	}
+	
+	.next .icon {
+		margin-left: 1em;
+	}
+}

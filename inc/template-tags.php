@@ -144,3 +144,19 @@ function sixthman_category_transient_flusher() {
 }
 add_action( 'edit_category', 'sixthman_category_transient_flusher' );
 add_action( 'save_post',     'sixthman_category_transient_flusher' );
+
+
+
+/**
+ * Post navigation (previous / next post) for single posts.
+ */
+function sixthman_post_navigation() {
+	the_post_navigation( array(
+		'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<h3>Next</h3><br /><br />', 'sixthman' ) . '</span> ' .
+			'<span class="sr-only">' . __( 'Next post:', 'hume' ) . '</span> ' .
+			'<span class="post-title">%title</span>',
+		'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<h3>Previous</h3><br /><br />', 'sixthman' ) . '</span> ' .
+			'<span class="sr-only">' . __( 'Previous post:', 'hume' ) . '</span> ' .
+			'<span class="post-title">%title</span>',
+	) );
+}

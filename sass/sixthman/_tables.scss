@@ -1,0 +1,31 @@
+table {
+	width: 100%;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin-bottom: 20px;
+}
+
+tr {
+	// border-bottom: 1px solid #ddd;
+}
+
+td, th {
+	padding: 10px;
+	font-size: .9em;
+	text-transform: uppercase;
+}
+
+thead {
+	border-bottom: 1px solid #ddd;
+}
+
+table tr:nth-child(even) {
+    background: #fafafa;
+}
+
+.table-small {
+	font-size: .8em;
+		td, th {
+			padding: 5px;
+		}
+}
