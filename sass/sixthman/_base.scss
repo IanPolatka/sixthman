@@ -6,7 +6,7 @@ body {
 a {
 	border-bottom: 3px solid $primary-color;
 	color: #000;
-		&:hover {
+		&:hover, &:focus {
 			text-decoration: none;
 			color: #000;
 			border-color: rgba($primary-color, 0.4);

@@ -3,6 +3,7 @@ blockquote {
 	font-style: italic;
 	line-height: 2;
 	font-size: .95em;
+	background: rgba($primary-color, .05);
 }
 
 .edit-link {
@@ -12,6 +13,8 @@ blockquote {
 
 		}
 }
+
+.entry-meta {margin-bottom: 20px;}
 
 p {
 	margin: 0 0 20px 0;
