@@ -1,0 +1,185 @@
+/* Footer Styles
+ 
+ 1.  Base Styles
+
+ */
+
+
+
+//  1.  Base Styles
+
+.site-footer {
+	background: #999;
+	font-size: .9em;
+		a {
+			border: none;
+		}
+		.widget-title {
+			color: #000;
+			font-size: 1.25em;
+			margin-bottom: 10px;
+			font-size: .9em;
+		}
+		.form-control {
+			font-size: .8em;
+			padding: 10px 5px;
+			height: auto;
+			border-radius: 4px;
+		}
+		.form-group {
+			margin-bottom: 5px;
+		}
+		.btn {
+			height: auto;
+			font-size: .8em;
+			padding: 13px;
+		}
+}
+
+.footer-inside {
+	padding: 30px 10px 0 10px;
+}
+
+.footer-menus {
+	display: flex;
+	flex-direction: column;
+}
+
+.footer-menus ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+	padding: 0;
+}
+
+.footer-menus ul li {
+	width: 48%;
+	list-style: none;
+	padding: 0 10px 5px 0px;
+		a {
+			color: #ddd;
+				&:hover {
+					color: $primary-color;
+				}
+		}
+}
+
+.st0{
+	fill:#ffcc00;
+}
+
+section {
+	margin-bottom: 20px;
+}
+
+.social-media a {
+	padding-right: 20px;
+	font-size: 1.5em;
+	color: #ddd;
+		&:hover {
+			color: $primary-color;
+		}
+}
+
+.site-info {
+	border-top: 1px solid #fff;
+	padding-top: 20px;
+}
+
+.sixthman-text {
+	font-size: .6em;
+	text-transform: uppercase;
+	text-decoration: italic;
+}
+
+
+.sixthman-network {
+	background: #666;
+	padding: 30px;
+	font-size: .9em;
+	text-align: center;
+	color: #ddd;
+		svg {
+			height: 30px;
+			display: block;
+			margin: 0 auto 5px auto;
+		}
+		a {
+			color: #ddd;
+		}
+}
+
+@media screen and (min-width: 650px) {
+	.footer-menus ul li {
+		width: 33%;
+		font-size: .9em;
+	}
+}
+
+
+@media screen and (min-width: 900px) {
+
+	.site-footer {
+		background: #999;
+		font-size: .9em;
+			.form-group {
+				margin-bottom: 5px;
+					input {
+						padding: 5px;
+					}
+			}
+			.btn {
+				height: auto;
+				font-size: .8em;
+				padding: 5px;
+			}
+	}
+
+	.footer-menus {
+		flex-direction: row;
+			.widget {
+				width: 20%;
+			}
+			section {
+				padding-right: 10px;
+			}
+	}
+
+	.footer-menus ul {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: no-wrap;
+		padding: 0;
+	}
+
+	.footer-menus ul li {
+		font-size: .9em;
+		width: 100%;
+	}
+
+	.social-media {
+		border-bottom: 1px solid #ddd;
+		padding-bottom: 20px;
+		 	a {
+				padding-right: 5px;
+				font-size: 1.4em;
+			}
+	}
+}
+
+
+
+@media screen and (min-width: 1000px) {
+
+	section {
+		flex: 1;
+	}
+
+
+	.footer-inside {
+		width: 960px;
+		margin: 0 auto;
+	}
+}
+
