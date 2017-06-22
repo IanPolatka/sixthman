@@ -3,6 +3,16 @@ body {
 	font-size: 16px;
 }
 
+a {
+	border-bottom: 3px solid $primary-color;
+	color: #000;
+		&:hover {
+			text-decoration: none;
+			color: #000;
+			border-color: rgba($primary-color, 0.4);
+		}
+}
+
 
 
 .site-content {
