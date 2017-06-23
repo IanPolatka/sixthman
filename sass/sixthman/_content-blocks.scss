@@ -1,4 +1,15 @@
+/*  Content Block Table of contents
 
+1.  Container
+2.  Main Content
+3.  Article
+4.  Archives
+
+*/
+
+
+
+//  1. Container
 
 .container {
 	width: 90%;
@@ -13,6 +24,8 @@
 
 
 
+//  2. Main Content
+
 .content-area {
 	&:after {
 		display: table;
@@ -23,48 +36,43 @@
 
 
 
+//  3. Article
+
+
+
 article {
 	width: 100%;
 }
 
 
 
+//  4. Archives
+
 .archives {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	
 }
 
 .archive-single {
-	float: left;
-	display: flex;
-	align-items: stretch;
-	width: 48%;
+	display: block;
 	border: 1px solid #ddd;
-	padding: 10px;
+	padding: 20px;
 	margin-bottom: 20px;
 	border-radius: 4px;
-	background: #f5f5f5;
+
+		.entry-content {
+			border-bottom: 1px solid #ddd;
+			margin: 0 0 10px 0;
+		}
 }
 
-.post-list-title {
-	display: block;
-	width: 100%;
-		a {
-			margin-bottom: 10px;
-			margin-bottom: 10px;
-		}
-		h4 {
-			display: block;
-			margin: 0 0 10px 0;
-			line-height: 1.5;
-		}
+.post-list-title h4 {
+	margin: 0;
 }
 
 @media screen and (min-width: 800px) {
 
 	.archive-single {
-		width: 30%;
+		
 	}
 
 }
@@ -72,7 +80,7 @@ article {
 @media screen and (min-width: 1000px) {
 
 	.archive-single {
-		width: 22%;
+		
 	}
 
 }
@@ -80,19 +88,37 @@ article {
 .cat-list ul {
 	font-size: .8em;
 	list-style-type: none;
-	margin: 0 0 10px 0;
+	margin: 0;
 	padding: 0;
 		li {
 			display: inline-block;
-				&:after {
-					content: ", ";
-				}
-				&:last-child:after { 
-					content: ""; 
+			margin-bottom: 10px;
+				a {
+					border-bottom: none;
+					background: $primary-color;
+					padding: 3px 5px;
+					border-radius: 2px;
+					font-size: .9em;
+					font-weight: bold;
+					margin-right: 5px;
+					text-transform: uppercase;
+						&:hover {
+							background: rgba($primary-color, 0.4);
+						}
 				}
 		}
 }
 
 .post-date {
 	font-size: .8em;
+	font-color: #666;
+	font-style: italic;
+	padding: 15px 0 10px 0;
 }
+
+
+
+
+
+
+

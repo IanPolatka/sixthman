@@ -12,41 +12,49 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) : ?>
+			<div class="row">
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					// the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
-			<div class="archives">
+				<div class="col-lg-10 col-lg-offset-1">
 
 				<?php
-				/* Start the Loop */
-				while ( have_posts() ) : the_post();
+				if ( have_posts() ) : ?>
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'template-parts/content', 'archive' );
+					<header class="page-header">
+						<?php
+							the_archive_title( '<h1 class="page-title">', '</h1>' );
+							// the_archive_description( '<div class="archive-description">', '</div>' );
+						?>
+					</header><!-- .page-header -->
 
-				endwhile; ?>
+					<div class="archives">
 
-			</div><!--  archives  -->
-			
-			<?php
-			the_posts_navigation();
+						<?php
+						/* Start the Loop */
+						while ( have_posts() ) : the_post();
 
-		else :
+							/*
+							 * Include the Post-Format-specific template for the content.
+							 * If you want to override this in a child theme, then include a file
+							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+							 */
+							get_template_part( 'template-parts/content', 'archive' );
 
-			get_template_part( 'template-parts/content', 'none' );
+						endwhile; ?>
 
-		endif; ?>
+					</div><!--  archives  -->
+					
+					<?php
+					the_posts_navigation();
+
+				else :
+
+					get_template_part( 'template-parts/content', 'none' );
+
+				endif; ?>
+
+				</div><!--  Col  -->
+
+			</div><!--  Row  -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

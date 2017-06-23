@@ -17,18 +17,14 @@
 		<?php the_title( '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' ); ?>
 	</header><!-- .entry-header -->
 
-	<small><strong>Posted On</strong></small>
+	
 	<div class="post-date"><?php the_date(); ?></div>
-
-	<small><strong>Posted In</strong></small>
-
-	<div class="cat-list"><?php echo get_the_category_list(); ?></div>
 
 	<div class="entry-content">
 		<?php
 
 			
-			// the_content();
+			the_excerpt();
 
 			/*
 			wp_link_pages( array(
@@ -38,6 +34,8 @@
 			*/
 		?>
 	</div><!-- .entry-content -->
+
+	<div class="cat-list"><?php echo get_the_category_list(); ?></div>
 
 	<!-- <?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
