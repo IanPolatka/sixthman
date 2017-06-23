@@ -4,6 +4,7 @@
 2.  Main Content
 3.  Article
 4.  Archives
+5.  Single
 
 */
 
@@ -114,6 +115,207 @@ article {
 	font-color: #666;
 	font-style: italic;
 	padding: 15px 0 10px 0;
+}
+
+
+
+//  5. Content Single
+
+.entry-meta {
+	font-size: .8em;
+	text-align: right;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding: 13px 0 10px 0;
+		&:after {
+			display: table;
+			content: "";
+			clear: both;
+		}
+		a {
+			border: none;
+				&:hover {
+					color: #999;
+				}
+		}
+		strong {
+			display: inline-block;
+			float: left;
+		}
+}
+
+.posted-on {
+	display: block;
+	text-align: left;
+	float: left;
+		strong {
+			display: none !important;
+		}
+		&:after {
+			content: "|";
+			padding: 0px 12px;
+		}
+		strong {
+			display: inline-block;
+			padding-right: 3px;
+		}
+}
+
+.gravatar {
+		img {
+			border-radius: 50%;
+			display: inline-block;
+			float: left;
+			margin-top: -5px;
+			margin-right: 8px;
+		}
+}
+
+.author-name {
+	font-weight: bold;
+	display: inline-block;
+	text-align: left;
+	float: left;
+		&:after {
+			font-weight: normal;
+			content: "|";
+			padding: 0px 7px;
+		}
+}
+
+.social-media-share-icons {
+	padding: 0;
+	list-style-type: none;
+	float: left;
+	margin-top: -3px;
+	margin-bottom: 0px;
+		li {
+			display: inline-block;
+			margin-left: 5px;
+				a {
+					display: block;
+					background: #ddd;
+					padding: 4px 10px;
+					color: white;
+					border-radius: 4px;
+					text-align: center;
+					width: 30px !important;
+				}
+		}
+}
+
+.facebook {
+	background: $facebook !important;
+		&:hover {
+			background: rgba($facebook, .8) !important;
+			color: white !important;
+		}
+}
+.twitter {
+	background: $twitter !important;
+		&:hover {
+			background: rgba($twitter, .8) !important;
+			color: white !important;
+		}
+}
+
+.single-post-navigation {
+	border-top: 1px solid #ddd;
+	margin-top: 60px;
+	padding-top: 30px;
+		nav {
+			padding: 0;
+			margin: 0;
+		}
+}
+
+.edit-link {
+	margin-top: 20px;
+}
+
+@media screen and (max-width: 767px) {
+
+	.entry-meta-desktop {
+		display: none;
+	}
+
+}
+
+@media screen and (min-width: 768px) {
+
+	.entry-meta-mobile {
+		display: none;
+	}
+
+}
+
+@media screen and (min-width: 900px) {
+
+	.content-single {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.content-single-meta {
+		flex: 1;
+		margin: 0 40px 0 0;
+	}
+
+	.gravatar {
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		img {
+			border-radius: 50%;
+			display: block;
+			float: right;
+		}
+	}
+
+	.content-single-content {
+		flex: 3;
+	}
+
+	.posted-on {
+		margin: 10px 0;
+		padding: 10px 0;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		text-align: right;
+			strong {
+				display: block;
+			}
+	}
+
+	.author-name {
+		font-weight: bold;
+		display: block;
+		padding: 5px 0;
+	}
+
+	.social-media-share-icons {
+		padding: 0;
+		margin: 10px 0 5px 0;
+		list-style-type: none;
+			li {
+				display: inline-block;
+				margin-left: 5px;
+					a {
+						display: block;
+						background: #ddd;
+						padding: 4px 10px;
+						color: white;
+						border-radius: 4px;
+						text-align: center;
+						width: 30px !important;
+					}
+			}
+	}
+
 }
 
 

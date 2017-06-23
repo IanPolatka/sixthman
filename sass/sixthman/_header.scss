@@ -1,6 +1,6 @@
 .site-header {
 	padding: 0px;
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 	background: #eee;
 		h2 {
 			line-height: 1;
@@ -209,5 +209,12 @@
 		display: block;
 	  	flex-direction: column;
 	}
+}
+
+
+
+.scores-container {
+	min-height: 20px;
+	border-bottom: 1px solid #ddd;
 }
 
