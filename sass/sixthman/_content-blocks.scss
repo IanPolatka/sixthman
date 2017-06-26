@@ -247,6 +247,90 @@ article {
 		display: none;
 	}
 
+	.entry-meta {
+		font-size: .8em;
+		text-align: right;
+		border: none;
+		padding: 0;
+			strong {
+				display: block;
+				float: none;
+				text-align: right;
+			}
+	}
+
+	.gravatar {
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		img {
+			margin-top: 0;
+			border-radius: 50%;
+			display: block;
+			float: right;
+		}
+	}
+
+	.author-name {
+		font-weight: bold;
+		display: block;
+		padding: 5px 0;
+		float: none;
+		text-align: right;
+			&:after {
+				content:"";
+				padding: 0;
+			}
+	}
+
+	.posted-on {
+		margin: 10px 0;
+		padding: 10px 0;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		text-align: right;
+		padding: 10px 0;
+		margin: 10px 0;
+		float: none;
+			strong {
+				display: block;
+			}
+			&:before {
+				content: "Posted On";
+				padding: 0;
+				margin: 0;
+				display: block;
+				font-weight: bold;
+			}
+			&:after {
+				content: "";
+				padding: 0;
+				margin: 0;
+			}
+	}
+
+	.social-media-share-icons {
+		padding: 0;
+		margin: 5px 0 0 0;
+		list-style-type: none;
+		float: right;
+			li {
+				display: inline-block;
+				margin-left: 5px;
+					a {
+						display: block;
+						background: #ddd;
+						padding: 4px 10px;
+						color: white;
+						border-radius: 4px;
+						text-align: center;
+						width: 30px !important;
+					}
+			}
+	}
+
 }
 
 @media screen and (min-width: 900px) {
@@ -263,57 +347,8 @@ article {
 		margin: 0 40px 0 0;
 	}
 
-	.gravatar {
-		&:after {
-			content: "";
-			display: table;
-			clear: both;
-		}
-		img {
-			border-radius: 50%;
-			display: block;
-			float: right;
-		}
-	}
-
 	.content-single-content {
 		flex: 3;
-	}
-
-	.posted-on {
-		margin: 10px 0;
-		padding: 10px 0;
-		border-top: 1px solid #ddd;
-		border-bottom: 1px solid #ddd;
-		text-align: right;
-			strong {
-				display: block;
-			}
-	}
-
-	.author-name {
-		font-weight: bold;
-		display: block;
-		padding: 5px 0;
-	}
-
-	.social-media-share-icons {
-		padding: 0;
-		margin: 10px 0 5px 0;
-		list-style-type: none;
-			li {
-				display: inline-block;
-				margin-left: 5px;
-					a {
-						display: block;
-						background: #ddd;
-						padding: 4px 10px;
-						color: white;
-						border-radius: 4px;
-						text-align: center;
-						width: 30px !important;
-					}
-			}
 	}
 
 }
