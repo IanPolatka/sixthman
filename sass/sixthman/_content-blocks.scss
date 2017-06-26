@@ -5,6 +5,8 @@
 3.  Article
 4.  Archives
 5.  Single
+6.  Social Media
+7.  Featured Post
 
 */
 
@@ -355,7 +357,231 @@ article {
 
 
 
+//  6. Social Media - Home Page
 
+.social-media-section {
+	display: flex;
+	flex-direction: column;
+		a {
+			border-bottom: none;
+			font-weight: bold;
+				&:hover {
+					color: $primary-color;
+				}
+		}
+}
+
+.twitter-feed {
+	border: 1px solid #ddd;
+	padding: 20px;
+	border-radius: 4px;
+	background: $twitter-dark;
+	color: white;
+	background: $twitter-dark; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient($twitter-dark, $twitter); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($twitter-dark, $twitter); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($twitter-dark, $twitter); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($twitter-dark, $twitter); /* Standard syntax */
+		h4 {
+			padding-bottom: 20px;
+			border-bottom: 1px solid #ddd;
+		}
+}
+
+.sbi_photo {
+	margin-bottom: 20px;
+	border-radius: 4px;
+}
+
+#sbi_images {
+	margin-top: -20px !important;
+	margin-bottom: -20px !important;
+}
+
+.sbi_photo:nth-child(odd) img {
+    margin-right: 0px !important;
+}
+
+.facebook-feed {
+	border: 1px solid #ddd;
+	padding: 20px;
+	border-radius: 4px;
+		h4 {
+			padding-bottom: 20px;
+			border-bottom: 1px solid #ddd;
+		}
+}
+
+.instagram-feed {
+	border: 1px solid #ddd;
+	padding: 20px;
+	border-radius: 4px;
+		h4 {
+			padding-bottom: 20px;
+			border-bottom: 1px solid #ddd;
+		}
+}
+
+@media screen and (min-width: 768px) {
+	.social-media-section {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.twitter-feed {
+		width: 31%;
+	}
+	.ctf {
+		align-items: center;
+	}
+	.instagram-feed {
+		width: 31%;
+	}
+	#sb_instagram #sbi_images {
+		padding: 0px !important;
+	}
+	#sbi_images {
+		margin-top: 0px !important;
+	}
+	#sb_instagram .sbi_photo img {
+	    width: 85%;
+	}
+	.facebook-feed {
+		width: 31%;
+	}
+}
+
+
+
+//  7. Featured Post - Home Page
+
+.featured-post {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+		.category {
+			font-size: .8em;
+			font-weight: bold;
+			margin: 20px 20px 5px 20px;
+				a {
+					border-bottom: none;
+					    background: #fc0;
+					    padding: 3px 5px;
+					    border-radius: 2px;
+					    font-size: .9em;
+					    font-weight: bold;
+					    margin-right: 5px;
+					    text-transform: uppercase;
+				}
+		}
+		.featured-image {
+			width: 100%;
+			height: 160px;
+			background: #eee;
+		}
+		p {
+			padding: 0 20px;
+		}
+		h4 {
+			padding: 0px 20px 0 20px;
+		}
+
+		.game-status {
+			font-weight: bold;
+			text-align: center;
+			width: 100%;
+			font-size: .8em;
+			margin-bottom: 20px;
+		}
+
+		.box-score {
+			padding: 0 5px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			margin-bottom: 10px;
+			background: #f5f5f5;
+			padding: 10px 0;
+		}
+		.teams {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+				.logo img {
+					height: 35px;
+					width: 35px;
+				}
+				.score {
+					border: 1px solid #ddd;
+					padding: 5px;
+					font-size: 1.45em;
+					font-weight: bold;
+					background: #fff;
+				}
+				h5 {
+					font-family: $body_font;
+					font-weight: 400;
+				}
+				.away-team {
+					display: flex;
+					align-items: center;
+					float: right;
+					justify-content: flex-end;
+					flex: 1;
+						.logo {
+							margin-right: 5px;
+							background: #eee;
+						}
+						.school-name {
+							margin-right: 5px;
+							text-align: right;
+						}
+						.score {
+							margin-right: 5px;
+							background: #fff;
+						}
+						h4 {
+							font-size: .8em;
+							margin-bottom: 0px;
+							padding: 0;
+						}
+						h5 {
+							font-size: .58em;
+							color: #ccc;
+							font-weight: normal !important;
+							margin-bottom: 0;
+						}
+				}
+				.home-team {
+					display: flex;
+					align-items: center;
+					float: left;
+					flex: 1;
+					justify-content: flex-start;
+						.logo {
+							margin-left: 5px;
+							background: #eee;
+						}
+						.school-name {
+							margin-left: 5px;
+							text-align: left;
+						}
+						.score {
+							margin-left: 5px;
+						}
+						h4 {
+							font-size: .95em;
+							margin-bottom: 0px;
+							padding: 0;
+						}
+						h5 {
+							font-size: .65em;
+							color: #ccc;
+							font-weight: normal !important;
+							margin-bottom: 0;
+						}
+				}
+		}
+}
 
 
 
