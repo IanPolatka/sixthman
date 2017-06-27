@@ -15,7 +15,6 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
 			<div class="hero-unit">
 
@@ -110,7 +109,7 @@ get_header(); ?>
 										<div class="team">
 											<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
 											<span class="team-name">CCHS</span>
-											<span class="score">3 <sup>(30, 25, 15)</span>
+											<span class="score">3 <sup>(30, 25, 15)</sup></span>
 										</div>
 										<div class="game-status">
 											<span class="game-time live"><strong>4th Game</strong></span>
@@ -191,6 +190,14 @@ get_header(); ?>
 
 			</div><!--  Hero  -->
 
+		</div>
+
+	</div><!--  site-container  -->
+
+	<div class="recent-posts">
+
+		<div class="container">
+
 			<h2 class="heading">Recent Posts</h2>
 
 			<div class="posts">
@@ -217,6 +224,10 @@ get_header(); ?>
 				?>
 
 			</div><!--  Posts  -->
+
+		</div><!--  Content Area  -->
+
+	</div><!--  Featured Posts  -->
 
 			<?php
 			/*
