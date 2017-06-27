@@ -67,6 +67,9 @@
 
 	</header>
 
+	<?php
+	/*
+
 	<div class="scores-container">
 
 		<ul>
@@ -177,6 +180,9 @@
 		</ul>
 
 	</div><!--  Scores Container  -->
+
+	*/
+	?>
 
 	<div id="content" class="site-content">
 

@@ -21,7 +21,7 @@ get_header(); ?>
 
 				<div class="featured-post">
 
-					<div class="featured-image"></div>
+					<div class="featured-image"><img src="https://www.dav.org/wp-content/uploads/MembershipHub_LAB_JoinDAV.jpg"></div>
 
 					<div class="category"><a href="">Category Name</a></div>
 
@@ -33,20 +33,24 @@ get_header(); ?>
 
 							<div class="away-team">
 
-								<div class="school-name">
+								<div class="team-details">
 
-									<h4>ABC</h4>
-									<h5>thorobreds</h5>
+									<div class="logo">
+										<img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png">
+									</div>
 
-								</div><!--  School Name  -->
+									<div class="school-name">
 
-								<div class="logo">
-									<img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png">
-								</div>
+										<h4>ABC</h4>
+										<h5>Camels</h5>
+
+									</div><!--  School Name  -->
+
+								</div><!--  Team Details  -->
 
 								<div class="score">
 
-									28
+									-
 
 								</div><!--  Score  -->
 
@@ -56,20 +60,24 @@ get_header(); ?>
 
 								<div class="score">
 
-									32
+									-
 
 								</div><!--  Score  -->
 
-								<div class="logo">
-									<img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png">
-								</div>
+								<div class="team-details">
 
-								<div class="school-name">
+									<div class="logo">
+										<img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png">
+									</div>
 
-									<h4>XYZ</h4>
-									<h5>camels</h5>
+									<div class="school-name">
 
-								</div><!--  School Name  -->
+										<h4>ABC</h4>
+										<h5>Bluebirds</h5>
+
+									</div><!--  School Name  -->
+
+								</div><!--  Team Details  -->
 
 							</div><!--  Away Team  -->
 
@@ -83,25 +91,132 @@ get_header(); ?>
 
 				</div><!--  Featured Post  -->
 
-				<div class="posts">
+				<div class="todays-events">
 
-					<div class="posts-inner">
+					<div class="events-inner">
 					
-						<h4>Important Dates</h4>
+						<h4>Today's Events</h4>
 
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+						<ul>
+							<li>
+								<a href="">
+									<span class="sport-name">Volleyball</span>
+									<div class="teams">
+										<div class="team">
+											<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
+											<span class="team-name">NCC</span>
+											<span class="score">1 <sup>(28, 14, 8)</sup></span>
+										</div>
+										<div class="team">
+											<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
+											<span class="team-name">CCHS</span>
+											<span class="score">3 <sup>(30, 25, 15)</span>
+										</div>
+										<div class="game-status">
+											<span class="game-time live"><strong>4th Game</strong></span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<span class="sport-name">Boys Soccer</span>
+								<div class="teams">
+									<div class="team">
+										<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
+										<span class="team-name">Ryle</span>
+										<span class="score">1</span>
+									</div>
+									<div class="team">
+										<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
+										<span class="team-name">CCHS</span>
+										<span class="score">3</span>
+									</div>
+									<div class="game-status">
+										<span class="game-time live"><strong>48'</strong></span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<span class="sport-name">Girls Soccer</span>
+								<div class="teams">
+									<div class="team">
+										<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
+										<span class="team-name">CCHS</span>
+										<span class="score">5</span>
+									</div>
+									<div class="team">
+										<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
+										<span class="team-name">BCHS</span>
+										<span class="score">2</span>
+									</div>
+									<div class="game-status">
+										<span class="game-time live"><strong>79'</strong></span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<span class="sport-name">Cross Country</span>
+								<div class="teams">
+									<div class="tournament-title">
+									Campbell County Championships @ AJ Jolly Park
+									</div>
+									<div class="game-status">
+										<span class="game-time"><strong>4:00pm</strong></span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<span class="sport-name">Boys Golf</span>
+								<div class="teams">
+									<div class="team">
+										<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
+										<span class="team-name">CCHS</span>
+										<span class="score">276</span>
+									</div>
+									<div class="team">
+										<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
+										<span class="team-name">BCHS</span>
+										<span class="score">245</span>
+									</div>
+									<div class="game-status">
+										<span class="game-time"><strong>Final</strong></span>
+									</div>
+								</div>
+							</li>
+						</ul>
 
 					</div>
 
 				</div>
 
 			</div><!--  Hero  -->
+
+			<h2 class="heading">Recent Posts</h2>
+
+			<div class="posts">
+
+				<?php
+					//  Display Most Recent Posts
+					$query = 'posts_per_page=8&offset=0&ignore_sticky_posts=1';
+					$queryObject = new WP_Query($query);
+
+					// The Loop...
+					if ($queryObject->have_posts()) {
+						while ($queryObject->have_posts()) {
+							$queryObject->the_post();?>
+							<div class="hp-post">
+							<div class="cat-list"><?php echo get_the_category_list(); ?></div>
+							<h4><a href="<?php get_permalink(); ?>"><?php the_title(); ?></a></h4>
+							<?php sixthman_simplified_posted_date(); ?>
+							</div><!--  HP Post  -->
+						<?php
+						}
+					} else {
+						echo 'There are no posts.';
+					}
+				?>
+
+			</div><!--  Posts  -->
 
 			<?php
 			/*
@@ -129,19 +244,6 @@ get_header(); ?>
 
 			*/
 			?>
-
-			<?php /*
-			while ( have_posts() ) : the_post();
-
-				get_template_part( 'template-parts/content', 'page' );
-
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-
-			endwhile; // End of the loop.
-			*/ ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
