@@ -213,7 +213,7 @@ get_header(); ?>
 							$queryObject->the_post();?>
 							<div class="hp-post">
 							<div class="cat-list"><?php echo get_the_category_list(); ?></div>
-							<h4><a href="<?php get_permalink(); ?>"><?php the_title(); ?></a></h4>
+							<h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
 							<?php sixthman_simplified_posted_date(); ?>
 							</div><!--  HP Post  -->
 						<?php
