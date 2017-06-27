@@ -17,69 +17,91 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<div class="featured-post">
+			<div class="hero-unit">
 
-				<div class="featured-image"></div>
+				<div class="featured-post">
 
-				<div class="category"><a href="">Category Name</a></div>
+					<div class="featured-image"></div>
 
-				<h4>This is a post title</h4>
+					<div class="category"><a href="">Category Name</a></div>
 
-				<div class="box-score">
+					<h2>This is a post title</h2>
 
-					<div class="teams">
+					<div class="box-score">
 
-						<div class="away-team">
+						<div class="teams">
 
-							<div class="school-name">
+							<div class="away-team">
 
-								<h4>ABC</h4>
-								<h5>thorobreds</h5>
+								<div class="school-name">
 
-							</div><!--  School Name  -->
+									<h4>ABC</h4>
+									<h5>thorobreds</h5>
 
-							<div class="logo">
-								<img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png">
-							</div>
+								</div><!--  School Name  -->
 
-							<div class="score">
+								<div class="logo">
+									<img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png">
+								</div>
 
-								28
+								<div class="score">
 
-							</div><!--  Score  -->
+									28
 
-						</div><!--  Away Team  -->
+								</div><!--  Score  -->
 
-						<div class="home-team">
+							</div><!--  Away Team  -->
 
-							<div class="score">
+							<div class="home-team">
 
-								32
+								<div class="score">
 
-							</div><!--  Score  -->
+									32
 
-							<div class="logo">
-								<img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png">
-							</div>
+								</div><!--  Score  -->
 
-							<div class="school-name">
+								<div class="logo">
+									<img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png">
+								</div>
 
-								<h4>XYZ</h4>
-								<h5>camels</h5>
+								<div class="school-name">
 
-							</div><!--  School Name  -->
+									<h4>XYZ</h4>
+									<h5>camels</h5>
 
-						</div><!--  Away Team  -->
+								</div><!--  School Name  -->
 
-					</div><!--  Teams  -->
+							</div><!--  Away Team  -->
 
-				</div><!--  Box Score  -->
+						</div><!--  Teams  -->
 
-				<div class="game-status">4:00pm</div><!--  Game Status  -->
+					</div><!--  Box Score  -->
 
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam</p>
+					<div class="game-status">4:00pm</div><!--  Game Status  -->
 
-			</div><!--  Featured Post  -->
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam</p>
+
+				</div><!--  Featured Post  -->
+
+				<div class="posts">
+
+					<div class="posts-inner">
+					
+						<h4>Important Dates</h4>
+
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+
+					</div>
+
+				</div>
+
+			</div><!--  Hero  -->
 
 			<?php
 			/*
@@ -125,5 +147,4 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

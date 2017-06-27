@@ -455,9 +455,16 @@ article {
 
 //  7. Featured Post - Home Page
 
+.hero-unit {
+	display: flex;
+	justify-content: space-between;
+}
+
 .featured-post {
 	border: 1px solid #ddd;
 	border-radius: 4px;
+	flex: 3;
+	margin-right: 50px;
 		.category {
 			font-size: .8em;
 			font-weight: bold;
@@ -481,7 +488,7 @@ article {
 		p {
 			padding: 0 20px;
 		}
-		h4 {
+		h2 {
 			padding: 0px 20px 0 20px;
 		}
 
@@ -581,6 +588,35 @@ article {
 						}
 				}
 		}
+}
+
+
+
+.posts {
+	display: flex;
+	flex: 1;
+	// background: #fafafa;
+	border-radius: 4px;
+    padding: 0px;
+    flex-direction: column;
+    text-align: center;
+    	h4 {
+    		width: 100%;
+    		padding: 0 0 10px 0;
+    		margin: 0 0 10px 0;
+    		text-align: center;
+    		border-bottom: 4px solid #eeeeee;
+    	}
+    	p {
+    		font-size: .8em;
+    		padding: 0 1em;
+    		border-bottom: 1px solid #eeeeee;
+    		padding-bottom: 20px;
+    		margin-bottom: 20px;
+    			&:last-child {
+    				border: none;
+    			}
+    	}
 }
 
 
