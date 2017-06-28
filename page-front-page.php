@@ -229,6 +229,39 @@ get_header(); ?>
 
 	</div><!--  Featured Posts  -->
 
+	<div class="container">
+
+		<h2 class="heading"><?php bloginfo( 'name' ); ?> Social Media Channels</h2>
+
+		<div class="social-media-section">
+
+			<div class="twitter-feed">
+				<div class="title">
+					<h4><i class="fa fa-twitter" aria-hidden="true"></i><span class="sr-only">Twitter Feed</span></h4>
+				</div><!--  Title  -->
+				<?php echo do_shortcode("[custom-twitter-feeds]"); ?>
+			</div>
+
+
+			<div class="instagram-feed">
+				<div class="title">
+					<h4><i class="fa fa-instagram" aria-hidden="true"></i><span class="sr-only">Instagram Feed</span></h4>
+				</div><!--  Title  -->
+				<?php echo do_shortcode("[instagram-feed]"); ?>
+			</div>
+
+			<div class="facebook-feed">
+				<div class="title">
+					<h4><i class="fa fa-facebook" aria-hidden="true"></i><span class="sr-only">Instagram Feed</span></h4>
+				</div><!--  Title  -->
+				<?php echo do_shortcode("[custom-facebook-feed]"); ?>
+			</div>
+
+		</div>
+
+
+	</div><!--  Container  -->
+
 			<?php
 			/*
 

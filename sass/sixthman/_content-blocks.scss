@@ -372,20 +372,31 @@ article {
 		}
 }
 
+.feed-box {
+	margin-bottom: 20px;
+}
+
 .twitter-feed {
 	border: 1px solid #ddd;
-	padding: 20px;
 	border-radius: 4px;
-	background: $twitter-dark;
-	color: white;
-	background: $twitter-dark; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient($twitter-dark, $twitter); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient($twitter-dark, $twitter); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient($twitter-dark, $twitter); /* For Firefox 3.6 to 15 */
-    background: linear-gradient($twitter-dark, $twitter); /* Standard syntax */
-		h4 {
-			padding-bottom: 20px;
-			border-bottom: 1px solid #ddd;
+	background: #fff;
+	color: black;
+	padding: 20px;
+	margin-bottom: 20px;
+		.title {
+			display: flex;
+			align-self: center;
+			width: 100%;
+			text-align: center;
+
+				h4 {
+					width: 100%;
+						i {
+							color: $twitter;
+							font-size: 3em;
+						}
+				}
+
 		}
 }
 
@@ -395,8 +406,14 @@ article {
 }
 
 #sbi_images {
-	margin-top: -20px !important;
-	margin-bottom: -20px !important;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.sbi_item {
+	display: flex;
+	width: 48% !important;
 }
 
 .sbi_photo:nth-child(odd) img {
@@ -405,21 +422,47 @@ article {
 
 .facebook-feed {
 	border: 1px solid #ddd;
-	padding: 20px;
 	border-radius: 4px;
-		h4 {
-			padding-bottom: 20px;
-			border-bottom: 1px solid #ddd;
+	padding: 20px;
+	margin-bottom: 20px;
+		.title {
+			display: flex;
+			align-self: center;
+			width: 100%;
+			text-align: center;
+
+				h4 {
+					width: 100%;
+						i {
+							color: $facebook;
+							font-size: 3em;
+						}
+				}
+
 		}
 }
 
 .instagram-feed {
 	border: 1px solid #ddd;
-	padding: 20px;
 	border-radius: 4px;
-		h4 {
-			padding-bottom: 20px;
-			border-bottom: 1px solid #ddd;
+	padding: 20px;
+	margin-bottom: 20px;
+		.title {
+			display: flex;
+			align-self: center;
+			width: 100%;
+			text-align: center;
+
+				h4 {
+					width: 100%;
+						i {
+							background: -webkit-gradient(linear, left top, left bottom, from(#bc2a8d), to(#fccc63));
+							-webkit-background-clip: text;
+							-webkit-text-fill-color: transparent;
+							font-size: 3em;
+						}
+				}
+
 		}
 }
 
