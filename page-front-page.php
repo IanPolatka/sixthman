@@ -264,84 +264,96 @@ get_header(); ?>
 
 	<div class="container">
 
-			<?php
-			/*
+		<div class="row">
 
-			<h2><?php bloginfo( 'name' ); ?> Social Media Section</h2>
+			<div class="col-lg-12">
 
-			<div class="social-media-section">
-
-				<div class="twitter-feed">
-					<h4>Twitter Feed</h4>
-					<?php echo do_shortcode("[custom-twitter-feeds]"); ?>
-				</div>
-
-				<div class="instagram-feed">
-					<h4>Instagram Feed</h4>
-					<?php echo do_shortcode("[instagram-feed]"); ?>
-				</div><!--  Instagram  -->
-
-				<div class="facebook-feed">
-					<h4>Facebook Feed</h4>
-					<?php echo do_shortcode("[custom-facebook-feed]"); ?>
-				</div><!--  Facebook  -->
-
-			</div><!--  Social Media Section  -->
-
-			*/
-			?>
-
-			<?php
-
-			$team = strtolower("Campbell County");
-			echo $team;
-			$team_name = str_replace(' ', '%20', $team);
-
-			$data = file_get_contents('http://6thmansports.com/api/football/schedule/2017-2018/' . $team_name);
-			$json_data = json_decode($data, true);
-
-			?>
-
-
-
-			<?php
-			foreach($json_data as $game) {
-
-				echo '<div style="border-top: 5px solid red;">';
-				echo $game['id'];
-				echo '<br />';
-				echo $game['date'];
-				echo '<br />';
-				echo '<hr>';
-				if (!isset($game['minutes_remaining']) && ($game['seconds_remaining'])) {
-					echo $game['time'];
-				} else {
-					if ($game['minutes_remaining']) {
-						echo $game['minutes_remaining'];
-					}
-					if ($game['seconds_remaining']) {
-						echo ":" . $game['seconds_remaining'];
-					}
-				}
-				echo '<hr>';
-				echo '<br />';?>
 				<?php
-				echo '<br />';
-				echo '<br />';
-				if ($game['home_team'] = $team) {
-					echo 'vs <img src="http://6thmansports.com/images/team-logos/' . $game['away_team_logo'] . '">' . $game['away_team'];
-				} 
-				if ($game['away_team'] = $team) {
-					echo '@ <img src="http://6thmansports.com/images/team-logos/' . $game['home_team_logo'] . '">' . $game['home_team'];
-				}
-				echo '<br />';
-				echo '</div>';
-				echo '<br />';
+				/*
 
-			}
-			?>
+				<h2><?php bloginfo( 'name' ); ?> Social Media Section</h2>
 
-			</div>
+				<div class="social-media-section">
+
+					<div class="twitter-feed">
+						<h4>Twitter Feed</h4>
+						<?php echo do_shortcode("[custom-twitter-feeds]"); ?>
+					</div>
+
+					<div class="instagram-feed">
+						<h4>Instagram Feed</h4>
+						<?php echo do_shortcode("[instagram-feed]"); ?>
+					</div><!--  Instagram  -->
+
+					<div class="facebook-feed">
+						<h4>Facebook Feed</h4>
+						<?php echo do_shortcode("[custom-facebook-feed]"); ?>
+					</div><!--  Facebook  -->
+
+				</div><!--  Social Media Section  -->
+
+				*/
+				?>
+
+				<?php
+
+				$team = strtolower("campbell county");
+				$team_name = str_replace(' ', '%20', $team);
+
+				$data = file_get_contents('http://6thmansports.com/api/football/schedule/2017-2018/' . $team_name);
+				$json_data = json_decode($data, true);
+
+				?>
+
+				<h3>Page Title</h3>
+
+				<table class="schedule-table">
+					<tbody>
+
+						<?php
+						foreach($json_data as $game) {
+
+							echo '<tr>';
+								echo '<td class="schedule-date">';
+									$source = $game['date'];
+									$date = new DateTime($source);
+									echo '<div>' . $date->format('l') . '</div>'; // 31.07.2012
+									echo '<div>' . $date->format('M j, Y') . '</div>'; // 31.07.2012
+								echo '</td>';
+								echo '<td class="opponent">';
+									echo '<strong>';
+									if (strtolower($game['home_team']) == $team) {
+										echo 'vs <img src="http://6thmansports.com/images/team-logos/' . $game['away_team_logo'] . '">' . $game['away_team'];
+									} else {
+										echo '@ <img src="http://6thmansports.com/images/team-logos/' . $game['home_team_logo'] . '">' . $game['home_team'];
+									}
+									echo '</strong>';
+								echo '</td>';
+								echo '<td>';
+									if (!empty($game['minutes_remaining'])) {
+										if ($game['minutes_remaining']) {
+											echo $game['minutes_remaining'];
+										}
+										if ($game['seconds_remaining']) {
+											echo ":" . $game['seconds_remaining'];
+										}
+									} else {
+										echo $game['time'];
+									}
+									echo $game['game_status'];
+								echo '</td>';
+							echo '</tr>';
+						}
+						?>
+
+					</tbody>
+				</table>
+
+			</div><!--  Col  -->
+
+		</div><!--  Row  -->
+
+	</div><!--  Container  -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

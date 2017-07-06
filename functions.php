@@ -247,3 +247,135 @@ require get_template_directory() . '/inc/jetpack.php';
 
 // Register Custom Navigation Walker
 require_once('wp-bootstrap-navwalker.php');
+
+function remove_dashboard_widgets () {
+
+  remove_meta_box('dashboard_quick_press','dashboard','side'); //Quick Press widget
+  remove_meta_box('dashboard_recent_drafts','dashboard','side'); //Recent Drafts
+  remove_meta_box('dashboard_primary','dashboard','side'); //WordPress.com Blog
+  remove_meta_box('dashboard_secondary','dashboard','side'); //Other WordPress News
+  remove_meta_box('dashboard_incoming_links','dashboard','normal'); //Incoming Links
+  // remove_meta_box('dashboard_plugins','dashboard','normal'); //Plugins
+  //  remove_meta_box('dashboard_right_now','dashboard', 'normal'); //Right Now
+  remove_meta_box('rg_forms_dashboard','dashboard','normal'); //Gravity Forms
+  //  remove_meta_box('dashboard_recent_comments','dashboard','normal'); //Recent Comments
+  //  remove_meta_box('icl_dashboard_widget','dashboard','normal'); //Multi Language Plugin
+  //  remove_meta_box('dashboard_activity','dashboard', 'normal'); //Activity
+  remove_action('welcome_panel','wp_welcome_panel');
+
+}
+
+add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
+
+
+
+// Register Custom Post Type
+function sixthman_hof_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Hall of Famers', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Hall of Fame', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'             => __( 'Hall of Fame', 'text_domain' ),
+		'name_admin_bar'        => __( 'Hall of Fame', 'text_domain' ),
+		'archives'              => __( 'Hall of Famers', 'text_domain' ),
+		'attributes'            => __( 'Item Attributes', 'text_domain' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
+		'all_items'             => __( 'All Members', 'text_domain' ),
+		'add_new_item'          => __( 'Add New Hall of Famer', 'text_domain' ),
+		'add_new'               => __( 'Add New Hall of Famer', 'text_domain' ),
+		'new_item'              => __( 'New Hall of Famer', 'text_domain' ),
+		'edit_item'             => __( 'Edit Hall of Famer', 'text_domain' ),
+		'update_item'           => __( 'Update Hall of Famer', 'text_domain' ),
+		'view_item'             => __( 'View Hall of Famer', 'text_domain' ),
+		'view_items'            => __( 'View Hall of Famers', 'text_domain' ),
+		'search_items'          => __( 'Search Hall of Famer', 'text_domain' ),
+		'not_found'             => __( 'Not found', 'text_domain' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
+		'featured_image'        => __( 'Featured Image', 'text_domain' ),
+		'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
+		'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
+		'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
+		'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
+		'items_list'            => __( 'Items list', 'text_domain' ),
+		'items_list_navigation' => __( 'Items list navigation', 'text_domain' ),
+		'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
+	);
+	$rewrite = array(
+		'slug'                  => 'hall-of-fame',
+		'with_front'            => true,
+		'pages'                 => true,
+		'feeds'                 => true,
+	);
+	$args = array(
+		'label'                 => __( 'Hall of Fame', 'text_domain' ),
+		'description'           => __( 'A list of all hall of famers', 'text_domain' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'thumbnail', 'page-attributes', ),
+		'taxonomies'            => array( 'hall-of-fame-year' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 20,
+		'menu_icon'             => 'dashicons-awards',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,		
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'rewrite'               => $rewrite,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'hof', $args );
+
+}
+add_action( 'init', 'sixthman_hof_post_type', 0 );
+
+
+
+// Register Custom Taxonomy
+function hall_of_fame_year() {
+
+	$labels = array(
+		'name'                       => _x( 'Hall of Fame Years', 'Taxonomy General Name', 'hall-of-fame-year' ),
+		'singular_name'              => _x( 'Hall of Fame Year', 'Taxonomy Singular Name', 'hall-of-fame-year' ),
+		'menu_name'                  => __( 'HOF Years', 'hall-of-fame-year' ),
+		'all_items'                  => __( 'All Years', 'hall-of-fame-year' ),
+		'parent_item'                => __( 'Parent Item', 'hall-of-fame-year' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'hall-of-fame-year' ),
+		'new_item_name'              => __( 'New HOF Year', 'hall-of-fame-year' ),
+		'add_new_item'               => __( 'Add HOF Year', 'hall-of-fame-year' ),
+		'edit_item'                  => __( 'Edit HOF Year', 'hall-of-fame-year' ),
+		'update_item'                => __( 'Update HOF Year', 'hall-of-fame-year' ),
+		'view_item'                  => __( 'View HOF Year', 'hall-of-fame-year' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'hall-of-fame-year' ),
+		'add_or_remove_items'        => __( 'Add or remove HOF Year', 'hall-of-fame-year' ),
+		'choose_from_most_used'      => __( 'Choose from the most years', 'hall-of-fame-year' ),
+		'popular_items'              => __( 'Popular HOF Years', 'hall-of-fame-year' ),
+		'search_items'               => __( 'Search Years', 'hall-of-fame-year' ),
+		'not_found'                  => __( 'Not Found', 'hall-of-fame-year' ),
+		'no_terms'                   => __( 'No items', 'hall-of-fame-year' ),
+		'items_list'                 => __( 'Items list', 'hall-of-fame-year' ),
+		'items_list_navigation'      => __( 'Items list navigation', 'hall-of-fame-year' ),
+	);
+	$rewrite = array(
+		'slug'                       => 'hof/year',
+		'with_front'                 => true,
+		'hierarchical'               => true,
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => false,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+		'rewrite'                    => $rewrite,
+	);
+	register_taxonomy( 'hall-of-fame-year', array( 'hof' ), $args );
+
+}
+add_action( 'init', 'hall_of_fame_year', 0 );

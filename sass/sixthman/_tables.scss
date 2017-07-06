@@ -1,3 +1,12 @@
+/*  Content Block Table of contents
+
+1.  Default Table
+2.  Schedule Table
+
+*/
+
+
+
 table {
 	width: 100%;
 	border: 1px solid #ddd;
@@ -28,4 +37,37 @@ table tr:nth-child(even) {
 		td, th {
 			padding: 5px;
 		}
+}
+
+
+
+//  2.  Schedule Table
+
+.schedule-table {
+	border: none;
+	border-top: 1px solid #ddd;
+}
+
+.schedule-table tr:nth-child(even) {
+    background: #fff;
+}
+
+.schedule-table tr {
+	border-bottom: 1px solid #ddd;
+}
+
+.schedule-date {
+	font-size: .7em;
+}
+
+.opponent img {
+	margin: 0 10px;
+	height: 25px;
+	width: auto;
+}
+
+@media screen and (min-width: 768px) {
+	.schedule-date {
+		width: 15%;
+	}
 }
