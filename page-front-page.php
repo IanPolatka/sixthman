@@ -20,7 +20,7 @@ get_header(); ?>
 
 				<div class="featured-post">
 
-					<div class="featured-image"><img src="https://www.dav.org/wp-content/uploads/MembershipHub_LAB_JoinDAV.jpg"></div>
+					<div class="featured-image"><img src="https://securea.mlb.com/assets/images/2/3/8/240055238/cuts/adleman2610_niiguymu_fnbjv9lu.jpg"></div>
 
 					<div class="category"><a href="">Category Name</a></div>
 
@@ -262,6 +262,8 @@ get_header(); ?>
 
 	</div><!--  Container  -->
 
+	<div class="container">
+
 			<?php
 			/*
 
@@ -288,6 +290,58 @@ get_header(); ?>
 
 			*/
 			?>
+
+			<?php
+
+			$team = strtolower("Campbell County");
+			echo $team;
+			$team_name = str_replace(' ', '%20', $team);
+
+			$data = file_get_contents('http://6thmansports.com/api/football/schedule/2017-2018/' . $team_name);
+			$json_data = json_decode($data, true);
+
+			?>
+
+
+
+			<?php
+			foreach($json_data as $game) {
+
+				echo '<div style="border-top: 5px solid red;">';
+				echo $game['id'];
+				echo '<br />';
+				echo $game['date'];
+				echo '<br />';
+				echo '<hr>';
+				if (!isset($game['minutes_remaining']) && ($game['seconds_remaining'])) {
+					echo $game['time'];
+				} else {
+					if ($game['minutes_remaining']) {
+						echo $game['minutes_remaining'];
+					}
+					if ($game['seconds_remaining']) {
+						echo ":" . $game['seconds_remaining'];
+					}
+				}
+				echo '<hr>';
+				echo '<br />';?>
+				<?php
+				echo '<br />';
+				echo '<br />';
+				if ($game['home_team'] = $team) {
+					echo 'vs <img src="http://6thmansports.com/images/team-logos/' . $game['away_team_logo'] . '">' . $game['away_team'];
+				} 
+				if ($game['away_team'] = $team) {
+					echo '@ <img src="http://6thmansports.com/images/team-logos/' . $game['home_team_logo'] . '">' . $game['home_team'];
+				}
+				echo '<br />';
+				echo '</div>';
+				echo '<br />';
+
+			}
+			?>
+
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
