@@ -508,19 +508,28 @@ article {
 	border: 1px solid #ddd;
 	border-radius: 4px;
 	margin-bottom: 20px;
-		.category {
-			font-size: .8em;
-			font-weight: bold;
-			margin: 20px 20px 5px 20px;
-				a {
-					border-bottom: none;
-				    background: #ddd;
-					padding: 3px 5px;
-					border-radius: 2px;
-					font-size: .9em;
+		.category ul {
+			padding: 0;
+			margin: 0;
+				li {
+					font-size: .8em;
 					font-weight: bold;
-					margin-right: 5px;
-					text-transform: uppercase;
+					margin: 20px 20px 5px 20px;
+					list-style-type: none;
+						a {
+							border-bottom: none;
+						    background: #ddd;
+							padding: 3px 5px;
+							border-radius: 2px;
+							font-size: .9em;
+							font-weight: bold;
+							margin-right: 5px;
+							text-transform: uppercase;
+								&:hover, &:active {
+									background: $primary-color;
+									color: black;
+								}
+						}
 				}
 		}
 		.featured-image {
@@ -648,6 +657,19 @@ article {
 			text-align: center;
 			font-size: .8em;
 			font-weight: bold;
+			margin-bottom: 0;
+		}
+		.game-live {
+			color: $red;
+		}
+		.game-time {
+			text-align: center;
+			font-weight: bold;
+			color: black;
+			font-size: .8em;
+		}
+		.text-content {
+			margin-top: 20px;
 		}
 }
 
@@ -1051,7 +1073,7 @@ article {
 			text-decoration: none;
 			border-bottom: none;
 		}
-		&:hover {
+		&:active {
 			background: #eeeeee;
 		}
 		span {

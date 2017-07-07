@@ -1,0 +1,145 @@
+[
+    {
+        "key": "group_595fcee684afb",
+        "title": "Posts Box Score",
+        "fields": [
+            {
+                "key": "field_595fd0c79bdfe",
+                "label": "Box Score",
+                "name": "box_score",
+                "type": "true_false",
+                "instructions": "Does this post include a box score?",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 1,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_595fceeee4581",
+                "label": "Category",
+                "name": "category",
+                "type": "taxonomy",
+                "instructions": "Does this post include a box score?  If so, select the sport first.",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_595fd0c79bdfe",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "taxonomy": "category",
+                "field_type": "select",
+                "allow_null": 0,
+                "add_term": 1,
+                "save_terms": 0,
+                "load_terms": 1,
+                "return_format": "object",
+                "multiple": 0
+            },
+            {
+                "key": "field_595fcf8a64b11",
+                "label": "Event ID",
+                "name": "event_id",
+                "type": "number",
+                "instructions": "Enter the event ID",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_595fd0c79bdfe",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "Enter the event ID",
+                "prepend": "",
+                "append": "",
+                "min": "",
+                "max": "",
+                "step": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_595fc4eae4548",
+        "title": "School Information",
+        "fields": [
+            {
+                "key": "field_595fc5119900f",
+                "label": "School Name",
+                "name": "school_name",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "school-information"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]

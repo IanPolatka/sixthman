@@ -20,81 +20,71 @@ get_header(); ?>
 
 				<div class="featured-post">
 
-					<div class="featured-image"><img src="https://securea.mlb.com/assets/images/2/3/8/240055238/cuts/adleman2610_niiguymu_fnbjv9lu.jpg"></div>
-
-					<div class="category"><a href="">Category Name</a></div>
-
-					<h2>This is a post title</h2>
-
 					<?php
+						// WP_Query arguments
+						$args = array(
+							'posts_per_page' => 1,
+							'post__in'  => get_option( 'sticky_posts' ),
+							'ignore_sticky_posts' => 1
+						);
 
-					$data 		= file_get_contents('http://6thmansports.com/api/football/game/17');
-					$json_data 	= json_decode($data, true);
-					$game 		= $json_data[0];
+						// The Query
+						query_posts( $args );
 
+						if ( have_posts() ) {
+						 
+							// The Loop
+							while ( have_posts() ) : the_post(); ?>
+
+								<div class="featured-image">
+
+									<?php 
+
+									if ( has_post_thumbnail() ) {
+										the_post_thumbnail();
+									} else {
+										echo '<img src="https://securea.mlb.com/assets/images/2/3/8/240055238/cuts/adleman2610_niiguymu_fnbjv9lu.jpg">';
+									}
+
+									?>
+										
+								</div>
+
+								<div class="category"><?php echo get_the_category_list(); ?></div>
+							    
+								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+
+								<?php if( get_field('box_score') ): ?>
+
+									<?php 
+										$term = get_field('category');
+										$category = $term->name;
+									?>
+
+									<?php if ($term) : ?>
+
+										<?php get_template_part( 'box-scores/score', $category  ); ?>
+
+									<?php endif; ?>
+
+								<?php endif; ?>
+
+								<div class="text-content">
+
+									<?php the_excerpt(); ?>
+
+								</div><!--  Text Content  -->
+
+							<?php
+							endwhile;
+
+							wp_reset_postdata();
+
+						} else {
+							echo '<h2>No Featured Posts To Display.</h2>';
+						}
+						
 					?>
-
-					<div class="box-score">
-
-						<div class="teams">
-
-							<div class="away-team">
-
-								<div class="team-details">
-
-									<div class="logo">
-										<img src="http://6thmansports.com/images/team-logos/<?php echo $game['away_team_logo']; ?>">
-									</div>
-
-									<div class="school-name">
-
-										<h4><?php echo $game['away_team_abbreviated_name']; ?></h4>
-										<h5><?php echo $game['away_team_mascot']; ?></h5>
-
-									</div><!--  School Name  -->
-
-								</div><!--  Team Details  -->
-
-								<div class="score">
-
-									<?php echo $game['away_team_first_qrt_score']; ?>
-
-								</div><!--  Score  -->
-
-							</div><!--  Away Team  -->
-
-							<div class="home-team">
-
-								<div class="score">
-
-									<?php echo $game['home_team_first_qrt_score']; ?>
-
-								</div><!--  Score  -->
-
-								<div class="team-details">
-
-									<div class="logo">
-										<img src="http://6thmansports.com/images/team-logos/<?php echo $game['home_team_logo']; ?>">
-									</div>
-
-									<div class="school-name">
-
-										<h4><?php echo $game['home_team_abbreviated_name']; ?></h4>
-										<h5><?php echo $game['home_team_mascot']; ?></h5>
-
-									</div><!--  School Name  -->
-
-								</div><!--  Team Details  -->
-
-							</div><!--  Away Team  -->
-
-						</div><!--  Teams  -->
-
-					</div><!--  Box Score  -->
-
-					<div class="game-status"><?php echo $game['time']; ?></div><!--  Game Status  -->
-
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam</p>
 
 				</div><!--  Featured Post  -->
 
