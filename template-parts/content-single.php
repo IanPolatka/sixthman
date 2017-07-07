@@ -57,6 +57,22 @@
 			</div><!-- .entry-header -->
 
 			<div class="entry-content">
+
+				<?php if( get_field('box_score') ): ?>
+
+					<?php 
+						$term = get_field('category');
+						$category = $term->name;
+					?>
+
+					<?php if ($term) : ?>
+
+						<?php get_template_part( 'box-scores/score', $category  ); ?>
+
+					<?php endif; ?>
+
+				<?php endif; ?>
+
 				<?php
 					the_content( sprintf(
 						wp_kses(

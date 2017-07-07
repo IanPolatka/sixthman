@@ -8,6 +8,8 @@
 
 ?>
 
+<?php if ( is_home() ) { ?>
+
 <div class="box-score">
 
 	<div class="teams">
@@ -181,4 +183,10 @@
 				}
 			?>
 		</div><!--  Game Time  -->
+<?php } ?>
+
+
+
+
+
 <?php } ?>
