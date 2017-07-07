@@ -379,3 +379,20 @@ function hall_of_fame_year() {
 
 }
 add_action( 'init', 'hall_of_fame_year', 0 );
+
+
+
+
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'School Information',
+		'menu_title'	=> 'School Information',
+		'menu_slug' 	=> 'school-information',
+		'capability'	=> 'manage_options',
+		'redirect'		=> false,
+		'icon_url' 		=> 'dashicons-welcome-learn-more',
+	));
+	
+}

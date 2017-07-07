@@ -26,6 +26,14 @@ get_header(); ?>
 
 					<h2>This is a post title</h2>
 
+					<?php
+
+					$data 		= file_get_contents('http://6thmansports.com/api/football/game/17');
+					$json_data 	= json_decode($data, true);
+					$game 		= $json_data[0];
+
+					?>
+
 					<div class="box-score">
 
 						<div class="teams">
@@ -35,13 +43,13 @@ get_header(); ?>
 								<div class="team-details">
 
 									<div class="logo">
-										<img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png">
+										<img src="http://6thmansports.com/images/team-logos/<?php echo $game['away_team_logo']; ?>">
 									</div>
 
 									<div class="school-name">
 
-										<h4>ABC</h4>
-										<h5>Camels</h5>
+										<h4><?php echo $game['away_team_abbreviated_name']; ?></h4>
+										<h5><?php echo $game['away_team_mascot']; ?></h5>
 
 									</div><!--  School Name  -->
 
@@ -49,7 +57,7 @@ get_header(); ?>
 
 								<div class="score">
 
-									-
+									<?php echo $game['away_team_first_qrt_score']; ?>
 
 								</div><!--  Score  -->
 
@@ -59,20 +67,20 @@ get_header(); ?>
 
 								<div class="score">
 
-									-
+									<?php echo $game['home_team_first_qrt_score']; ?>
 
 								</div><!--  Score  -->
 
 								<div class="team-details">
 
 									<div class="logo">
-										<img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png">
+										<img src="http://6thmansports.com/images/team-logos/<?php echo $game['home_team_logo']; ?>">
 									</div>
 
 									<div class="school-name">
 
-										<h4>ABC</h4>
-										<h5>Bluebirds</h5>
+										<h4><?php echo $game['home_team_abbreviated_name']; ?></h4>
+										<h5><?php echo $game['home_team_mascot']; ?></h5>
 
 									</div><!--  School Name  -->
 
@@ -84,7 +92,7 @@ get_header(); ?>
 
 					</div><!--  Box Score  -->
 
-					<div class="game-status">4:00pm</div><!--  Game Status  -->
+					<div class="game-status"><?php echo $game['time']; ?></div><!--  Game Status  -->
 
 					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam</p>
 
@@ -297,8 +305,8 @@ get_header(); ?>
 
 				<?php
 
-				$team = strtolower("campbell county");
-				$team_name = str_replace(' ', '%20', $team);
+				$school_name 	= strtolower(get_field('school_name', 'option')); 
+				$team_name 		= str_replace(' ', '%20', $school_name);
 
 				$data = file_get_contents('http://6thmansports.com/api/football/schedule/2017-2018/' . $team_name);
 				$json_data = json_decode($data, true);
@@ -322,7 +330,7 @@ get_header(); ?>
 								echo '</td>';
 								echo '<td class="opponent">';
 									echo '<strong>';
-									if (strtolower($game['home_team']) == $team) {
+									if (strtolower($game['home_team']) == $school_name) {
 										echo 'vs <img src="http://6thmansports.com/images/team-logos/' . $game['away_team_logo'] . '">' . $game['away_team'];
 									} else {
 										echo '@ <img src="http://6thmansports.com/images/team-logos/' . $game['home_team_logo'] . '">' . $game['home_team'];
