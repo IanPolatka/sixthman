@@ -11,6 +11,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+<?php 
+$term 		= get_field('category');
+$cat		= $term->name;
+$category 	= str_replace(' ', '-', $cat);
+?>
+
 		<div class="col-lg-3 col-md-3 col-sm-3 entry-meta-desktop">
 
 			<div class="entry-meta">
@@ -58,18 +64,9 @@
 
 			<div class="entry-content">
 
-				<?php if( get_field('box_score') ): ?>
+				<?php if ($term) : ?>
 
-					<?php 
-						$term = get_field('category');
-						$category = $term->name;
-					?>
-
-					<?php if ($term) : ?>
-
-						<?php get_template_part( 'box-scores/score', $category  ); ?>
-
-					<?php endif; ?>
+					<?php get_template_part( 'box-scores/score', $category  ); ?>
 
 				<?php endif; ?>
 

@@ -8,7 +8,7 @@
 6.  Social Media
 7.  Featured Post
 8.  Home Page Loop
-9.  Aside
+9.  Single Box Score
 
 */
 
@@ -1103,8 +1103,35 @@ article {
 
 
 
-.heading {
-	margin: 50px 0;
+
+
+//  8. Home Page Queried Posts
+
+
+.individual-box-score {
+
+	font-size: .8em;
+	border-radius: 4px;
+
+		img {
+			height: 20px;
+			width: auto;
+			margin-right: 5px;
+		}
+
+		tr {
+			border-bottom: 1px solid #ddd;
+		}
+
+		tr:nth-child(even) {
+		    background: #fff;
+		    border: none;
+		}
+
+		.game-live {
+			color: $red;
+		}
+
 }
 
 

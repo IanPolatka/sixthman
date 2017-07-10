@@ -58,7 +58,8 @@ get_header(); ?>
 
 									<?php 
 										$term = get_field('category');
-										$category = $term->name;
+										$cat		= $term->name;
+										$category 	= str_replace(' ', '-', $cat);
 									?>
 
 									<?php if ($term) : ?>
@@ -298,7 +299,7 @@ get_header(); ?>
 				$school_name 	= strtolower(get_field('school_name', 'option')); 
 				$team_name 		= str_replace(' ', '%20', $school_name);
 
-				$data = file_get_contents('http://6thmansports.com/api/football/schedule/2017-2018/' . $team_name);
+				$data = file_get_contents('https://6thmansports.com/api/football/schedule/2017-2018/' . $team_name);
 				$json_data = json_decode($data, true);
 
 				?>
