@@ -1,18 +1,16 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * Template Name: Sport Home Page
  *
  * @package sixthman
  */
 
 get_header(); ?>
+
+<?php 
+$term = get_field('select_sport');
+$category = $term->name;
+?>
 
 <div class="secondary-menu">
 
@@ -56,24 +54,49 @@ get_header(); ?>
 
 </div><!--  Secondary Menu  -->
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<h3><?php the_title(); ?></h3>
+
+	<div class="row">
+
+		<div class="col-lg-3">
 
 			<?php
-			while ( have_posts() ) : the_post();
+			
+			//  Query the schedule
+			get_template_part( 'schedules/schedule', $category  ); 
 
-				get_template_part( 'template-parts/content', 'page' );
-
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-
-			endwhile; // End of the loop.
 			?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</div>
+
+		<div class="col-lg-9">
+
+
+				<?php
+				$args = array(
+					'posts_per_page' => 5,
+					'category_name'  => $category
+				);
+				?>
+
+				<?php
+				// The Query
+				query_posts( $args );
+				while ( have_posts() ) : the_post();
+
+					get_template_part( 'template-parts/content', 'page' );
+
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+
+				endwhile; // End of the loop.
+				?>
+
+		</div><!--  Col  -->
+
+	</div><!--  Row  -->
 
 <?php
 get_sidebar();
