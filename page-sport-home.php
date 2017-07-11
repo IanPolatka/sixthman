@@ -7,11 +7,6 @@
 
 get_header(); ?>
 
-<?php 
-$term = get_field('select_sport');
-$category = $term->name;
-?>
-
 <div class="secondary-menu">
 
 	<?php 
@@ -58,19 +53,24 @@ $category = $term->name;
 
 	<div class="row">
 
-		<div class="col-lg-3">
+		<div class="col-xs-12">
+
+			<?php 
+			$term 					= get_field('select_sport');
+			$cat					= $term->name;
+			$scheduleCategory 		= str_replace(' ', '-', $cat);
+			?>
 
 			<?php
-			
+				
 			//  Query the schedule
-			get_template_part( 'schedules/schedule', $category  ); 
+			get_template_part( 'schedules/schedule', $scheduleCategory ); 
 
 			?>
 
-		</div>
+		</div><!--  Col  -->
 
-		<div class="col-lg-9">
-
+		<div class="col-lg-6">
 
 				<?php
 				$args = array(

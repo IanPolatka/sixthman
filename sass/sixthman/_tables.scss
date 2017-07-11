@@ -39,6 +39,22 @@ table tr:nth-child(even) {
 		}
 }
 
+.game-live {
+	color: $red;
+}
+
+.winning-text {
+	color: #00b300;
+	font-weight: bold;
+	margin-right: 5px;
+}
+
+.losing-text {
+	color: $red;
+	font-weight: bold;
+	margin-right: 5px;
+}
+
 
 
 //  2.  Schedule Table
@@ -58,6 +74,7 @@ table tr:nth-child(even) {
 
 .schedule-date {
 	font-size: .7em;
+	padding-left: 0;
 }
 
 .opponent img {

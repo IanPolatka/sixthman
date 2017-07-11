@@ -13,6 +13,8 @@ if( ! empty( $data ) ) {
 		
 foreach( $data as $item ) { ?>
 
+<?php echo $item->home_team_first_half_score; ?>
+
 
 
 <?php 

@@ -2,7 +2,7 @@
 
 $id		 = get_field('event_id');
 
-$request = wp_safe_remote_get( 'https://www.6thmansports.com/api/football/game/' . $id );
+$request = wp_safe_remote_get( 'https://www.6thmansports.com/api/soccer-boys/game/' . $id );
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }
@@ -12,8 +12,6 @@ $data = json_decode( $body );
 if( ! empty( $data ) ) {
 		
 foreach( $data as $item ) { ?>
-
-hello world
 
 <?php 
 //  Insert data into box score on the home page
@@ -43,15 +41,15 @@ if ( is_home() ) { ?>
 				<div class="score">
 
 					<?php
-						if ($item->game_status > 0) {
+						if ($item->game_status > 0 || $item->minutes_remaining) {
 							if (!$item->away_team_final_score) {
-								if ($item->away_team_first_qrt_score) {
-									$fhs = $item->away_team_first_qrt_score;
+								if ($item->away_team_first_half_score) {
+									$fhs = $item->away_team_first_half_score;
 								} else {
 									$fhs = 0;
 								}
-								if ($item->away_team_second_qrt_score) {
-									$shs = $item->away_team_second_qrt_score;
+								if ($item->away_team_second_half_score) {
+									$shs = $item->away_team_second_half_score;
 								} else {
 									$shs = 0;
 								}
@@ -64,7 +62,7 @@ if ( is_home() ) { ?>
 								echo $fhs + $shs + $os;
 
 							} else {
-								$item->away_team_final_score;
+								echo $item->away_team_final_score;
 							}
 						} else {
 							echo '-';
@@ -80,15 +78,15 @@ if ( is_home() ) { ?>
 				<div class="score">
 
 					<?php
-						if ($item->game_status > 0) {
+						if ($item->game_status > 0 || isset($item->minutes_remaining)) {
 							if (!$item->home_team_final_score) {
-								if ($item->home_team_first_qrt_score) {
-									$fhs = $item->home_team_first_qrt_score;
+								if ($item->home_team_first_half_score) {
+									$fhs = $item->home_team_first_half_score;
 								} else {
 									$fhs = 0;
 								}
-								if ($item->home_team_second_qrt_score) {
-									$shs = $item->home_team_second_qrt_score;
+								if ($item->home_team_second_half_score) {
+									$shs = $item->home_team_second_half_score;
 								} else {
 									$shs = 0;
 								}
@@ -98,14 +96,14 @@ if ( is_home() ) { ?>
 									$os = 0;
 								}
 
-								echo $fqs + $sqs + $os;
+								echo $fhs + $shs + $os;
 
-								} else {
-									$item->home_team_final_score;
-								}
 							} else {
-								echo '-';
+								$item->home_team_final_score;
 							}
+						} else {
+							echo '-';
+						}
 						?>
 
 					</div><!--  Score  -->
@@ -133,7 +131,7 @@ if ( is_home() ) { ?>
 
 	<div class="game-status">
 		<?php
-			if ($item->game_status <= 0) {
+			if ($item->game_status <= 0 && !isset($item->minutes_remaining)) {
 				echo $item->time;
 			}
 			if ($item->game_status == 1) {
@@ -159,10 +157,7 @@ if ( is_home() ) { ?>
 		<div class="game-time">
 			<?php
 				if ($item->minutes_remaining) {
-					echo $item->minutes_remaining;
-				}
-				if ($item->seconds_remaining) {
-					echo ":" . $item->seconds_remaining;
+					echo '<div class="game-live">' . $item->minutes_remaining . '\'</div>';
 				}
 			?>
 		</div><!--  Game Time  -->
@@ -177,7 +172,7 @@ if ( is_home() ) { ?>
 	<table class="individual-box-score">
 		<thead>
 			<tr>
-				<th width="43%">
+				<th width="65%">
 					<?php
 						if ($item->game_status <= 0) {
 							echo $item->time;
@@ -201,8 +196,6 @@ if ( is_home() ) { ?>
 				</th>
 				<th>1</th>
 				<th>2</th>
-				<th>3</th>
-				<th>4</th>
 				<?php if (isset($item->away_team_overtime_score) || isset($item->home_team_overtime_score)) { ?>
 				<th>OT</th>
 				<?php } ?>
