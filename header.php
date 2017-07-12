@@ -189,5 +189,3 @@ header('Access-Control-Allow-Origin: *');
 	?>
 
 	<div id="content" class="site-content">
-
-		<div class="container">

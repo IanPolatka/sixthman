@@ -17,7 +17,7 @@ get_header(); ?>
 
     <?php $parentLink = get_permalink($post->post_parent); ?>
 
-	    <a href="<?php echo $parentLink; ?>">
+	    <a class="parent-link" href="<?php echo $parentLink; ?>">
 	     
 	    <?php 
 	    if ($root_parent = get_the_title($grandparent) !== $root_parent = get_the_title($current)) {
@@ -49,11 +49,13 @@ get_header(); ?>
 
 </div><!--  Secondary Menu  -->
 
-	<h3><?php the_title(); ?></h3>
+<div class="container">
 
-	<div class="row">
+	<h3 class="page-title"><?php the_title(); ?></h3>
 
-		<div class="col-xs-12">
+	<div class="sport-home-container">
+
+		<div class="sport-home-main">
 
 			<?php 
 			$term 					= get_field('select_sport');
@@ -62,42 +64,68 @@ get_header(); ?>
 			?>
 
 			<?php
-				
+					
 			//  Query the schedule
-			get_template_part( 'schedules/schedule', $scheduleCategory ); 
+			get_template_part( 'schedules/summary/schedule-summary', $scheduleCategory ); 
+
+			?>
+			
+			<?php
+
+				$term 	= get_field('category');
+				$cat	= $term->name;
 
 			?>
 
-		</div><!--  Col  -->
+			<h3>Recent <?php echo $cat; ?> Post's</h3>
 
-		<div class="col-lg-6">
+			<?php
 
-				<?php
+				// WP_Query arguments
 				$args = array(
 					'posts_per_page' => 5,
-					'category_name'  => $category
+					'category_name'  => $cat
 				);
-				?>
 
-				<?php
 				// The Query
 				query_posts( $args );
-				while ( have_posts() ) : the_post();
 
-					get_template_part( 'template-parts/content', 'page' );
+				if ( have_posts() ) {
+							 
+					// The Loop
+					while ( have_posts() ) : the_post(); ?>
+								    
+						<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
+						<?php the_excerpt(); ?>
 
-				endwhile; // End of the loop.
-				?>
+						<hr>
 
-		</div><!--  Col  -->
+					<?php
+					endwhile;
 
-	</div><!--  Row  -->
+					wp_reset_postdata();
+
+				} else {
+					echo '<h2>No Featured Posts To Display.</h2>';
+				}
+							
+			?>
+
+		</div><!--  Sport Home Main  -->
+
+
+		<div class="sport-home-aside">
+
+			<H3>HELLO WORLD</H3>
+
+			<?php get_sidebar(); ?>
+
+		</div><!--  Sport Home Aside  -->
+
+	</div><!--  Sport Home Container  -->
+
+</div><!--  Container  -->
 
 <?php
-get_sidebar();
 get_footer();

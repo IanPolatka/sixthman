@@ -17,6 +17,12 @@ foreach( $data as $item ) { ?>
 //  Insert data into box score on the home page
 if ( is_home() ) { ?>
 
+	<?php if ($item->tournament_title) { ?>
+
+		<h6 class="text-center"><?php echo $item->tournament_title; ?></h6>
+
+	<?php } ?>
+
 	<div class="box-score">
 
 		<div class="teams">
@@ -166,7 +172,6 @@ if ( is_home() ) { ?>
 	//  Close Minutes/Seconds Remaining
 	}
 
-//  Close is Home Page check
 } else { ?>
 
 	<table class="individual-box-score">

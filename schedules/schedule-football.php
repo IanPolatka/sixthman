@@ -1,52 +1,63 @@
 <?php
 
-	$school_name 	= strtolower(get_field('school_name', 'option')); 
-	$team_name 		= str_replace(' ', '%20', $school_name);
-	$school_year	= get_field('school_year');
+$school_year	= get_field('school_year');
+$team_name	 	= strtolower(get_field('school_name', 'option'));
 
-	$data = file_get_contents('http://6thmansports.com/api/football/schedule/' . $school_year . '/' . $team_name);
-	$json_data = json_decode($data, true);
+$request 		= wp_safe_remote_get( 'http://6thmansports.com/api/football/schedule/' . $school_year . '/' . $team_name);
+if( is_wp_error( $request ) ) {
+	return false; // Bail early
+}
 
-	?>
+$body = wp_remote_retrieve_body( $request );
+$data = json_decode( $body );
+if( ! empty( $data ) ) { ?>
 
-		<table class="schedule-table">
-			<tbody>
+	<table class="schedule-table">
+		<tbody>
 
-						<?php
-						foreach($json_data as $game) {
+			<?php
+			foreach( $data as $item ) {
 
-							echo '<tr>';
-								echo '<td class="schedule-date">';
-									$source = $game['date'];
-									$date = new DateTime($source);
-									echo '<div>' . $date->format('l') . '</div>'; // 31.07.2012
-									echo '<div>' . $date->format('M j, Y') . '</div>'; // 31.07.2012
-								echo '</td>';
-								echo '<td class="opponent">';
-									echo '<strong>';
-									if (strtolower($game['home_team']) == $school_name) {
-										echo 'vs <img src="http://6thmansports.com/images/team-logos/' . $game['away_team_logo'] . '">' . $game['away_team'];
-									} else {
-										echo '@ <img src="http://6thmansports.com/images/team-logos/' . $game['home_team_logo'] . '">' . $game['home_team'];
-									}
-									echo '</strong>';
-								echo '</td>';
-								echo '<td>';
-									if (!empty($game['minutes_remaining'])) {
-										if ($game['minutes_remaining']) {
-											echo $game['minutes_remaining'];
-										}
-										if ($game['seconds_remaining']) {
-											echo ":" . $game['seconds_remaining'];
-										}
-									} else {
-										echo $game['time'];
-									}
-									echo $game['game_status'];
-								echo '</td>';
-							echo '</tr>';
+				echo '<tr>';
+					echo '<td class="schedule-date">';
+						$source = $item->date;
+						$date = new DateTime($source);
+						echo '<div>' . $date->format('l') . '</div>'; // 31.07.2012
+						echo '<div>' . $date->format('M j, Y') . '</div>'; // 31.07.2012
+					echo '</td>';
+					echo '<td class="opponent">';
+						echo '<strong>';
+							if (strtolower($item->home_team) == strtolower($team_name)) {
+								echo 'vs <img src="http://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">' . $item->away_team;
+							} else {
+								echo '@ <img src="http://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">' . $item->home_team;
+							}
+						echo '</strong>';
+					echo '</td>';
+					echo '<td>';
+						if (!empty($item->minutes_remaining)) {
+							if ($item->minutes_remaining) {
+								echo $item->minutes_remaining;
+							}
+							if ($item->seconds_remaining) {
+								echo ":" . $item->seconds_remaining;
+							}
+						} else {
+							echo $item->time;
 						}
-						?>
+						echo $item->game_status;
+					echo '</td>';
+				echo '</tr>';
+			
+			}
+			?>
 
-					</tbody>
-				</table>
+		</tbody>
+	</table>
+
+<?php
+}
+?>
+
+
+

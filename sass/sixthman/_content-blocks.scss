@@ -9,6 +9,8 @@
 7.  Featured Post
 8.  Home Page Loop
 9.  Single Box Score
+10. Schedule Summary
+11. Secondary Menu
 
 */
 
@@ -19,6 +21,9 @@
 .container {
 	width: 90%;
 	margin: 0 auto;
+		.page-title {
+			margin: 30px 0 20px 0;
+		}
 }
 
 @media screen and (min-width: 1000px) {
@@ -1105,7 +1110,7 @@ article {
 
 
 
-//  8. Home Page Queried Posts
+//  9.  Single Post Box Score
 
 
 .individual-box-score {
@@ -1133,6 +1138,137 @@ article {
 		}
 
 }
+
+
+
+
+//  10.  Schedule Summary
+
+.sport-home-container {
+	display: flex;
+}
+
+.most-recent-games-title {
+	background: #ddd;
+	color: #000;
+	padding: 5px;
+	border-radius: 4px 4px 0 0;
+		h5 {
+			margin-bottom: 0;
+		}
+}
+
+.most-recent-games {
+	display: flex;
+	flex-direction: row;
+	border: 1px solid #ddd;
+	border-radius: 0 0 4px 4px;
+	min-height: 20px;
+	margin-bottom: 20px;
+}
+
+.game {
+	width: 20%;
+	padding: 5px;
+	border-right: 1px solid #ddd;
+	font-size: .7em;
+	text-align: center;
+		img {
+			height: 25px;
+			width: 25px;
+			margin: 5px auto;
+			display: block;
+		}
+		i {
+			font-size: 20px;
+			margin-bottom: 5px;
+		}
+		&:last-child {
+			border: none;
+			align-self: center;
+		}
+}
+
+.sport-home-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.sport-home-main {
+	flex: 1;
+}
+
+.sport-home-aside {
+	flex: 1;
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+	.sport-home-container {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.most-recent-games {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.sport-home-main {
+		flex: 2;
+		margin-right: 100px;
+	}
+
+	.sport-home-aside {
+		flex: 1;
+	}
+
+}
+
+
+
+//  10.  Secondary Menu
+
+.secondary-menu {
+	display: flex;
+	padding: 10px;
+	text-transform: uppercase;
+	font-size: .9em;
+	overflow: scroll;
+	white-space: nowrap;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+    ms-overflow-style: -ms-autohiding-scrollbar;
+		ul {
+			margin: 0;
+			padding: 0;
+				li {
+					list-style: none;
+					display: inline-block;
+					padding: 0 7px;
+						&:first-child {
+							border-left: 1px solid #fff;
+							padding-left: 15px;
+						}
+						a {
+							border: none;
+								&:hover {
+									color: $primary-color;
+								}
+						}
+				}
+		}
+}
+
+a.parent-link {
+	font-weight: bold;
+	border: none;
+	margin-right: 15px;
+}
+
+
 
 
 

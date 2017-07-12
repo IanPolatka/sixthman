@@ -14,6 +14,8 @@
 
 get_header(); ?>
 
+<div class="container">
+
 	<div id="primary" class="content-area">
 
 			<div class="hero-unit">
