@@ -105,7 +105,7 @@ if ( is_home() ) { ?>
 								echo $fhs + $shs + $os;
 
 							} else {
-								$item->home_team_final_score;
+								echo $item->home_team_final_score;
 							}
 						} else {
 							echo '-';

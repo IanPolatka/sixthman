@@ -3,7 +3,7 @@
 $school_year	= get_field('school_year');
 $team_name	 	= strtolower(get_field('school_name', 'option'));
 
-$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/soccer-boys/schedule-summary/' . $school_year . '/' . $team_name);
+$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/volleyball/schedule-summary/' . $school_year . '/' . $team_name);
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }
@@ -31,11 +31,25 @@ if( ! empty( $data ) ) { ?>
 
 				<?php 
 				if (strtolower($item->home_team) == strtolower($team_name)) { ?>
-					<img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>" alt="<?php echo $item->away_team ?>" title="<?php echo $item->away_abbreviated_name ?>">
+					<div class="team-logo-box">
+						<?php
+						if ($item->away_team_logo) { ?>
+							<img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>" alt="<?php echo $item->away_team ?>" title="<?php echo $item->away_abbreviated_name ?>">
+						<?php
+						} ?>
+					</div><!--  Team Logo Box  -->
 					vs
 					<?php echo $item->away_team ?>
 				<?php } else { ?>
-					<img src="https://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>" alt="<?php echo $item->home_team ?>" title="<?php echo $item->home_abbreviated_name ?>">
+					<div class="team-logo-box">
+						<?php
+						if ($item->home_team_logo) {
+						?>
+							<img src="https://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>" alt="<?php echo $item->home_team ?>" title="<?php echo $item->home_abbreviated_name ?>">
+						<?php
+						}
+						?>
+					</div><!--  Team Logo Box  -->
 					@ 
 					<?php echo $item->home_team ?>
 				<?php } ?>
@@ -46,7 +60,7 @@ if( ! empty( $data ) ) { ?>
 
 		<div class="game">
 
-			<a href="<?php echo home_url(); ?>/<?php echo 'boys-soccer/schedule'; ?>">
+			<a href="<?php echo home_url(); ?>/<?php echo 'volleyball/schedule'; ?>">
 
 				<i class="fa fa-calendar-o" aria-hidden="true"></i>
 

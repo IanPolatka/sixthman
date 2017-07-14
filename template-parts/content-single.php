@@ -9,6 +9,8 @@
 
 ?>
 
+<div class="container">
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 <?php 
@@ -16,6 +18,8 @@ $term 		= get_field('category');
 $cat		= $term->name;
 $category 	= str_replace(' ', '-', $cat);
 ?>
+
+	<div class="row">
 
 		<div class="col-lg-3 col-md-3 col-sm-3 entry-meta-desktop">
 
@@ -102,3 +106,7 @@ $category 	= str_replace(' ', '-', $cat);
 		</div><!--  Col  -->
 
 </article><!-- #post-<?php the_ID(); ?> -->
+
+</div><!--  Row  -->
+
+</div><!--  Container  -->
