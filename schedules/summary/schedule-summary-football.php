@@ -4,10 +4,12 @@
 	$team_name 		= str_replace(' ', '%20', $school_name);
 	$school_year	= get_field('school_year');
 
-	$data = file_get_contents('http://6thmansports.com/api/football/schedule/' . $school_year . '/' . $team_name);
+	$data = file_get_contents('https://6thmansports.com/api/football/schedule-summary/' . $school_year . '/' . $team_name);
 	$json_data = json_decode($data, true);
 
 	?>
+
+	hello world
 
 		<table class="schedule-table">
 			<tbody>

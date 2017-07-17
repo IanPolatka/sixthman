@@ -3,7 +3,7 @@
 $school_year	= get_field('school_year');
 $team_name	 	= strtolower(get_field('school_name', 'option'));
 
-$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/soccer-boys/schedule-summary/' . $school_year . '/' . $team_name);
+$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/soccer-boys/schedule/' . $school_year . '/' . $team_name);
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }

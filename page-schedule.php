@@ -58,7 +58,7 @@ get_header(); ?>
 
 			<?php 
 			$term 					= get_field('select_sport');
-			$cat					= $term->name;
+			$cat					= strtolower($term->name);
 			$scheduleCategory 		= str_replace(' ', '-', $cat);
 
 			?>
