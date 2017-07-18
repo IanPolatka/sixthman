@@ -62,7 +62,6 @@ get_header(); ?>
 			$cat					= strtolower($term->name);
 			$scheduleCategory 		= str_replace(' ', '-', $cat);
 			
-			echo $scheduleCategory;
 			?>
 
 			<?php

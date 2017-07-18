@@ -3,7 +3,7 @@
 $school_year	= get_field('school_year');
 $team_name	 	= strtolower(get_field('school_name', 'option'));
 
-$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/soccer-boys/schedule/' . $school_year . '/' . $team_name . '/1');
+$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/soccer-girls/schedule/' . $school_year . '/' . $team_name . '/1');
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }
@@ -96,7 +96,7 @@ if( ! empty( $data ) ) { ?>
 
 
 
-$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/soccer-boys/schedule/' . $school_year . '/' . $team_name . '/2');
+$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/soccer-girls/schedule/' . $school_year . '/' . $team_name . '/2');
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }
@@ -189,7 +189,7 @@ if( ! empty( $data ) ) { ?>
 
 
 
-$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/soccer-boys/schedule/' . $school_year . '/' . $team_name . '/3');
+$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/soccer-girls/schedule/' . $school_year . '/' . $team_name . '/3');
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }

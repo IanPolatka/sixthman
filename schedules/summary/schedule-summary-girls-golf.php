@@ -3,7 +3,7 @@
 $school_year	= get_field('school_year');
 $team_name	 	= strtolower(get_field('school_name', 'option'));
 
-$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/golf-boys/schedule-summary/' . $school_year . '/' . $team_name);
+$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/golf-girls/schedule-summary/' . $school_year . '/' . $team_name);
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }
@@ -54,7 +54,7 @@ if( ! empty( $data ) ) { ?>
 
 		<div class="game">
 
-			<a href="<?php echo home_url(); ?>/<?php echo 'boys-golf/schedule'; ?>">
+			<a href="<?php echo home_url(); ?>/<?php echo 'girls-golf/schedule'; ?>">
 
 				<i class="fa fa-calendar-o" aria-hidden="true"></i>
 

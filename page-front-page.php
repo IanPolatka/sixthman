@@ -97,6 +97,13 @@ get_header(); ?>
 					
 						<h4>Today's Events</h4>
 
+						<?php
+					
+						//  Query the schedule
+						get_template_part( 'schedules/todays-events'); 
+
+						?>
+
 						<ul>
 							<li>
 								<a href="">
