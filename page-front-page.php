@@ -100,97 +100,9 @@ get_header(); ?>
 						<?php
 					
 						//  Query the schedule
-						get_template_part( 'schedules/todays-events'); 
+						get_template_part( 'todays-events/events'); 
 
 						?>
-
-						<ul>
-							<li>
-								<a href="">
-									<span class="sport-name">Volleyball</span>
-									<div class="teams">
-										<div class="team">
-											<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
-											<span class="team-name">NCC</span>
-											<span class="score">1 <sup>(28, 14, 8)</sup></span>
-										</div>
-										<div class="team">
-											<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
-											<span class="team-name">CCHS</span>
-											<span class="score">3 <sup>(30, 25, 15)</sup></span>
-										</div>
-										<div class="game-status">
-											<span class="game-time live"><strong>4th Game</strong></span>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<span class="sport-name">Boys Soccer</span>
-								<div class="teams">
-									<div class="team">
-										<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
-										<span class="team-name">Ryle</span>
-										<span class="score">1</span>
-									</div>
-									<div class="team">
-										<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
-										<span class="team-name">CCHS</span>
-										<span class="score">3</span>
-									</div>
-									<div class="game-status">
-										<span class="game-time live"><strong>48'</strong></span>
-									</div>
-								</div>
-							</li>
-							<li>
-								<span class="sport-name">Girls Soccer</span>
-								<div class="teams">
-									<div class="team">
-										<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
-										<span class="team-name">CCHS</span>
-										<span class="score">5</span>
-									</div>
-									<div class="team">
-										<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
-										<span class="team-name">BCHS</span>
-										<span class="score">2</span>
-									</div>
-									<div class="game-status">
-										<span class="game-time live"><strong>79'</strong></span>
-									</div>
-								</div>
-							</li>
-							<li>
-								<span class="sport-name">Cross Country</span>
-								<div class="teams">
-									<div class="tournament-title">
-									Campbell County Championships @ AJ Jolly Park
-									</div>
-									<div class="game-status">
-										<span class="game-time"><strong>4:00pm</strong></span>
-									</div>
-								</div>
-							</li>
-							<li>
-								<span class="sport-name">Boys Golf</span>
-								<div class="teams">
-									<div class="team">
-										<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
-										<span class="team-name">CCHS</span>
-										<span class="score">276</span>
-									</div>
-									<div class="team">
-										<span class="team-logo"><img src="https://www.dav.org/wp-content/themes/dav-theme-5-0-0-7/assets/img/davseal.png"></span>
-										<span class="team-name">BCHS</span>
-										<span class="score">245</span>
-									</div>
-									<div class="game-status">
-										<span class="game-time"><strong>Final</strong></span>
-									</div>
-								</div>
-							</li>
-						</ul>
 
 					</div>
 

@@ -18,7 +18,7 @@
 		</header><!-- .entry-header -->
 
 		
-		<div class="post-date"><?php the_date(); ?></div>
+		<div class="post-date"><?php sixthman_posted_on_archive(); ?></div>
 
 		<div class="entry-content">
 			<?php

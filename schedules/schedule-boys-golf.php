@@ -3,9 +3,6 @@
 $school_year	= get_field('school_year');
 $team_name	 	= strtolower(get_field('school_name', 'option'));
 
-
-
-
 //  Show Varsity Schedule
 
 $request 		= wp_safe_remote_get( 'https://6thmansports.com/api/golf-boys/schedule/' . $school_year . '/' . $team_name . '/1');

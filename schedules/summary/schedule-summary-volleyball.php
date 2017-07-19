@@ -26,8 +26,20 @@ if( ! empty( $data ) ) { ?>
 				$source = $item->date;
 				$date = new DateTime($source);
 				?>
-				<div><?php echo $date->format('l'); ?></div>
-				<div><?php echo $date->format('M j'); ?></div>
+				<div><?php echo $date->format('D M j'); ?></div>
+
+				<strong>
+				<?php if ($item->game_status > 5) {
+					if (strtolower($item->winning_team) == strtolower($team_name)) {
+						echo '<span class="winning-text">W</span>';
+					}
+					if (strtolower($item->losing_team) == strtolower($team_name)) {
+						echo '<span class="losing-text">L</span>';
+					}
+				} else {
+					echo $item->time;
+				} ?>
+				</strong>
 
 				<?php 
 				if (strtolower($item->home_team) == strtolower($team_name)) { ?>
@@ -38,7 +50,7 @@ if( ! empty( $data ) ) { ?>
 						<?php
 						} ?>
 					</div><!--  Team Logo Box  -->
-					vs
+					vs<br />
 					<?php echo $item->away_team ?>
 				<?php } else { ?>
 					<div class="team-logo-box">
@@ -50,7 +62,7 @@ if( ! empty( $data ) ) { ?>
 						}
 						?>
 					</div><!--  Team Logo Box  -->
-					@ 
+					@<br />
 					<?php echo $item->home_team ?>
 				<?php } ?>
 
