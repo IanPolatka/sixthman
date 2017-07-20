@@ -16,7 +16,7 @@ get_header(); ?>
 
 			<div class="row">
 
-				<div class="col-lg-10 col-lg-offset-1">
+				<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
 
 				<?php
 				if ( have_posts() ) : ?>
@@ -54,6 +54,8 @@ get_header(); ?>
 
 				endif; ?>
 
+				<?php get_sidebar(); ?>
+
 				</div><!--  Col  -->
 
 			</div><!--  Row  -->
@@ -64,5 +66,4 @@ get_header(); ?>
 </div><!--  Container  -->
 
 <?php
-get_sidebar();
 get_footer();

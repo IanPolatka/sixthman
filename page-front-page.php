@@ -114,7 +114,7 @@ get_header(); ?>
 
 	</div><!--  site-container  -->
 
-	<div class="recent-posts">
+	<div class="recent-posts content-block">
 
 		<div class="container">
 
@@ -149,7 +149,7 @@ get_header(); ?>
 
 	</div><!--  Featured Posts  -->
 
-	<div class="container">
+	<div class="container content-block">
 
 		<h2 class="heading"><?php bloginfo( 'name' ); ?> Social Media Channels</h2>
 
@@ -164,7 +164,7 @@ get_header(); ?>
 
 
 			<div class="instagram-feed">
-				<div class="title">
+		 		<div class="title">
 					<h4><i class="fa fa-instagram" aria-hidden="true"></i><span class="sr-only">Instagram Feed</span></h4>
 				</div><!--  Title  -->
 				<?php echo do_shortcode("[instagram-feed]"); ?>
@@ -179,102 +179,114 @@ get_header(); ?>
 
 		</div>
 
+		</div>
+
 
 	</div><!--  Container  -->
 
-	<div class="container">
+	<div class="records-summary">
 
-		<div class="row">
+		<div class="container">
 
-			<div class="col-lg-12">
+			<div class="row">
 
-				<?php
-				/*
+				<div class="col-lg-12">
 
-				<h2><?php bloginfo( 'name' ); ?> Social Media Section</h2>
+					<h2 class="heading">Team Records</h2>
 
-				<div class="social-media-section">
+					<p>Campbell County has accumulated a number of trophies over the years. Visit the records page to see a breakdown of each sport.</p>
 
-					<div class="twitter-feed">
-						<h4>Twitter Feed</h4>
-						<?php echo do_shortcode("[custom-twitter-feeds]"); ?>
-					</div>
+					<p><a href="#" class="btn btn-primary">Visit The Records page</a></p>
 
-					<div class="instagram-feed">
-						<h4>Instagram Feed</h4>
-						<?php echo do_shortcode("[instagram-feed]"); ?>
-					</div><!--  Instagram  -->
+					<div class="record-boxes">
 
-					<div class="facebook-feed">
-						<h4>Facebook Feed</h4>
-						<?php echo do_shortcode("[custom-facebook-feed]"); ?>
-					</div><!--  Facebook  -->
+						<div class="record-box">
 
-				</div><!--  Social Media Section  -->
+							<h1>6</h1>
 
-				*/
-				?>
+							<h5>KHSAA State Titles</h5>
 
-				<?php
+						</div><!--  Record Box  -->
 
-				$school_name 	= strtolower(get_field('school_name', 'option')); 
-				$team_name 		= str_replace(' ', '%20', $school_name);
+						<div class="record-box">
 
-				$data = file_get_contents('https://6thmansports.com/api/football/schedule/2017-2018/' . $team_name);
-				$json_data = json_decode($data, true);
+							<h1>10</h1>
 
-				?>
+							<h5>KHSAA State Runner-Ups</h5>
 
-				<h3>Page Title</h3>
+						</div><!--  Record Box  -->
 
-				<table class="schedule-table">
-					<tbody>
+						<div class="record-box">
 
-						<?php
-						foreach($json_data as $game) {
+							<h1>74</h1>
 
-							echo '<tr>';
-								echo '<td class="schedule-date">';
-									$source = $game['date'];
-									$date = new DateTime($source);
-									echo '<div>' . $date->format('l') . '</div>'; // 31.07.2012
-									echo '<div>' . $date->format('M j, Y') . '</div>'; // 31.07.2012
-								echo '</td>';
-								echo '<td class="opponent">';
-									echo '<strong>';
-									if (strtolower($game['home_team']) == $school_name) {
-										echo 'vs <img src="http://6thmansports.com/images/team-logos/' . $game['away_team_logo'] . '">' . $game['away_team'];
-									} else {
-										echo '@ <img src="http://6thmansports.com/images/team-logos/' . $game['home_team_logo'] . '">' . $game['home_team'];
-									}
-									echo '</strong>';
-								echo '</td>';
-								echo '<td>';
-									if (!empty($game['minutes_remaining'])) {
-										if ($game['minutes_remaining']) {
-											echo $game['minutes_remaining'];
-										}
-										if ($game['seconds_remaining']) {
-											echo ":" . $game['seconds_remaining'];
-										}
-									} else {
-										echo $game['time'];
-									}
-									echo $game['game_status'];
-								echo '</td>';
-							echo '</tr>';
-						}
-						?>
+							<h5>KHSAA Regional Titles</h5>
 
-					</tbody>
-				</table>
+						</div><!--  Record Box  -->
 
-			</div><!--  Col  -->
+						<div class="record-box">
 
-		</div><!--  Row  -->
+							<h1>87</h1>
+
+							<h5>KHSAA District Titles</h5>
+
+						</div><!--  Record Box  -->
+
+						<div class="record-box">
+
+							<h1>68</h1>
+
+							<h5>NKAC Conference Titles</h5>
+
+						</div><!--  Record Box  -->
+
+					</div><!--  Record Boxes  -->
+
+				</div><!--  Col  -->
+
+			</div><!--  Row  -->
+
+		</div><!--  Container  -->
+
+	</div><!--  Record Summary  -->
+
+	<div class="container content-block">
+
+	<div class="row">
+
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+			<h4><i class="fa fa-map-marker light-icon" aria-hidden="true"></i> Directions</h4>
+
+			<p>Headed to an away game? Don't get lost, visit the directions page.</p>
+
+			<p><a href="" class="btn btn-primary btn-small">Visit The Directions Page</a></p>
+
+		</div><!--  Col  -->
+
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+			<h4><i class="fa fa-university light-icon" aria-hidden="true"></i> Hall Of Fame</h4>
+
+			<p>Headed to an away game? Don't get lost, visit the directions page.</p>
+
+			<p><a href="" class="btn btn-primary btn-small">Visit Hall of Fame</a></p>
+
+		</div><!--  Col  -->
+
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+			<h4><i class="fa fa-comments light-icon" aria-hidden="true"></i> Contact Us</h4>
+
+			<p>Headed to an away game? Don't get lost, visit the directions page.</p>
+
+			<p><a href="" class="btn btn-primary btn-small">Contact Us</a></p>
+
+		</div><!--  Col  -->
+
+		</div>
 
 	</div><!--  Container  -->
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

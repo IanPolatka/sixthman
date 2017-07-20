@@ -11,6 +11,8 @@
 9.  Single Box Score
 10. Schedule Summary
 11. Secondary Menu
+12. Home Page Records Section
+13. Icons
 
 */
 
@@ -30,6 +32,11 @@
 	.container {
 		width: 960px;
 	}
+}
+
+.content-block {
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
 
 
@@ -1273,6 +1280,76 @@ a.parent-link {
 	margin-right: 15px;
 }
 
+
+
+
+
+
+//  12.  Home Page Records Section
+
+.records-summary {
+    background: url(img/home-page/records-mobile.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 40px 0;
+    color: #fff;
+    text-align: center;
+    	h2 {
+    		color: $primary-color;
+    	}
+}
+
+.record-boxes {
+	display: flex;
+	flex-direction: column;
+}
+
+.record-box {
+	text-align: center;
+	padding: 30px;
+	border: 1px solid #fff;
+	border-radius: 4px;
+	margin-bottom: 20px;
+		h1 {
+			color: $primary-color;
+			margin-bottom: 5px;
+		}
+		h4 {
+			margin-bottom: 0;
+		}
+}
+
+@media screen and (min-width: 768px) {
+
+	.records-summary {
+	    background: url(img/home-page/records-desktop.jpg) no-repeat center center;
+	    background-size: cover;
+	    	p {
+	    		padding: 0 20%;
+	    	}
+	}
+
+	.record-boxes {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.record-box {
+		text-align: center;
+		padding: 15px;
+		margin-bottom: 20px;
+		width: 18%;
+	}
+
+}
+
+
+
+//  12.  Icons
+
+.light-icon {
+	color: #ddd;
+	font-size: .9em !important;
+}
 
 
 
