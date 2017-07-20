@@ -7,19 +7,17 @@ if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }
 
-$body = wp_remote_retrieve_body( $request );
-$data = json_decode( $body );
+$body 	= wp_remote_retrieve_body( $request );
+$data 	= json_decode( $body );
 if( ! empty( $data ) ) {
 		
 foreach( $data as $item ) { ?>
 
-<?php echo $item->home_team_first_half_score; ?>
-
-
-
 <?php 
 //  Insert data into box score on the home page
 if ( is_home() ) { ?>
+
+	<?php echo $item->game_status; ?>
 
 	<div class="box-score">
 

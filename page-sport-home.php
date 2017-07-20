@@ -51,7 +51,7 @@ get_header(); ?>
 
 <div class="container">
 
-	<h3 class="page-title"><?php the_title(); ?></h3>
+	<h2 class="page-title"><?php the_title(); ?></h2>
 
 	<div class="sport-home-container">
 
@@ -59,10 +59,13 @@ get_header(); ?>
 
 			<?php 
 			$term 					= get_field('select_sport');
+			$category 				= $term->name;
 			$cat					= strtolower($term->name);
 			$scheduleCategory 		= str_replace(' ', '-', $cat);
 			
 			?>
+
+			<?php echo $scheduleCategory; ?>
 
 			<?php
 					
@@ -70,15 +73,8 @@ get_header(); ?>
 			get_template_part( 'schedules/summary/schedule-summary', $scheduleCategory ); 
 
 			?>
-			
-			<?php
 
-				$term 	= get_field('category');
-				$cat	= $term->name;
-
-			?>
-
-			<h3>Recent <?php echo $cat; ?> Post's</h3>
+			<h3>Recent <?php echo $category; ?> Post's</h3>
 
 			<?php
 
@@ -112,6 +108,12 @@ get_header(); ?>
 				}
 							
 			?>
+
+			<p>
+				<a href="/category/<?php echo $scheduleCategory; ?>" class="btn btn-primary btn-block">
+					View More <?php echo $category; ?> Posts
+				</a>
+			</p>
 
 		</div><!--  Sport Home Main  -->
 

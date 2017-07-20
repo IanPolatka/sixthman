@@ -11,13 +11,13 @@
 
 <div class="container">
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 <?php 
-$term 		= get_field('category');
-$cat		= $term->name;
-$category 	= str_replace(' ', '-', $cat);
+	$term 		= get_field('category');
+	$cat		= $term->name;
+	$category 	= str_replace(' ', '-', $cat);
 ?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="row">
 
@@ -28,6 +28,10 @@ $category 	= str_replace(' ', '-', $cat);
 				<span class="author-name"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author(); ?></a></span>
 				<span class="author-description"><?php the_author_meta('description'); ?></span>
 				<?php sixthman_posted_date(); ?>
+				<div class="posted-in">
+					<strong>Posted In</strong>
+					<div class="cat-list"><?php echo get_the_category_list(); ?></div>
+				</div>
 				<strong>Share This</strong>
 				<ul class="social-media-share-icons">
 					<li>
@@ -102,6 +106,8 @@ $category 	= str_replace(' ', '-', $cat);
 			<div class="single-post-navigation">
 				<?php sixthman_post_navigation(); ?>
 			</div><!--  Single Post Navigation  -->
+
+			<?php get_sidebar(); ?>
 
 		</div><!--  Col  -->
 

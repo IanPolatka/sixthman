@@ -9,12 +9,13 @@ if( is_wp_error( $request ) ) {
 }
 
 $body = wp_remote_retrieve_body( $request );
-$data = json_decode( $body );
-if( ! empty( $data ) ) { ?>
+$data = json_decode( $body ); ?>
 
-	<div class="most-recent-games-title">
-		<h5>Latest Games</h5>
-	</div>
+<div class="most-recent-games-title">
+	<h5>Latest Games</h5>
+</div>
+
+<?php if( ! empty( $data ) ) { ?>
 
 	<div class="most-recent-games">
 		<?php
@@ -83,5 +84,13 @@ if( ! empty( $data ) ) { ?>
 		</div><!--  Game  -->
 
 	</div><!--  Most Recent Games  -->
+
+<?php } else { ?>
+
+	<div class="most-recent-games">
+
+		<p>No Recent Volleyball Match's</p>
+
+	</div>
 
 <?php } ?>

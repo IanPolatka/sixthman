@@ -327,6 +327,27 @@ article {
 			}
 	}
 
+	.posted-in {
+		border-bottom: 1px solid #ddd;
+		text-align: right;
+		padding: 0 0 5px 0;
+		margin: 10px 0;
+		float: none;
+			strong {
+				display: block;
+				margin-bottom: 5px;
+			}
+			&:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			.cat-list ul li a {
+			    margin-left: 5px;
+			    margin-right: 0;
+			}
+	}
+
 	.social-media-share-icons {
 		padding: 0;
 		margin: 5px 0 0 0;
