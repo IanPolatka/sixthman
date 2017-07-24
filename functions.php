@@ -67,6 +67,14 @@ function sixthman_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Add theme support for Custom Logo
+	add_theme_support( 'custom-logo', array(
+		'width' 		=> 90,
+		'height' 		=> 90,
+		'flex-width'	=> true,
+	) );
+
 }
 endif;
 add_action( 'after_setup_theme', 'sixthman_setup' );
@@ -394,47 +402,16 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false,
 		'icon_url' 		=> 'dashicons-welcome-learn-more',
 	));
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Alerts',
+		'menu_title'	=> 'Alerts',
+		'menu_slug' 	=> 'alerts',
+		'capability'	=> 'manage_options',
+		'redirect'		=> false,
+		'icon_url' 		=> 'dashicons-megaphone',
+	));
 	
 }
-
-
-
-
-
-
-// Callback function to filter the MCE settings
-function my_mce_before_init_insert_formats( $init_array ) {  
-	// Define the style_formats array
-	$style_formats = array(  
-		// Each array child is a format with it's own settings
-		array(  
-			'title' => '.translation',  
-			'block' => 'blockquote',  
-			'classes' => 'translation',
-			'wrapper' => true,
-			
-		),  
-		array(  
-			'title' => '⇠.rtl',  
-			'block' => 'blockquote',  
-			'classes' => 'rtl',
-			'wrapper' => true,
-		),
-		array(  
-			'title' => '.ltr⇢',  
-			'block' => 'blockquote',  
-			'classes' => 'ltr',
-			'wrapper' => true,
-		),
-	);  
-	// Insert the array, JSON ENCODED, into 'style_formats'
-	$init_array['style_formats'] = json_encode( $style_formats );  
-	
-	return $init_array;  
-  
-} 
-// Attach callback to 'tiny_mce_before_init' 
-add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' ); 
-
 
 

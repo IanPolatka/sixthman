@@ -9,13 +9,13 @@
 //  1.  Base Styles
 
 .site-footer {
-	background: #999;
+	background: #482980;
 	font-size: .9em;
 		a {
 			border: none;
 		}
-		.widget-title {
-			color: #000;
+		.widget-title, h2.rsswidget {
+			color: $primary-color;
 			font-size: 1.25em;
 			margin-bottom: 10px;
 			font-size: .9em;
@@ -58,7 +58,7 @@
 	list-style: none;
 	padding: 0 10px 5px 0px;
 		a {
-			color: #ddd;
+			color: #fff;
 				&:hover {
 					color: $primary-color;
 				}
@@ -95,7 +95,7 @@ section {
 
 
 .sixthman-network {
-	background: #666;
+	background: #1e1136;
 	padding: 0px 0 15px 0;
 	font-size: .9em;
 	text-align: center;
@@ -180,6 +180,14 @@ section {
 	.footer-inside {
 		width: 960px;
 		margin: 0 auto;
+	}
+}
+
+
+
+@media screen and (max-width: 900px) {
+	.footer-menus ul li a {
+		font-size: 1.1em;
 	}
 }
 
