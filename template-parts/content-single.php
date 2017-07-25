@@ -35,7 +35,7 @@
 				<strong>Share This</strong>
 				<ul class="social-media-share-icons">
 					<li>
-						<a  class="facebook" href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title(); ?>" title="Share on Facebook.">
+						<a class="facebook" href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title(); ?>" title="Share on Facebook.">
 							<span class="sr-only">Share on Facebook</span>
 							<i class="fa fa-facebook" aria-hidden="true"></i>
 						</a>

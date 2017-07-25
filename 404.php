@@ -9,56 +9,76 @@
 
 get_header(); ?>
 
+<div class="container">
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'sixthman' ); ?></h1>
-				</header><!-- .page-header -->
+			<div class="row">
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'sixthman' ); ?></p>
+				<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
 
-					<?php
-						get_search_form();
+					<section class="error-404 not-found">
+						<header class="page-header">
+							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'sixthman' ); ?></h1>
+						</header><!-- .page-header -->
 
-						the_widget( 'WP_Widget_Recent_Posts' );
+						<div class="page-content">
+							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'sixthman' ); ?></p>
 
-						// Only show the widget if site has multiple categories.
-						if ( sixthman_categorized_blog() ) :
-					?>
+		
+							<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+								<label>
+									<span class="screen-reader-text">Hello World:</span>
+								</label>
+								<input type="search" class="search-field form-control" placeholder="Search …" value="" name="s" title="Search for:" />
+								<input type="submit" class="search-submit" value="Search" />
+							</form>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'sixthman' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
+							<?php the_widget( 'WP_Widget_Recent_Posts' );
 
-					<?php
-						endif;
+								// Only show the widget if site has multiple categories.
+								if ( sixthman_categorized_blog() ) :
+							
+							?>
 
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'sixthman' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+							<div class="widget widget_categories">
+								<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'sixthman' ); ?></h2>
+								<ul>
+								<?php
+									wp_list_categories( array(
+										'orderby'    => 'count',
+										'order'      => 'DESC',
+										'show_count' => 1,
+										'title_li'   => '',
+										'number'     => 10,
+									) );
+								?>
+								</ul>
+							</div><!-- .widget -->
 
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+							<?php
+								endif;
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+								/* translators: %1$s: smiley */
+								$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'sixthman' ), convert_smilies( ':)' ) ) . '</p>';
+								the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+
+								the_widget( 'WP_Widget_Tag_Cloud' );
+							?>
+
+						</div><!-- .page-content -->
+					</section><!-- .error-404 -->
+
+
+				</div><!--  Col  -->
+
+			</div><!--  Row  -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
+</div><!--  Container  -->
 
 <?php
 get_footer();

@@ -415,3 +415,22 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 
+
+
+
+//  Custom Search Form
+
+function sixthman_search_form() { ?>
+
+	<form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
+		<div class="form-group">
+			<label class="sr-only" for="search">Search</label>
+			<input type="search" id="search" class="form-control" placeholder="Search …" value="" name="s" title="Search for:" />
+		</div>
+		<input type="submit" class="btn btn-primary btn-block" value="Search" />
+	</form>
+
+<?php
+} ?>
+
+
