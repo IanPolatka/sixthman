@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Form Page
+ * Template Name: Contact Us
  *
  * @package sixthman
  */
@@ -68,41 +68,56 @@ get_header(); ?>
 			<?php
 
 			// check if the repeater field has rows of data
-			if( have_rows('form_items') ): ?>
+			if( have_rows('contact_us_section') ): ?>
 
-				<table class="form-table">
-					<tbody>
-			 	
-						<?php
-						// loop through the rows of data
-						while ( have_rows('form_items') ) : the_row(); ?>
+				<?php
+					// loop through the rows of data
+					while ( have_rows('contact_us_section') ) : the_row(); ?>
 
-						    <tr>
+						<h4><?php the_sub_field('section_title'); ?></h4>
 
-						    	<td><?php the_sub_field('item_title'); ?></td>
+							<?php
 
-						        <?php $file = get_sub_field('form');
-						        if( $file ): ?>
-	
-									<td><a href="<?php echo $file['url']; ?>" class="btn btn-primary">
-										<i class="fa fa-cloud-download" aria-hidden="true"></i>&nbsp;&nbsp;
-										<?php echo $file['title']; ?>
-									</a></td>
+							// check if the repeater field has rows of data
+							if( have_rows('contact') ): ?>
 
-								<?php endif; ?>
+								<div class="contacts">
 
-							</tr>
+									<?php
+									// loop through the rows of data
+									while ( have_rows('contact') ) : the_row(); ?>
 
-						<?php
-						endwhile; ?>
+										<div class="contact">
 
-					</tbody>
-				</table>
+											<p><?php the_sub_field('name'); ?></p>
+											<?php if (get_sub_field('title')) { ?>
+												<p><?php the_sub_field('title'); ?></p>
+											<?php } ?>
+											<?php if (get_sub_field('phone')) { ?>
+												<p><?php the_sub_field('phone'); ?></p>
+											<?php } ?>
+											<?php if (get_sub_field('email')) { ?>
+												<p><?php the_sub_field('email'); ?></p>
+											<?php } ?>
+											<?php if (get_sub_field('fax')) { ?>
+												<p><?php the_sub_field('fax'); ?></p>
+											<?php } ?>
+
+										</div>
+
+									<?php
+									endwhile; ?>
+
+								</div><!--  Contacts  -->
+
+							<?php
+							endif; ?>
+
+				<?php
+					endwhile; ?>
 
 			<?php
-			endif;
-
-			?>
+			endif; ?>
 
 		</div><!--  Col  -->
 

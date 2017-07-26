@@ -13,6 +13,7 @@
 11. Secondary Menu
 12. Home Page Records Section
 13. Icons
+13. Contact Us
 
 */
 
@@ -1370,6 +1371,28 @@ a.parent-link {
 .light-icon {
 	color: #ddd;
 	font-size: .9em !important;
+}
+
+
+
+//  13. Contact Us
+
+.contacts {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.contact {
+	width: 28%;
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+	padding: 20px;
+	border-radius: 4px;
+	font-size: 1em;
+		p {
+			margin-bottom: 1px;
+		}
 }
 
 

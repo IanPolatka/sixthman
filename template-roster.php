@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Form Page
+ * Template Name: Roster
  *
  * @package sixthman
  */
@@ -68,28 +68,41 @@ get_header(); ?>
 			<?php
 
 			// check if the repeater field has rows of data
-			if( have_rows('form_items') ): ?>
+			if( have_rows('team_roster') ): ?>
 
-				<table class="form-table">
+				<table class="roster-table">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Number</th>
+							<th>Position</th>
+							<th>Grade Level</th>
+						</tr>
+					</thead>
 					<tbody>
 			 	
 						<?php
 						// loop through the rows of data
-						while ( have_rows('form_items') ) : the_row(); ?>
+						while ( have_rows('team_roster') ) : the_row(); ?>
 
 						    <tr>
 
-						    	<td><?php the_sub_field('item_title'); ?></td>
-
-						        <?php $file = get_sub_field('form');
-						        if( $file ): ?>
-	
-									<td><a href="<?php echo $file['url']; ?>" class="btn btn-primary">
-										<i class="fa fa-cloud-download" aria-hidden="true"></i>&nbsp;&nbsp;
-										<?php echo $file['title']; ?>
-									</a></td>
-
-								<?php endif; ?>
+						    	<td>
+						    		<div class="roster-heading">Name</div>
+						    		<?php the_sub_field('name'); ?>
+						  		</td>
+						    	<td>
+						    		<div class="roster-heading">Number</div>
+						    		<?php the_sub_field('number'); ?>
+						    	</td>
+						    	<td>
+						    	<div class="roster-heading">Position</div>
+						    		<?php the_sub_field('position'); ?>
+						    	</td>
+						    	<td>
+						    	<div class="roster-heading">Grade</div>
+						    		<?php the_sub_field('grade'); ?>
+						    	</td>
 
 							</tr>
 
