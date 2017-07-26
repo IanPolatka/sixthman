@@ -1,13 +1,6 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * Template Name: Form Page
  *
  * @package sixthman
  */
@@ -58,29 +51,64 @@ get_header(); ?>
 
 <div class="container">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="row">
+
+		<div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+
+			<h2 class="page-title"><?php the_title(); ?></h2>
 
 			<?php
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
-
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+				the_content();
 
 			endwhile; // End of the loop.
 			?>
 
 			<?php
-			get_sidebar(); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+			// check if the repeater field has rows of data
+			if( have_rows('form_items') ): ?>
 
-</div>
+				<table class="form-table">
+					<tbody>
+			 	
+						<?php
+						// loop through the rows of data
+						while ( have_rows('form_items') ) : the_row(); ?>
+
+						    <tr>
+
+						    	<td><?php the_sub_field('item_title'); ?></td>
+
+						        <?php $file = get_sub_field('form');
+						        if( $file ): ?>
+	
+									<td><a href="<?php echo $file['url']; ?>" class="btn btn-primary">
+										<i class="fa fa-cloud-download" aria-hidden="true"></i>&nbsp;&nbsp;
+										<?php echo $file['title']; ?>
+									</a></td>
+
+								<?php endif; ?>
+
+							</tr>
+
+						<?php
+						endwhile; ?>
+
+					</tbody>
+				</table>
+
+			<?php
+			endif;
+
+			?>
+
+		</div><!--  Col  -->
+
+	</div><!--  Row  -->
+
+</div><!--  Container  -->
 
 <?php
 get_footer();
