@@ -9,6 +9,41 @@
 
 ?>
 
+<?php 
+
+$categories = get_the_category();
+
+$page = get_page_by_title( $categories[0]->name );
+?>
+
+<div class="secondary-menu">
+
+	<a class="parent-link" href="<?php echo home_url(); ?>/<?php echo strtolower($categories[0]->name); ?>">
+	     
+		<?php echo $categories[0]->name; ?>
+
+   	</a>
+ 
+ 	<?php
+
+	    $children = wp_list_pages(array(
+	        'child_of' => $page->ID,
+	        'echo' => '0',
+	        'title_li' => ''
+	    ));
+
+	    if ($children) {
+	        echo "<ul>\n".$children."</ul>\n";
+	    } 
+	?>
+
+</div><!--  Secondary Menu  -->
+
+
+
+
+
+
 <div class="container">
 
 <?php 

@@ -168,6 +168,10 @@
         color: $primary-color;
         background: transparent;
     }
+    .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+        color: #000;
+        background-color: $primary-color;
+    }
 }
 
 //  Beyond Mobile Specific Styles

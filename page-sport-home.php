@@ -65,8 +65,6 @@ get_header(); ?>
 			
 			?>
 
-			<?php echo $scheduleCategory; ?>
-
 			<?php
 					
 			//  Query the schedule
