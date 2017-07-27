@@ -56,7 +56,7 @@ get_header(); ?>
 
 </div><!--  Secondary Menu  -->
 
-<div class="container">
+<div class="container page-content">
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">

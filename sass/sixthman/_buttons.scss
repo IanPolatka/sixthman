@@ -15,6 +15,12 @@
 	color: #fff;
 }
 
+.btn-primary:active:hover, .btn-primary:focus:hover {
+	background: #b28e00;
+	border-color: #b28e00;
+	color: #fff;
+} 
+
 .btn-small {
 	padding: .45em .95em;
 	font-size: .8em;

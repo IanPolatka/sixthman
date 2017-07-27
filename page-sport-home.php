@@ -49,7 +49,7 @@ get_header(); ?>
 
 </div><!--  Secondary Menu  -->
 
-<div class="container">
+<div class="container page-content">
 
 	<h2 class="page-title"><?php the_title(); ?></h2>
 
@@ -90,11 +90,25 @@ get_header(); ?>
 					// The Loop
 					while ( have_posts() ) : the_post(); ?>
 								    
-						<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+						<div class="archive-single">
 
-						<?php the_excerpt(); ?>
+							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-						<hr>
+								<header class="entry-header post-list-title">
+									<?php the_title( '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' ); ?>
+								</header><!-- .entry-header -->
+
+		
+								<div class="post-date"><?php sixthman_posted_on_archive(); ?></div>
+
+								<div class="entry-content">
+									<?php
+									the_excerpt();?>
+								</div><!-- .entry-content -->
+
+							</article><!-- #post-<?php the_ID(); ?> -->
+
+						</div><!--  Archive  -->
 
 					<?php
 					endwhile;
@@ -117,8 +131,6 @@ get_header(); ?>
 
 
 		<div class="sport-home-aside">
-
-			<H3>HELLO WORLD</H3>
 
 			<?php get_sidebar(); ?>
 

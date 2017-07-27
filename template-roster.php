@@ -49,7 +49,7 @@ get_header(); ?>
 
 </div><!--  Secondary Menu  -->
 
-<div class="container">
+<div class="container page-content">
 
 	<div class="row">
 

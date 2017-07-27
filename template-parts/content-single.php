@@ -37,6 +37,8 @@ $page = get_page_by_title( $categories[0]->name );
 	    } 
 	?>
 
+	<div class="clearfix"></div>
+
 </div><!--  Secondary Menu  -->
 
 

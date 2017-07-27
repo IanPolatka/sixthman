@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-<div class="container">
+<div class="container page-content">
 
 <div class="row">
 

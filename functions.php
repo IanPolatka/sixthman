@@ -432,5 +432,3 @@ function sixthman_search_form() { ?>
 
 <?php
 } ?>
-
-

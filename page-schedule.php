@@ -49,7 +49,7 @@ get_header(); ?>
 
 </div><!--  Secondary Menu  -->
 
-<div class="container">
+<div class="container page-content">
 
 	<h3 class="page-title"><?php the_title(); ?></h3>
 

@@ -14,6 +14,7 @@
 12. Home Page Records Section
 13. Icons
 13. Contact Us
+14. Posts
 
 */
 
@@ -536,7 +537,8 @@ article {
 .hero-unit {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 20px;
+	margin: 0;
+	padding: 30px 0 0 0;
 }
 
 .featured-post {
@@ -714,6 +716,7 @@ article {
 	.hero-unit {
 		display: flex;
 		flex-direction: row;
+		padding: 50px 0 20px 0;
 			.featured-post {
 				flex: 3;
 				margin-right: 50px;
@@ -1379,12 +1382,13 @@ a.parent-link {
 
 .contacts {
 	display: flex;
-	justify-content: space-between;
+	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .contact {
-	width: 28%;
+	width: 48%;
 	border: 1px solid #ddd;
 	margin-bottom: 20px;
 	padding: 20px;
@@ -1393,6 +1397,24 @@ a.parent-link {
 		p {
 			margin-bottom: 1px;
 		}
+}
+
+.contact-us-section {
+	padding: 0 0 30px 0;
+}
+
+
+
+//  13. Posts
+
+.page-content {
+	padding: 0 0 30px 0;
+}
+
+@media screen and (min-width: 768px) {
+	.page-content {
+		padding: 20px 0 50px 0;
+	}
 }
 
 

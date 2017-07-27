@@ -143,6 +143,8 @@ get_header(); ?>
 					}
 				?>
 
+				<p><a href="/posts" class="btn btn-primary">Read More Posts</a></p>
+
 			</div><!--  Posts  -->
 
 		</div><!--  Content Area  -->

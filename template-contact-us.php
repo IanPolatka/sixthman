@@ -49,7 +49,7 @@ get_header(); ?>
 
 </div><!--  Secondary Menu  -->
 
-<div class="container">
+<div class="container page-content">
 
 	<div class="row">
 
@@ -74,6 +74,8 @@ get_header(); ?>
 					// loop through the rows of data
 					while ( have_rows('contact_us_section') ) : the_row(); ?>
 
+						<div class="contact-us-section">
+
 						<h4><?php the_sub_field('section_title'); ?></h4>
 
 							<?php
@@ -89,15 +91,15 @@ get_header(); ?>
 
 										<div class="contact">
 
-											<p><?php the_sub_field('name'); ?></p>
+											<p><strong><?php the_sub_field('name'); ?></strong></p>
 											<?php if (get_sub_field('title')) { ?>
-												<p><?php the_sub_field('title'); ?></p>
+												<p><em><?php the_sub_field('title'); ?></em></p>
 											<?php } ?>
 											<?php if (get_sub_field('phone')) { ?>
 												<p><?php the_sub_field('phone'); ?></p>
 											<?php } ?>
 											<?php if (get_sub_field('email')) { ?>
-												<p><?php the_sub_field('email'); ?></p>
+												<p><a href="mailto:<?php the_sub_field('email'); ?>">Email</a></p>
 											<?php } ?>
 											<?php if (get_sub_field('fax')) { ?>
 												<p><?php the_sub_field('fax'); ?></p>
@@ -112,6 +114,8 @@ get_header(); ?>
 
 							<?php
 							endif; ?>
+
+						</div><!--  Contact Us Section  -->
 
 				<?php
 					endwhile; ?>
