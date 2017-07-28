@@ -262,7 +262,7 @@ get_header(); ?>
 
 			<p>Headed to an away game? Don't get lost, visit the directions page.</p>
 
-			<p><a href="" class="btn btn-primary btn-small">Visit The Directions Page</a></p>
+			<p><a href="/directions" class="btn btn-primary btn-small">Visit The Directions Page</a></p>
 
 		</div><!--  Col  -->
 
@@ -270,9 +270,9 @@ get_header(); ?>
 
 			<h4><i class="fa fa-university light-icon" aria-hidden="true"></i> Hall Of Fame</h4>
 
-			<p>Headed to an away game? Don't get lost, visit the directions page.</p>
+			<p>Take a look at everyone who has been voted into the Campbell County High School Athletic Hall of Fame.</p>
 
-			<p><a href="" class="btn btn-primary btn-small">Visit Hall of Fame</a></p>
+			<p><a href="/hall-of-fame" class="btn btn-primary btn-small">Visit Hall of Fame</a></p>
 
 		</div><!--  Col  -->
 
@@ -280,9 +280,9 @@ get_header(); ?>
 
 			<h4><i class="fa fa-comments light-icon" aria-hidden="true"></i> Contact Us</h4>
 
-			<p>Headed to an away game? Don't get lost, visit the directions page.</p>
+			<p>See contact information for all athletic department members as well as coaches.</p>
 
-			<p><a href="" class="btn btn-primary btn-small">Contact Us</a></p>
+			<p><a href="/contact-us" class="btn btn-primary btn-small">Contact Us</a></p>
 
 		</div><!--  Col  -->
 

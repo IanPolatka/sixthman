@@ -9,7 +9,49 @@
 
 get_header(); ?>
 
-<div class="container">
+<div class="secondary-menu">
+
+	<?php 
+     
+    	$parent = $post->post_parent;
+     
+    ?>
+
+    <?php $parentLink = get_permalink($post->post_parent); ?>
+
+	<a class="parent-link" href="<?php echo $parentLink; ?>">
+	     
+	    <?php 
+	    if ($root_parent = get_the_title($grandparent) !== $root_parent = get_the_title($current)) {
+	    	echo get_the_title($grandparent); 
+	    }else { 
+	    	echo get_the_title($parent); 
+	    } 
+   		?>
+
+   	</a>
+ 
+ 	<?php
+	    if ($post->post_parent) {
+	        $page = $post->post_parent;
+	    } else {
+	        $page = $post->ID;
+	    }
+
+	    $children = wp_list_pages(array(
+	        'child_of' => $page,
+	        'echo' => '0',
+	        'title_li' => ''
+	    ));
+
+	    if ($children) {
+	        echo "<ul>\n".$children."</ul>\n";
+	    } 
+	?>
+
+</div><!--  Secondary Menu  -->
+
+<div class="container page-content">
 
 	<div class="row">
 
@@ -20,7 +62,7 @@ get_header(); ?>
 				<?php
 				while ( have_posts() ) : the_post(); ?>
 
-					<?php the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
+					<h1 class="entry-title"><?php the_title(); ?></h1>
 
 					<?php
 
@@ -67,9 +109,13 @@ get_header(); ?>
 								        the_sub_field('sport_name');
 								        echo '</h4>';
 
-								        echo '<p><small><strong>Coached By: ';
-								        the_sub_field('coached_by');
-								        echo '</strong></small></p>';
+								        if (get_sub_field('coached_by')) {
+									        echo '<p><small><strong>Coached By: ';
+									        the_sub_field('coached_by');
+									        echo '</strong></small></p>';
+									    } else {
+									    	echo '<p></p>';
+									    }
 
 								        	// Check The Accomplishments Repeater
 											if( have_rows('accomplishments') ):

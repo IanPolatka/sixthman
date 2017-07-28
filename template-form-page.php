@@ -86,7 +86,7 @@ get_header(); ?>
 	
 									<td><a href="<?php echo $file['url']; ?>" class="btn btn-primary">
 										<i class="fa fa-cloud-download" aria-hidden="true"></i>&nbsp;&nbsp;
-										<?php echo $file['title']; ?>
+										Download
 									</a></td>
 
 								<?php endif; ?>
