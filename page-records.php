@@ -108,67 +108,6 @@ get_header(); ?>
 
 			</div><!--  Records Total  -->
 
-			<h3>Baseball</h3>
-
-			<div class="sport-records">
-
-				<div class="sport-record-section">
-
-					<h5>5</h5>
-					<p><strong>KHSAA State Championships</strong></p>
-
-					<ul>
-						<li>2010, 2011, 2016</li>
-					</ul>
-
-				</div><!--  Sport Record Section  -->
-
-				<div class="sport-record-section">
-
-					<h5>10</h5>
-					<p><strong>KHSAA State Runner-Ups</strong></p>
-
-					<ul>
-						<li>2010, 2011, 2016</li>
-					</ul>
-
-				</div><!--  Sport Record Section  -->
-
-				<div class="sport-record-section">
-
-					<h5>14</h5>
-					<p><strong>KHSAA Regional Championships</strong></p>
-
-					<ul>
-						<li>2010, 2011, 2016, 1999, 2000, 2001, 2002</li>
-					</ul>
-
-				</div><!--  Sport Record Section  -->
-
-				<div class="sport-record-section">
-
-					<h5>19</h5>
-					<p><strong>KHSAA District Championships</strong></p>
-
-					<ul>
-						<li>2010, 2011, 2016, 2001, 2002</li>
-					</ul>
-
-				</div><!--  Sport Record Section  -->
-
-				<div class="sport-record-section">
-
-					<h5>4</h5>
-					<p><strong>NKAC Conference Championships</strong></p>
-
-					<ul>
-						<li>2010, 2016, 2001, 2002</li>
-					</ul>
-
-				</div><!--  Sport Record Section  -->
-
-
-
 				
 				<div class="individual-sport-records">
 
