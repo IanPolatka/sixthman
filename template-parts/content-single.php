@@ -131,6 +131,9 @@ $page = get_page_by_title( $categories[0]->name );
 						'after'  => '</div>',
 					) );
 				?>
+
+			<div class="clearfix"></div>
+			
 			</div><!-- .entry-content -->
 
 			<footer class="entry-footer">
