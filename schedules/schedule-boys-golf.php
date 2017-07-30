@@ -40,15 +40,21 @@ if( ! empty( $data ) ) { ?>
 						<?php 
 						if (strtolower($item->home_team) == strtolower($team_name)) { ?>
 							vs 
-							<?php if ($item->away_team_logo) { ?>
+							<?php 
+							if ($item->away_team_logo) { ?>
 								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>" alt="<?php echo $item->away_team ?>" title="<?php echo $item->away_team ?>">
-							<?php } ?>
+							<?php } else {
+								echo '&nbsp;&nbsp;&nbsp;&nbsp;';
+							} ?>
 							<?php echo $item->away_team ?>
 						<?php } else { ?>
-							@
-							<?php if ($item->home_team_logo) { ?>
+							@ 
+							<?php 
+							if ($item->home_team_logo) { ?>
 								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>" alt="<?php echo $item->home_team ?>" title="<?php echo $item->home_team ?>">
-							<?php } ?>
+							<?php } else {
+								echo '&nbsp;&nbsp;&nbsp;&nbsp;';
+							} ?>
 							<?php echo $item->home_team ?>
 						<?php } ?>
 					</strong>
@@ -106,15 +112,21 @@ if( ! empty( $data ) ) { ?>
 						<?php 
 						if (strtolower($item->home_team) == strtolower($team_name)) { ?>
 							vs 
-							<?php if ($item->away_team_logo) { ?>
+							<?php 
+							if ($item->away_team_logo) { ?>
 								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>" alt="<?php echo $item->away_team ?>" title="<?php echo $item->away_team ?>">
-							<?php } ?>
+							<?php } else {
+								echo '&nbsp;&nbsp;&nbsp;&nbsp;';
+							} ?>
 							<?php echo $item->away_team ?>
 						<?php } else { ?>
-							@
-							<?php if ($item->home_team_logo) { ?>
+							@ 
+							<?php 
+							if ($item->home_team_logo) { ?>
 								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>" alt="<?php echo $item->home_team ?>" title="<?php echo $item->home_team ?>">
-							<?php } ?>
+							<?php } else {
+								echo '&nbsp;&nbsp;&nbsp;&nbsp;';
+							} ?>
 							<?php echo $item->home_team ?>
 						<?php } ?>
 					</strong>

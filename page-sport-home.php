@@ -132,6 +132,20 @@ get_header(); ?>
 
 		<div class="sport-home-aside">
 
+			<form action="https://camelpride.createsend.com/t/i/s/byuklj/" method="post" id="subForm">
+			    <p>
+			        <label for="fieldName">Name</label><br />
+			        <input id="fieldName" name="cm-name" type="text" class="form-control"/>
+			    </p>
+			    <p>
+			        <label for="fieldEmail">Email</label><br />
+			        <input id="fieldEmail" name="cm-byuklj-byuklj" type="email" required />
+			    </p>
+			    <p>
+			        <button class="btn btn-primary btn-block" type="submit">Subscribe</button>
+			    </p>
+			</form>
+
 			<?php get_sidebar(); ?>
 
 		</div><!--  Sport Home Aside  -->

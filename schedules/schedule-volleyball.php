@@ -30,9 +30,21 @@ if( ! empty( $data ) ) { ?>
 					echo '<td class="opponent">';
 						echo '<strong>';
 							if (strtolower($item->home_team) == strtolower($team_name)) {
-								echo 'vs <img src="http://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">' . $item->away_team;
+								echo 'vs';
+								if ($item->away_team_logo) {
+									echo '<img src="http://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
+								} else {
+									echo '&nbsp&nbsp&nbsp';
+								}
+								echo $item->away_team;
 							} else {
-								echo '@ <img src="http://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">' . $item->home_team;
+								echo '@';
+								if ($item->home_team_logo) {
+									echo '<img src="http://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
+								} else {
+									echo '&nbsp&nbsp&nbsp';
+								}
+								echo $item->home_team;
 							}
 						echo '</strong>';
 					echo '</td>';
@@ -194,9 +206,21 @@ if( ! empty( $data ) ) { ?>
 					echo '<td class="opponent">';
 						echo '<strong>';
 							if (strtolower($item->home_team) == strtolower($team_name)) {
-								echo 'vs <img src="http://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">' . $item->away_team;
+								echo 'vs';
+								if ($item->away_team_logo) {
+									echo '<img src="http://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
+								} else {
+									echo '&nbsp&nbsp&nbsp';
+								}
+								echo $item->away_team;
 							} else {
-								echo '@ <img src="http://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">' . $item->home_team;
+								echo '@';
+								if ($item->home_team_logo) {
+									echo '<img src="http://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
+								} else {
+									echo '&nbsp&nbsp&nbsp';
+								}
+								echo $item->home_team;
 							}
 						echo '</strong>';
 					echo '</td>';
@@ -243,9 +267,21 @@ if( ! empty( $data ) ) { ?>
 					echo '<td class="opponent">';
 						echo '<strong>';
 							if (strtolower($item->home_team) == strtolower($team_name)) {
-								echo 'vs <img src="http://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">' . $item->away_team;
+								echo 'vs';
+								if ($item->away_team_logo) {
+									echo '<img src="http://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
+								} else {
+									echo '&nbsp&nbsp&nbsp';
+								}
+								echo $item->away_team;
 							} else {
-								echo '@ <img src="http://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">' . $item->home_team;
+								echo '@';
+								if ($item->home_team_logo) {
+									echo '<img src="http://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
+								} else {
+									echo '&nbsp&nbsp&nbsp';
+								}
+								echo $item->home_team;
 							}
 						echo '</strong>';
 					echo '</td>';

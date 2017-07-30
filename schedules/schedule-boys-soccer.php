@@ -37,10 +37,22 @@ if( ! empty( $data ) ) { ?>
 					<strong>
 						<?php 
 						if (strtolower($item->home_team) == strtolower($team_name)) { ?>
-							vs <img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>" alt="<?php echo $item->away_team ?>" title="<?php echo $item->away_team ?>">
+							vs 
+							<?php 
+							if ($item->away_team_logo) { ?>
+								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>" alt="<?php echo $item->away_team ?>" title="<?php echo $item->away_team ?>">
+							<?php } else {
+								echo '&nbsp;&nbsp;&nbsp;';
+							} ?>
 							<?php echo $item->away_team ?>
 						<?php } else { ?>
-							@ <img src="https://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>" alt="<?php echo $item->home_team ?>" title="<?php echo $item->home_team ?>">
+							@ 
+							<?php 
+							if ($item->home_team_logo) { ?>
+								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>" alt="<?php echo $item->home_team ?>" title="<?php echo $item->home_team ?>">
+							<?php } else {
+								echo '&nbsp;&nbsp;&nbsp;';
+							} ?>
 							<?php echo $item->home_team ?>
 						<?php } ?>
 					</strong>
@@ -130,10 +142,22 @@ if( ! empty( $data ) ) { ?>
 					<strong>
 						<?php 
 						if (strtolower($item->home_team) == strtolower($team_name)) { ?>
-							vs <img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>" alt="<?php echo $item->away_team ?>" title="<?php echo $item->away_team ?>">
+							vs 
+							<?php 
+							if ($item->away_team_logo) { ?>
+								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>" alt="<?php echo $item->away_team ?>" title="<?php echo $item->away_team ?>">
+							<?php } else {
+								echo '&nbsp;&nbsp;&nbsp;';
+							} ?>
 							<?php echo $item->away_team ?>
 						<?php } else { ?>
-							@ <img src="https://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>" alt="<?php echo $item->home_team ?>" title="<?php echo $item->home_team ?>">
+							@ 
+							<?php 
+							if ($item->home_team_logo) { ?>
+								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>" alt="<?php echo $item->home_team ?>" title="<?php echo $item->home_team ?>">
+							<?php } else {
+								echo '&nbsp;&nbsp;&nbsp;';
+							} ?>
 							<?php echo $item->home_team ?>
 						<?php } ?>
 					</strong>
@@ -223,10 +247,22 @@ if( ! empty( $data ) ) { ?>
 					<strong>
 						<?php 
 						if (strtolower($item->home_team) == strtolower($team_name)) { ?>
-							vs <img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>" alt="<?php echo $item->away_team ?>" title="<?php echo $item->away_team ?>">
+							vs 
+							<?php 
+							if ($item->away_team_logo) { ?>
+								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>" alt="<?php echo $item->away_team ?>" title="<?php echo $item->away_team ?>">
+							<?php } else {
+								echo '&nbsp;&nbsp;&nbsp;';
+							} ?>
 							<?php echo $item->away_team ?>
 						<?php } else { ?>
-							@ <img src="https://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>" alt="<?php echo $item->home_team ?>" title="<?php echo $item->home_team ?>">
+							@ 
+							<?php 
+							if ($item->home_team_logo) { ?>
+								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>" alt="<?php echo $item->home_team ?>" title="<?php echo $item->home_team ?>">
+							<?php } else {
+								echo '&nbsp;&nbsp;&nbsp;';
+							} ?>
 							<?php echo $item->home_team ?>
 						<?php } ?>
 					</strong>

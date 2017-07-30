@@ -42,25 +42,27 @@
 			    	<h2 class="widget-title">Connect</h2>
 
 				    <p class="social-media">
-				    	<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-				    	<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-				    	<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-				    	<a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+				    	<a href="https://facebook.com/camelpride"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				    	<a href="https://twitter.com/camelpride"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				    	<a href="https://instagram.com/camelpride"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+				    	<a href="mailto:info@camelpride.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
 				    </p>
 
 				    <h2 class="widget-title">Newsletter Signup</h2>
 
-				    <form>
+				    <p class="newsletter-copy">Stay up to date on all camel sports information</p>
+
+				    <form action="https://camelpride.createsend.com/t/i/s/byuklj/" method="post" id="subForm">
 					  <div class="form-group">
-					    <label class="sr-only" for="exampleInputName">Name</label>
-					    <input type="email" class="form-control" id="exampleInputName" placeholder="Name">
+					    <label class="sr-only" for="fieldName">Name</label>
+					    <input id="fieldName" name="cm-name" type="text" class="form-control" placeholder="Name" required />
 					  </div>
 					  <div class="form-group">
-					    <label class="sr-only" for="exampleInputEmail">Email</label>
-					    <input type="email" class="form-control" id="exampleInputEmail" placeholder="Email Address">
+					    <label class="sr-only" for="fieldEmail">Email</label>
+					    <input name="cm-byuklj-byuklj" type="email" class="form-control" placeholder="Email Address" required />
 					  </div>
 					  
-					  <button type="submit" class="btn btn-warning btn-block">Submit</button>
+					  <button type="submit" class="btn btn-primary btn-block">Submit</button>
 					</form>
 
 			    </section>
@@ -132,6 +134,8 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
+<?php the_field('analytics_code', 'option'); ?>
 
 </body>
 </html>

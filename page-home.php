@@ -42,13 +42,16 @@ get_header(); ?>
 
 									<?php 
 
-									if ( has_post_thumbnail() ) {
-										the_post_thumbnail();
-									} else {
-										echo '<img src="https://securea.mlb.com/assets/images/2/3/8/240055238/cuts/adleman2610_niiguymu_fnbjv9lu.jpg">';
-									}
-
-									?>
+									if ( has_post_thumbnail() ) { ?>
+										<a href="<?php the_permalink(); ?>">
+											<?php the_post_thumbnail(); ?>
+										</a>
+									<?php } else { ?>
+										<a href="<?php the_permalink(); ?>">
+											<img src="https://camelpride.com/wp-content/uploads/2017/07/backdrop-1.jpg">
+										</a>
+									<?php
+									} ?>
 										
 								</div>
 
@@ -198,7 +201,7 @@ get_header(); ?>
 
 					<p>Campbell County has accumulated a number of trophies over the years. Visit the records page to see a breakdown of each sport.</p>
 
-					<p><a href="#" class="btn btn-primary">Visit The Records page</a></p>
+					<p><a href="/records" class="btn btn-primary">Visit The Records page</a></p>
 
 					<div class="record-boxes">
 

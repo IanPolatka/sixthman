@@ -14,6 +14,7 @@
 $categories = get_the_category();
 
 $page = get_page_by_title( $categories[0]->name );
+
 ?>
 
 <div class="secondary-menu">
@@ -42,11 +43,7 @@ $page = get_page_by_title( $categories[0]->name );
 </div><!--  Secondary Menu  -->
 
 
-
-
-
-
-<div class="container">
+<div class="container page-content-single">
 
 <?php 
 	$term 		= get_field('category');

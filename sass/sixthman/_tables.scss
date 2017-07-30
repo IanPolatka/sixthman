@@ -64,6 +64,10 @@ table tr:nth-child(even) {
 .schedule-table {
 	border: none;
 	border-top: 1px solid #ddd;
+	margin-bottom: 40px;
+		&:last-child {
+			margin-bottom: 0;
+		}
 }
 
 .schedule-table tr:nth-child(even) {

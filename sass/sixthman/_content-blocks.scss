@@ -556,7 +556,7 @@ article {
 					list-style-type: none;
 						a {
 							border-bottom: none;
-						    background: #ddd;
+						    background: $primary-color;
 							padding: 3px 5px;
 							border-radius: 2px;
 							font-size: .9em;
@@ -564,7 +564,7 @@ article {
 							margin-right: 5px;
 							text-transform: uppercase;
 								&:hover, &:active {
-									background: $primary-color;
+									background: rgba($primary-color, .4);
 									color: black;
 								}
 						}
@@ -1344,6 +1344,37 @@ a.parent-link {
 		}
 }
 
+.sport-records {
+		h4 {
+			display: block;
+			width: 100%;
+		}
+		p {
+			margin-bottom: 5px;
+		}
+		ul {
+			padding: 0;
+			margin: 0;
+				li {
+					list-style-type: none;
+					padding: 0;
+					margin: 0;
+				}
+		}
+		.year li {
+			display: inline-block;
+				&:after {
+					content: ",";
+					padding-right: 4px;
+				}
+				&:last-child:after {
+					content: "";
+					padding-right: 0px
+				}
+		}
+
+}
+
 @media screen and (min-width: 768px) {
 
 	.records-summary {
@@ -1412,6 +1443,10 @@ a.parent-link {
 	padding: 0 0 30px 0;
 }
 
+.page-content-single {
+	padding: 30px 0;
+}
+
 @media screen and (min-width: 768px) {
 	.page-content {
 		padding: 20px 0 50px 0;
@@ -1456,12 +1491,34 @@ a.parent-link {
 	flex-direction: column;
 }
 
-.sport-record-section {
+.individual-sport-records {
 	margin-bottom: 20px;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 40px;
+	margin-bottom: 40px;
+		&:last-child {
+			border-bottom: none;
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+		h4 {
+			display: block;
+		}
+		h5 {
+			margin-bottom: 5px;
+		}
 		ul {
 			list-style-type: none;
 			padding: 0;
 			margin: 0;
+				h4 {
+					color: $primary-color;
+					font-size: 1.3em;
+					margin-bottom: 10px;
+				}
+		}
+		.year {
+			margin-bottom: 20px;
 		}
 }
 
@@ -1480,6 +1537,28 @@ a.parent-link {
 			}
 			h4 {
 				font-size: .8em;
+			}
+	}
+
+	.individual-sport-records {
+			ul {
+				list-style-type: none;
+				padding: 0;
+				margin: 0;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				flex-wrap: wrap;
+					li {
+						width: 45%;
+					}
+			}
+			.year {
+				display: inline-block;
+				margin-bottom: 20px;
+					li {
+						width: auto;
+					}
 			}
 	}
 }

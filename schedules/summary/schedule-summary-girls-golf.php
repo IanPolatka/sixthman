@@ -46,6 +46,8 @@ if( ! empty( $data ) ) { ?>
 					</div>
 					@<br />
 					<strong><?php echo $item->home_team ?></strong>
+					<br />
+					<?php echo $item->time; ?>
 				<?php } ?>
 
 			</div>

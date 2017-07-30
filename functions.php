@@ -411,6 +411,15 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false,
 		'icon_url' 		=> 'dashicons-megaphone',
 	));
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Analytics',
+		'menu_title'	=> 'Analytics',
+		'menu_slug' 	=> 'analytics',
+		'capability'	=> 'manage_options',
+		'redirect'		=> false,
+		'icon_url' 		=> 'dashicons-chart-area',
+	));
 	
 }
 
