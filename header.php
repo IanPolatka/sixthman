@@ -78,7 +78,7 @@ header('Access-Control-Allow-Origin: *');
 
 	<div id="content" class="site-content">
 
-	<?php if( get_field('breaking_news_box', 'option') ): ?>
+	<?php if( get_field('breaking_news_alert', 'option') ): ?>
 
 		<div class="container">
 
@@ -101,7 +101,7 @@ header('Access-Control-Allow-Origin: *');
 
 	<?php endif; ?>
 
-	<?php if( get_field('information_news_box', 'option') ): ?>
+	<?php if( get_field('information_news_alert', 'option') ): ?>
 
 		<div class="container">
 
