@@ -37,12 +37,12 @@ if( ! empty( $data ) ) { ?>
 				</td>
 				<td class="opponent">
 					<?php if ($item->meet_location) { ?>
-						<strong><?php echo $item->meet_location; ?></strong>
+						<div class="text-muted"><small><?php echo $item->meet_location; ?></small></div>
 					<?php } ?>
-					<?php
-					if ($item->host_school_logo) { ?>
-						<img src="https://6thmansports.com/images/team-logos/<?php echo $item->host_school_logo; ?>" alt="<?php echo $item->host_school ?>" title="<?php echo $item->host_school ?>">
-					} ?>
+					<?php if ($item->host_school_logo) { ?>
+						<img src="https://6thmansports.com/images/team-logos/<?php echo $item->host_school_logo; ?>" 
+						alt="<?php echo $item->host_school; ?>" title="<?php echo $item->host_school; ?>">
+					<?php } ?>
 					<?php if ($item->tournament_title) { ?>
 						<strong><?php echo $item->tournament_title; ?></strong>
 					<?php } ?>
