@@ -542,6 +542,10 @@ article {
 	padding: 30px 0 0 0;
 }
 
+.hero-unit-lite-padding {
+	padding: 20px 0 0 0;
+}
+
 .featured-post {
 	border: 1px solid #ddd;
 	border-radius: 4px;
@@ -741,6 +745,10 @@ article {
 			.score {
 				min-width: 50px;
 			}
+	}
+
+	.hero-unit-lite-padding {
+		padding: 20px 0 20px 0;
 	}
 
 }

@@ -87,12 +87,19 @@ header('Access-Control-Allow-Origin: *');
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
 					<div class="alert alert-breaking">
-						<div class="box-title">Breaking News</div>
-						<div class="box-content">
-							<?php the_field('breaking_news_alert', 'option') ?>
-						</div>
-					</div>
-
+						<?php
+						if (get_field('breaking_news_link', 'option')) { ?>
+							<a href="<?php the_field('breaking_news_link', 'option'); ?>">
+						<?php } ?>
+							<div class="box-title">Breaking News</div>
+							<div class="box-content">
+								<?php the_field('breaking_news_text', 'option') ?>
+							</div>
+						<?php
+						if (get_field('breaking_news_link', 'option')) { ?>
+							</a>
+						<?php } ?>
+					</div><!--  alert  -->
 				</div>
 
 			</div>
@@ -110,16 +117,23 @@ header('Access-Control-Allow-Origin: *');
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
 					<div class="alert alert-info">
-						<div class="box-title"><span>Information</span></div>
-						<div class="box-content">
-							<?php the_field('information_news_alert', 'option') ?>
-						</div><!--  Box Content  -->
-					</div><!--  Alert  -->
+						<?php
+						if (get_field('information_news_link', 'option')) { ?>
+							<a href="<?php the_field('information_news_link', 'option'); ?>">
+						<?php } ?>
+							<div class="box-title">Important Information</div>
+							<div class="box-content">
+								<?php the_field('information_news_text', 'option') ?>
+							</div>
+						<?php
+						if (get_field('information_news_link', 'option')) { ?>
+							</a>
+						<?php } ?>
+					</div><!--  alert  -->
+				</div>
 
-				</div><!--  Col  -->
+			</div>
 
-			</div><!--  Row  -->
-
-		</div><!--  Container  -->
+		</div>
 
 	<?php endif; ?>

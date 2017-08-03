@@ -60,7 +60,19 @@ if( ! empty( $data ) ) { ?>
 					</strong>
 				</td>
 				<td>
-					<?php echo $item->time; ?>
+					<?php if (strtolower($item->winning_team) == strtolower($team_name)) { ?>
+						<span class="winning-text">W</span>
+						<?php if ($item->match_score) {
+							echo $item->match_score;
+						} ?>
+					<?php } elseif (strtolower($item->losing_team) == strtolower($team_name)) { ?>
+						<span class="losing-text">L</span>
+						<?php if ($item->match_score) {
+							echo $item->match_score;
+						} ?>
+					<?php } else { ?>
+						<?php echo $item->time; ?>
+					<?php } ?>
 				</td>
 			</tr>
 
@@ -132,7 +144,19 @@ if( ! empty( $data ) ) { ?>
 					</strong>
 				</td>
 				<td>
-					<?php echo $item->time; ?>
+					<?php if (strtolower($item->winning_team) == strtolower($team_name)) { ?>
+						<span class="winning-text">W</span>
+						<?php if ($item->match_score) {
+							echo $item->match_score;
+						} ?>
+					<?php } elseif (strtolower($item->losing_team) == strtolower($team_name)) { ?>
+						<span class="losing-text">L</span>
+						<?php if ($item->match_score) {
+							echo $item->match_score;
+						} ?>
+					<?php } else { ?>
+						<?php echo $item->time; ?>
+					<?php } ?>
 				</td>
 			</tr>
 
@@ -198,7 +222,19 @@ if( ! empty( $data ) ) { ?>
 					</strong>
 				</td>
 				<td>
-					<?php echo $item->time; ?>
+					<?php if (strtolower($item->winning_team) == strtolower($team_name)) { ?>
+						<span class="winning-text">W</span>
+						<?php if ($item->match_score) {
+							echo $item->match_score;
+						} ?>
+					<?php } elseif (strtolower($item->losing_team) == strtolower($team_name)) { ?>
+						<span class="losing-text">L</span>
+						<?php if ($item->match_score) {
+							echo $item->match_score;
+						} ?>
+					<?php } else { ?>
+						<?php echo $item->time; ?>
+					<?php } ?>
 				</td>
 			</tr>
 

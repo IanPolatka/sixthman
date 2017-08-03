@@ -6,17 +6,21 @@
 	flex-wrap: none;
 	background: #eee;
 	border-radius: 4px;
-	margin-bottom: 20px;
 	padding: 0;
 	border: none;
-	margin-top: 30px;
+	margin-bottom: 0;
+	margin-top: 20px;
+	font-size: .85em;
+		a {
+			border-bottom: none;
+		}
 }
 
 .box-title {
 	background: #ddd;
 	padding: 10px;
 	border-radius: 4px 4px 0 0;
-	font-size: 1em;
+	font-size: 1.25em;
 }
 
 .box-content {
@@ -38,6 +42,12 @@
 		.box-content {
 			background: $red;
 		}
+		a {
+			color: #fff;
+				&:hover {
+					color: #eeeeee;
+				}
+		}
 }
 
 .alert-info {
@@ -48,5 +58,11 @@
 		}
 		.box-content {
 			background: $yellow;
+		}
+		a {
+			color: #000;
+				&:hover {
+					color: #333;
+				}
 		}
 }

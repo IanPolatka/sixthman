@@ -18,7 +18,15 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 
+		<?php if( get_field('alert_news_alert', 'option') || get_field('information_news_alert', 'option')): ?>
+
+			<div class="hero-unit hero-unit-lite-padding">
+
+		<?php else : ?>
+
 			<div class="hero-unit">
+
+		<?php endif; ?>
 
 				<div class="featured-post">
 
