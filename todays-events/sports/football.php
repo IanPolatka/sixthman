@@ -20,7 +20,7 @@ if( ! empty( $data ) ) { ?>
 					<div class="team">
 						<span class="team-logo">
 							<?php if ($item->away_team_logo) { ?>
-								<img src="http://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>">
+								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>">
 							<?php } ?>
 						</span>
 						<span class="team-name"><?php echo $item->away_team; ?></span>
@@ -68,7 +68,7 @@ if( ! empty( $data ) ) { ?>
 					<div class="team">
 						<span class="team-logo">
 							<?php if ($item->home_team_logo) { ?>
-								<img src="http://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>">
+								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>">
 							<?php } ?>
 						</span>
 						<span class="team-name"><?php echo $item->home_team; ?></span>

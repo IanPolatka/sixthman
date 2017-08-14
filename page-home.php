@@ -71,8 +71,9 @@ get_header(); ?>
 
 									<?php 
 										$term = get_field('category');
-										$cat		= $term->name;
+										$cat		= strtolower($term->name);
 										$category 	= str_replace(' ', '-', $cat);
+
 									?>
 
 									<?php if ($term) : ?>

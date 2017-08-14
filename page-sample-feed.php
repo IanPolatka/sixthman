@@ -1,8 +1,17 @@
 <?php
+/**
+ * Template Name: Sample Feed
+ *
+ * @package sixthman
+ */
+
+get_header(); ?>
+
+<?php
 
 $id		 = get_field('event_id');
 
-$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/soccer-girls/game/' . $id);
+$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/soccer-girls/game/1');
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }
@@ -15,7 +24,7 @@ foreach( $data as $item ) { ?>
 
 <?php 
 //  Insert data into box score on the home page
-if ( is_home() ) { ?>
+if ( !is_home() ) { ?>
 
 	<div class="box-score">
 
@@ -343,3 +352,5 @@ if ( is_home() ) { ?>
 	}
 
 ?>
+
+<?php get_footer(); ?>
