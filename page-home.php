@@ -142,7 +142,7 @@ get_header(); ?>
 						'ignore_sticky_posts' => 1,
 						'post__not_in' => $sticky,
 						'posts_per_page' => 8,
-						'offset' => 3,
+						'offset' => 1,
 					);
 					$queryObject = new WP_Query($query);
 
