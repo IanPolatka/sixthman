@@ -59,10 +59,12 @@ if ( is_home() ) { ?>
 									$os = 0;
 								}
 
-								echo $fhs + $shs + $os;
+								$result = $fhs + $shs + $os;
+
+								echo $result;
 
 							} else {
-								$item->away_team_final_score;
+								echo $item->away_team_final_score;
 							}
 						} else {
 							echo '-';
@@ -96,10 +98,12 @@ if ( is_home() ) { ?>
 									$os = 0;
 								}
 
-								echo $fhs + $shs + $os;
+								$result = $fhs + $shs + $os;
+
+								echo $result;
 
 							} else {
-								$item->home_team_final_score;
+								echo $item->home_team_final_score;
 							}
 						} else {
 							echo '-';
