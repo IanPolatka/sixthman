@@ -72,7 +72,12 @@ if ( is_home() ) { ?>
 					}
 
 					$score = array($one, $two, $three, $four, $five);
-					echo array_sum($score); 
+
+					if ($item->game_status > 1)
+						echo array_sum($score); 
+					else {
+						echo '-';
+					}
 
 					?>
 
@@ -112,7 +117,12 @@ if ( is_home() ) { ?>
 					}
 
 					$score = array($one, $two, $three, $four, $five);
-					echo array_sum($score); 
+					
+					if ($item->game_status > 1)
+						echo array_sum($score); 
+					else {
+						echo '-';
+					}
 
 					?>
 
