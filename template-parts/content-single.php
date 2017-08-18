@@ -49,6 +49,7 @@ $page = get_page_by_title( $categories[0]->name );
 	$term 		= get_field('category');
 	$cat		= $term->name;
 	$category 	= str_replace(' ', '-', $cat);
+	$cat_name	= strtolower($category);
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -108,7 +109,9 @@ $page = get_page_by_title( $categories[0]->name );
 
 				<?php if ($term) : ?>
 
-					<?php get_template_part( 'box-scores/score', $category  ); ?>
+
+
+					<?php get_template_part( 'box-scores/score', $cat_name  ); ?>
 
 				<?php endif; ?>
 

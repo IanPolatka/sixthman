@@ -17,8 +17,6 @@ foreach( $data as $item ) { ?>
 //  Insert data into box score on the home page
 if ( is_home() ) { ?>
 
-	<?php echo $item->game_status; ?>
-
 	<div class="box-score">
 
 		<div class="teams">
@@ -74,7 +72,7 @@ if ( is_home() ) { ?>
 								echo $fqs + $sqs + $tqs + $ftqs + $os;
 
 							} else {
-								$item->away_team_final_score;
+								echo $item->away_team_final_score;
 							}
 						} else {
 							echo '-';
@@ -121,7 +119,7 @@ if ( is_home() ) { ?>
 								echo $fqs + $sqs + $tqs + $ftqs + $os;
 
 								} else {
-									$item->home_team_final_score;
+									echo $item->home_team_final_score;
 								}
 							} else {
 								echo '-';
