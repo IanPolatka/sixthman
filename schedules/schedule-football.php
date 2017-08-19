@@ -40,7 +40,12 @@ if( ! empty( $data ) ) { ?>
 						echo '</strong>';
 					echo '</td>';
 					echo '<td>';
-						if (!empty($item->minutes_remaining)) {
+						if ($item->game_status > 6) {
+							echo '<span class="winning-text">W </span>';
+							echo $item->home_team_final_score;
+							echo '-';
+							echo $item->away_team_final_score;
+						} elseif (($item->game_status > 1) && ($item->game_status < 7)) {
 							if ($item->minutes_remaining) {
 								echo $item->minutes_remaining;
 							}
@@ -50,7 +55,6 @@ if( ! empty( $data ) ) { ?>
 						} else {
 							echo $item->time;
 						}
-						echo $item->game_status;
 					echo '</td>';
 				echo '</tr>';
 			
