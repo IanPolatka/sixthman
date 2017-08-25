@@ -24,11 +24,7 @@ if( ! empty( $data ) ) { ?>
 							<?php } ?>
 						</span>
 						<span class="team-name"><?php echo $item->away_team; ?></span>
-						<span class="score" style="text-align: right;">
-							<?php if (strtolower($item->winning_team) == strtolower($item->away_team)) { ?>
-								<strong style="text-align: right;"><span class="winning-text">W</span></strong>
-							<?php } ?>
-						</span>
+						
 					</div>
 					<div class="team">
 						<span class="team-logo">
@@ -38,8 +34,11 @@ if( ! empty( $data ) ) { ?>
 						</span>
 						<span class="team-name"><?php echo $item->home_team; ?></span>
 						<span class="score" style="text-align: right;">
-							<?php if (strtolower($item->winning_team) == strtolower($item->home_team)) { ?>
+							<?php if (strtolower($item->winning_team) == $team_name) { ?>
 								<strong><span class="winning-text">W</span></strong>
+							<?php } ?>
+							<?php if (strtolower($item->losing_team) == $team_name) { ?>
+								<strong><span class="losing-text">L</span></strong>
 							<?php } ?>
 						</span>
 					</div>

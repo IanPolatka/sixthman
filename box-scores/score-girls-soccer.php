@@ -59,10 +59,12 @@ if ( is_home() ) { ?>
 									$os = 0;
 								}
 
-								echo $fhs + $shs + $os;
+								$result = $fhs + $shs + $os;
+
+								echo $result;
 
 							} else {
-								$item->away_team_final_score;
+								echo $item->away_team_final_score;
 							}
 						} else {
 							echo '-';
@@ -96,10 +98,12 @@ if ( is_home() ) { ?>
 									$os = 0;
 								}
 
-								echo $fhs + $shs + $os;
+								$result = $fhs + $shs + $os;
+
+								echo $result;
 
 							} else {
-								$item->home_team_final_score;
+								echo $item->home_team_final_score;
 							}
 						} else {
 							echo '-';
@@ -214,7 +218,7 @@ if ( is_home() ) { ?>
 			<tr>
 				<td>
 					<img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>" alt="$item->away_team_school_name">
-					<strong><?php echo $item->away_team_school_name; ?></strong>
+					<strong><?php echo $item->away_team_abbreviated_name; ?></strong>
 				</td>
 				<td>
 					<?php if (isset($item->away_team_first_half_score)) { ?>

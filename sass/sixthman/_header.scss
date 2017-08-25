@@ -33,6 +33,9 @@
 			font-style: normal;
 			line-height: 50px;
             color: #fff;
+                &:hover {
+                    color: $primary-color;
+                }
 		}
 }
 

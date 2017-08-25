@@ -40,7 +40,30 @@ if( ! empty( $data ) ) { ?>
 						echo '</strong>';
 					echo '</td>';
 					echo '<td>';
-						if (!empty($item->minutes_remaining)) {
+						if ($item->game_status > 6) {
+							if (strtolower($item->winning_team) == strtolower($team_name)) {
+								echo '<span class="winning-text">W </span>';
+							}
+							if (strtolower($item->losing_team) == strtolower($team_name)) {
+								echo '<span class="losing-text">L </span>';
+							}
+
+							if ($item->away_team_final_score && $item->home_team_final_score) {
+								if ($item->away_team_final_score > $item->home_team_final_score) {
+									echo $item->away_team_final_score;
+									echo '-';
+									echo $item->home_team_final_score;
+								} elseif ($item->away_team_final_score < $item->home_team_final_score) {
+									echo $item->home_team_final_score;
+									echo '-';
+									echo $item->away_team_final_score;
+								} else {
+									echo $item->away_team_final_score;
+									echo '-';
+									echo $item->home_team_final_score;
+								}
+							}
+						} elseif (($item->game_status > 1) && ($item->game_status < 7)) {
 							if ($item->minutes_remaining) {
 								echo $item->minutes_remaining;
 							}
@@ -50,7 +73,6 @@ if( ! empty( $data ) ) { ?>
 						} else {
 							echo $item->time;
 						}
-						echo $item->game_status;
 					echo '</td>';
 				echo '</tr>';
 			
@@ -99,7 +121,30 @@ if( ! empty( $data ) ) { ?>
 						echo '</strong>';
 					echo '</td>';
 					echo '<td>';
-						if (!empty($item->minutes_remaining)) {
+						if ($item->game_status > 6) {
+							if (strtolower($item->winning_team) == strtolower($team_name)) {
+								echo '<span class="winning-text">W </span>';
+							}
+							if (strtolower($item->losing_team) == strtolower($team_name)) {
+								echo '<span class="losing-text">L </span>';
+							}
+
+							if ($item->away_team_final_score && $item->home_team_final_score) {
+								if ($item->away_team_final_score > $item->home_team_final_score) {
+									echo $item->away_team_final_score;
+									echo '-';
+									echo $item->home_team_final_score;
+								} elseif ($item->away_team_final_score < $item->home_team_final_score) {
+									echo $item->home_team_final_score;
+									echo '-';
+									echo $item->away_team_final_score;
+								} else {
+									echo $item->away_team_final_score;
+									echo '-';
+									echo $item->home_team_final_score;
+								}
+							}
+						} elseif (($item->game_status > 1) && ($item->game_status < 7)) {
 							if ($item->minutes_remaining) {
 								echo $item->minutes_remaining;
 							}
@@ -109,7 +154,6 @@ if( ! empty( $data ) ) { ?>
 						} else {
 							echo $item->time;
 						}
-						echo $item->game_status;
 					echo '</td>';
 				echo '</tr>';
 			
@@ -158,7 +202,30 @@ if( ! empty( $data ) ) { ?>
 						echo '</strong>';
 					echo '</td>';
 					echo '<td>';
-						if (!empty($item->minutes_remaining)) {
+						if ($item->game_status > 6) {
+							if (strtolower($item->winning_team) == strtolower($team_name)) {
+								echo '<span class="winning-text">W </span>';
+							}
+							if (strtolower($item->losing_team) == strtolower($team_name)) {
+								echo '<span class="losing-text">L </span>';
+							}
+
+							if ($item->away_team_final_score && $item->home_team_final_score) {
+								if ($item->away_team_final_score > $item->home_team_final_score) {
+									echo $item->away_team_final_score;
+									echo '-';
+									echo $item->home_team_final_score;
+								} elseif ($item->away_team_final_score < $item->home_team_final_score) {
+									echo $item->home_team_final_score;
+									echo '-';
+									echo $item->away_team_final_score;
+								} else {
+									echo $item->away_team_final_score;
+									echo '-';
+									echo $item->home_team_final_score;
+								}
+							}
+						} elseif (($item->game_status > 1) && ($item->game_status < 7)) {
 							if ($item->minutes_remaining) {
 								echo $item->minutes_remaining;
 							}

@@ -136,7 +136,14 @@ get_header(); ?>
 
 				<?php
 					//  Display Most Recent Posts
-					$query = 'posts_per_page=8&offset=0&ignore_sticky_posts=1';
+					$sticky = get_option( 'sticky_posts' );
+					// $query = 'posts_per_page=8&offset=0&ignore_sticky_posts=1';
+					$query = array(
+						'ignore_sticky_posts' => 1,
+						'post__not_in' => $sticky,
+						'posts_per_page' => 8,
+						'offset' => 1,
+					);
 					$queryObject = new WP_Query($query);
 
 					// The Loop...
