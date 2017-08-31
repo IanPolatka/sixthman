@@ -88,7 +88,10 @@ header('Access-Control-Allow-Origin: *');
 
 					<div class="alert alert-breaking">
 						<?php
-						if (get_field('breaking_news_link', 'option')) { ?>
+
+						$alert_link = get_field('breaking_news_link', 'option');
+
+						if ($alert_link) { ?>
 							<a href="<?php the_field('breaking_news_link', 'option'); ?>">
 						<?php } ?>
 							<div class="box-title">Breaking News</div>
@@ -96,7 +99,7 @@ header('Access-Control-Allow-Origin: *');
 								<?php the_field('breaking_news_text', 'option') ?>
 							</div>
 						<?php
-						if (get_field('breaking_news_link', 'option')) { ?>
+						if ($alert_link) { ?>
 							</a>
 						<?php } ?>
 					</div><!--  alert  -->
@@ -118,15 +121,18 @@ header('Access-Control-Allow-Origin: *');
 
 					<div class="alert alert-info">
 						<?php
-						if (get_field('information_news_link', 'option')) { ?>
-							<a href="<?php the_field('information_news_link', 'option'); ?>">
+
+						$link = get_field('information_news_link', 'option');
+
+						if ($link) { ?>
+							<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
 						<?php } ?>
 							<div class="box-title">Important Information</div>
 							<div class="box-content">
 								<?php the_field('information_news_text', 'option') ?>
 							</div>
 						<?php
-						if (get_field('information_news_link', 'option')) { ?>
+						if ($link) { ?>
 							</a>
 						<?php } ?>
 					</div><!--  alert  -->
