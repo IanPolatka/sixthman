@@ -3,7 +3,7 @@
 $school_year	= get_field('school_year');
 $team_name	 	= strtolower(get_field('school_name', 'option'));
 
-$request 		= wp_safe_remote_get( 'http://6thmansports.com/api/volleyball/schedule/' . $school_year . '/' . $team_name . '/1');
+$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/volleyball/schedule/' . $school_year . '/' . $team_name . '/1');
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }
@@ -35,7 +35,7 @@ if( ! empty( $data ) ) { ?>
 							if (strtolower($item->home_team) == strtolower($team_name)) {
 								echo 'vs';
 								if ($item->away_team_logo) {
-									echo '<img src="http://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
+									echo '<img src="https://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
 								} else {
 									echo '&nbsp&nbsp&nbsp';
 								}
@@ -43,7 +43,7 @@ if( ! empty( $data ) ) { ?>
 							} else {
 								echo '@';
 								if ($item->home_team_logo) {
-									echo '<img src="http://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
+									echo '<img src="https://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
 								} else {
 									echo '&nbsp&nbsp&nbsp';
 								}
@@ -182,7 +182,7 @@ if( ! empty( $data ) ) { ?>
 
 
 
-$request 		= wp_safe_remote_get( 'http://6thmansports.com/api/volleyball/schedule/' . $school_year . '/' . $team_name . '/2');
+$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/volleyball/schedule/' . $school_year . '/' . $team_name . '/2');
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }
@@ -211,7 +211,7 @@ if( ! empty( $data ) ) { ?>
 							if (strtolower($item->home_team) == strtolower($team_name)) {
 								echo 'vs';
 								if ($item->away_team_logo) {
-									echo '<img src="http://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
+									echo '<img src="https://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
 								} else {
 									echo '&nbsp&nbsp&nbsp';
 								}
@@ -219,7 +219,7 @@ if( ! empty( $data ) ) { ?>
 							} else {
 								echo '@';
 								if ($item->home_team_logo) {
-									echo '<img src="http://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
+									echo '<img src="https://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
 								} else {
 									echo '&nbsp&nbsp&nbsp';
 								}
@@ -243,7 +243,7 @@ if( ! empty( $data ) ) { ?>
 
 
 
-$request 		= wp_safe_remote_get( 'http://6thmansports.com/api/volleyball/schedule/' . $school_year . '/' . $team_name . '/3');
+$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/volleyball/schedule/' . $school_year . '/' . $team_name . '/3');
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }
@@ -272,7 +272,7 @@ if( ! empty( $data ) ) { ?>
 							if (strtolower($item->home_team) == strtolower($team_name)) {
 								echo 'vs';
 								if ($item->away_team_logo) {
-									echo '<img src="http://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
+									echo '<img src="https://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
 								} else {
 									echo '&nbsp&nbsp&nbsp';
 								}
@@ -280,7 +280,7 @@ if( ! empty( $data ) ) { ?>
 							} else {
 								echo '@';
 								if ($item->home_team_logo) {
-									echo '<img src="http://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
+									echo '<img src="https://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
 								} else {
 									echo '&nbsp&nbsp&nbsp';
 								}
