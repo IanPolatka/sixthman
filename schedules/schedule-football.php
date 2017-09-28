@@ -48,7 +48,7 @@ if( ! empty( $data ) ) { ?>
 								echo '<span class="losing-text">L </span>';
 							}
 
-							if ($item->away_team_final_score && $item->home_team_final_score) {
+							if (isset($item->away_team_final_score) && isset($item->home_team_final_score)) {
 								if ($item->away_team_final_score > $item->home_team_final_score) {
 									echo $item->away_team_final_score;
 									echo '-';
@@ -129,7 +129,7 @@ if( ! empty( $data ) ) { ?>
 								echo '<span class="losing-text">L </span>';
 							}
 
-							if ($item->away_team_final_score && $item->home_team_final_score) {
+							if (isset($item->away_team_final_score) && isset($item->home_team_final_score)) {
 								if ($item->away_team_final_score > $item->home_team_final_score) {
 									echo $item->away_team_final_score;
 									echo '-';
@@ -213,7 +213,7 @@ if( ! empty( $data ) ) { ?>
 								echo '<span class="losing-text">L </span>';
 							}
 
-							if ($item->away_team_final_score && $item->home_team_final_score) {
+							if (isset($item->away_team_final_score) && isset($item->home_team_final_score)) {
 								if ($item->away_team_final_score > $item->home_team_final_score) {
 									echo $item->away_team_final_score;
 									echo '-';
