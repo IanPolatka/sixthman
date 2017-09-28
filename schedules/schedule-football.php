@@ -193,6 +193,9 @@ if( ! empty( $data ) ) { ?>
 						echo '<div>' . $date->format('M j, Y') . '</div>'; // 31.07.2012
 					echo '</td>';
 					echo '<td class="opponent">';
+						if ($item->tournament_title) {
+							echo '<small>' .$item->tournament_title . '</small><br />';
+						}
 						echo '<strong>';
 							if (strtolower($item->home_team) == strtolower($team_name)) {
 								echo 'vs <img src="https://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">' . $item->away_team;
@@ -235,7 +238,6 @@ if( ! empty( $data ) ) { ?>
 						} else {
 							echo $item->time;
 						}
-						echo $item->game_status;
 					echo '</td>';
 				echo '</tr>';
 			
@@ -247,7 +249,6 @@ if( ! empty( $data ) ) { ?>
 
 <?php
 }
-?>
 
 
 
