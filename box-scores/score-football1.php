@@ -2,13 +2,13 @@
 
 $id		 = get_field('event_id');
 
-$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/soccer-girls/game/' . $id);
+$request = wp_safe_remote_get( 'https://www.6thmansports.com/api/football/game/' . $id );
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }
 
-$body = wp_remote_retrieve_body( $request );
-$data = json_decode( $body );
+$body 	= wp_remote_retrieve_body( $request );
+$data 	= json_decode( $body );
 if( ! empty( $data ) ) {
 		
 foreach( $data as $item ) { ?>
@@ -41,17 +41,27 @@ if ( is_home() ) { ?>
 				<div class="score">
 
 					<?php
-						if ($item->game_status > 0 || isset($item->minutes_remaining)) {
+						if ($item->game_status > 0) {
 							if (!$item->away_team_final_score) {
-								if ($item->away_team_first_half_score) {
-									$fhs = $item->away_team_first_half_score;
+								if ($item->away_team_first_qrt_score) {
+									$fqs = $item->away_team_first_qrt_score;
 								} else {
-									$fhs = 0;
+									$fqs = 0;
 								}
-								if ($item->away_team_second_half_score) {
-									$shs = $item->away_team_second_half_score;
+								if ($item->away_team_second_qrt_score) {
+									$sqs = $item->away_team_second_qrt_score;
 								} else {
-									$shs = 0;
+									$sqs = 0;
+								}
+								if ($item->away_team_third_qrt_score) {
+									$tqs = $item->away_team_third_qrt_score;
+								} else {
+									$tqs = 0;
+								}
+								if ($item->away_team_fourth_qrt_score) {
+									$ftqs = $item->away_team_fourth_qrt_score;
+								} else {
+									$ftqs = 0;
 								}
 								if ($item->away_team_overtime_score) {
 									$os = $item->away_team_overtime_score;
@@ -59,9 +69,7 @@ if ( is_home() ) { ?>
 									$os = 0;
 								}
 
-								$result = $fhs + $shs + $os;
-
-								echo $result;
+								echo $fqs + $sqs + $tqs + $ftqs + $os;
 
 							} else {
 								echo $item->away_team_final_score;
@@ -80,17 +88,27 @@ if ( is_home() ) { ?>
 				<div class="score">
 
 					<?php
-						if ($item->game_status > 0 || isset($item->minutes_remaining)) {
+						if ($item->game_status > 0) {
 							if (!$item->home_team_final_score) {
-								if ($item->home_team_first_half_score) {
-									$fhs = $item->home_team_first_half_score;
+								if ($item->home_team_first_qrt_score) {
+									$fqs = $item->home_team_first_qrt_score;
 								} else {
-									$fhs = 0;
+									$fqs = 0;
 								}
-								if ($item->home_team_second_half_score) {
-									$shs = $item->home_team_second_half_score;
+								if ($item->home_team_second_qrt_score) {
+									$sqs = $item->home_team_second_qrt_score;
 								} else {
-									$shs = 0;
+									$sqs = 0;
+								}
+								if ($item->home_team_third_qrt_score) {
+									$tqs = $item->home_team_third_qrt_score;
+								} else {
+									$tqs = 0;
+								}
+								if ($item->home_team_fourth_qrt_score) {
+									$ftqs = $item->home_team_fourth_qrt_score;
+								} else {
+									$ftqs = 0;
 								}
 								if ($item->home_team_overtime_score) {
 									$os = $item->home_team_overtime_score;
@@ -98,16 +116,14 @@ if ( is_home() ) { ?>
 									$os = 0;
 								}
 
-								$result = $fhs + $shs + $os;
+								echo $fqs + $sqs + $tqs + $ftqs + $os;
 
-								echo $result;
-
+								} else {
+									echo $item->home_team_final_score;
+								}
 							} else {
-								echo $item->home_team_final_score;
+								echo '-';
 							}
-						} else {
-							echo '-';
-						}
 						?>
 
 					</div><!--  Score  -->
@@ -135,22 +151,28 @@ if ( is_home() ) { ?>
 
 	<div class="game-status">
 		<?php
-			if ($item->game_status <= 0 && !isset($item->minutes_remaining)) {
+			if ($item->game_status <= 0) {
 				echo $item->time;
 			}
 			if ($item->game_status == 1) {
-				echo '<span class="game-live">1st Half</span>';
+				echo '<span class="game-live">1st Quarter</span>';
 			}
 			if ($item->game_status == 2) {
-				echo '<span class="game-live">Halftime</span>';
+				echo '<span class="game-live">2nd Quarter</span>';
 			}
 			if ($item->game_status == 3) {
-				echo '<span class="game-live">2nd Half</span>';
+				echo '<span class="game-live">Halftime</span>';
 			}
 			if ($item->game_status == 4) {
-				echo '<span class="game-live">Overtime</span>';
+				echo '<span class="game-live">3rd Quarter</span>';
 			}
 			if ($item->game_status == 5) {
+				echo '<span class="game-live">4th Quarter</span>';
+			}
+			if ($item->game_status == 6) {
+				echo '<span class="game-live">Overtime</span>';
+			}
+			if ($item->game_status == 7) {
 				echo 'Final';
 			}
 		?>
@@ -161,7 +183,10 @@ if ( is_home() ) { ?>
 		<div class="game-time">
 			<?php
 				if ($item->minutes_remaining) {
-					echo '<div class="game-live">' . $item->minutes_remaining . '\'</div>';
+					echo $item->minutes_remaining;
+				}
+				if ($item->seconds_remaining) {
+					echo ":" . $item->seconds_remaining;
 				}
 			?>
 		</div><!--  Game Time  -->
@@ -176,30 +201,38 @@ if ( is_home() ) { ?>
 	<table class="individual-box-score">
 		<thead>
 			<tr>
-				<th width="65%">
+				<th width="43%">
 					<?php
 						if ($item->game_status <= 0) {
 							echo $item->time;
 						}
 						if ($item->game_status == 1) {
-							echo '<span class="game-live">1st Half</span>';
+							echo '<span class="game-live">1st Quarter</span>';
 						}
 						if ($item->game_status == 2) {
-							echo '<span class="game-live">Halftime</span>';
+							echo '<span class="game-live">2nd Quarter</span>';
 						}
 						if ($item->game_status == 3) {
-							echo '<span class="game-live">2nd Half</span>';
+							echo '<span class="game-live">Halftime</span>';
 						}
 						if ($item->game_status == 4) {
-							echo '<span class="game-live">Overtime</span>';
+							echo '<span class="game-live">3rd Quarter</span>';
 						}
 						if ($item->game_status == 5) {
+							echo '<span class="game-live">4th Quarter</span>';
+						}
+						if ($item->game_status == 6) {
+							echo '<span class="game-live">Overtime</span>';
+						}
+						if ($item->game_status == 7) {
 							echo 'Final';
 						}
 					?>
 				</th>
 				<th>1</th>
 				<th>2</th>
+				<th>3</th>
+				<th>4</th>
 				<?php if (isset($item->away_team_overtime_score) || isset($item->home_team_overtime_score)) { ?>
 				<th>OT</th>
 				<?php } ?>
@@ -219,15 +252,29 @@ if ( is_home() ) { ?>
 					<strong><?php echo $item->away_team_abbreviated_name; ?></strong>
 				</td>
 				<td>
-					<?php if (isset($item->away_team_first_half_score)) { ?>
-						<?php echo $item->away_team_first_half_score; ?>
+					<?php if (isset($item->away_team_first_qrt_score)) { ?>
+						<?php echo $item->away_team_first_qrt_score; ?>
 					<?php } else { ?>
 						-
 					<?php } ?>
 				</td>
 				<td>
-					<?php if (isset($item->away_team_second_half_score)) { ?>
-						<?php echo $item->away_team_second_half_score; ?>
+					<?php if (isset($item->away_team_second_qrt_score)) { ?>
+						<?php echo $item->away_team_second_qrt_score; ?>
+					<?php } else { ?>
+						-
+					<?php } ?>
+				</td>
+				<td>
+					<?php if (isset($item->away_team_third_qrt_score)) { ?>
+						<?php echo $item->away_team_third_qrt_score; ?>
+					<?php } else { ?>
+						-
+					<?php } ?>	
+				</td>
+				<td>
+					<?php if (isset($item->away_team_fourth_qrt_score)) { ?>
+						<?php echo $item->away_team_fourth_qrt_score; ?>
 					<?php } else { ?>
 						-
 					<?php } ?>
@@ -247,15 +294,25 @@ if ( is_home() ) { ?>
 							if (isset($item->away_team_final_score)) {
 								echo '<strong>' . $item->away_team_final_score . '</strong>';
 							} else {
-								if ($item->away_team_first_half_score) {
-									$fhs = $item->away_team_first_qrt_score;
+								if ($item->away_team_first_qrt_score) {
+									$fqs = $item->away_team_first_qrt_score;
 								} else {
-									$fhs = 0;
+									$fqs = 0;
 								}
-								if ($item->away_team_second_half_score) {
-									$shs = $item->away_team_second_qrt_score;
+								if ($item->away_team_second_qrt_score) {
+									$sqs = $item->away_team_second_qrt_score;
 								} else {
-									$shs = 0;
+									$sqs = 0;
+								}
+								if ($item->away_team_third_qrt_score) {
+									$tqs = $item->away_team_third_qrt_score;
+								} else {
+									$tqs = 0;
+								}
+								if ($item->away_team_fourth_qrt_score) {
+									$ftqs = $item->away_team_fourth_qrt_score;
+								} else {
+									$ftqs = 0;
 								}
 								if ($item->away_team_overtime_score) {
 									$os = $item->away_team_overtime_score;
@@ -263,7 +320,7 @@ if ( is_home() ) { ?>
 									$os = 0;
 								}
 
-								echo $fhs + $shs + $os;
+								echo $fqs + $sqs + $tqs + $ftqs + $os;
 							}
 						} else {
 							echo '-';
@@ -277,15 +334,29 @@ if ( is_home() ) { ?>
 					<strong><?php echo $item->home_team_abbreviated_name; ?></strong>
 				</td>
 				<td>
-					<?php if (isset($item->home_team_first_half_score)) { ?>
-						<?php echo $item->home_team_first_half_score; ?>
+					<?php if (isset($item->home_team_first_qrt_score)) { ?>
+						<?php echo $item->home_team_first_qrt_score; ?>
 					<?php } else { ?>
 						-
 					<?php } ?>
 				</td>
 				<td>
-					<?php if (isset($item->home_team_second_half_score)) { ?>
-						<?php echo $item->home_team_second_half_score; ?>
+					<?php if (isset($item->home_team_second_qrt_score)) { ?>
+						<?php echo $item->home_team_second_qrt_score; ?>
+					<?php } else { ?>
+						-
+					<?php } ?>
+				</td>
+				<td>
+					<?php if (isset($item->home_team_third_qrt_score)) { ?>
+						<?php echo $item->home_team_third_qrt_score; ?>
+					<?php } else { ?>
+						-
+					<?php } ?>	
+				</td>
+				<td>
+					<?php if (isset($item->home_team_fourth_qrt_score)) { ?>
+						<?php echo $item->home_team_fourth_qrt_score; ?>
 					<?php } else { ?>
 						-
 					<?php } ?>
@@ -305,15 +376,25 @@ if ( is_home() ) { ?>
 							if (isset($item->home_team_final_score)) {
 								echo '<strong>' . $item->home_team_final_score . '</strong>';
 							} else {
-								if ($item->home_team_first_half_score) {
-									$fhs = $item->home_team_first_half_score;
+								if ($item->home_team_first_qrt_score) {
+									$fqs = $item->home_team_first_qrt_score;
 								} else {
-									$fhs = 0;
+									$fqs = 0;
 								}
-								if ($item->home_team_second_half_score) {
-									$shs = $item->home_team_second_half_score;
+								if ($item->home_team_second_qrt_score) {
+									$sqs = $item->home_team_second_qrt_score;
 								} else {
-									$shs = 0;
+									$sqs = 0;
+								}
+								if ($item->home_team_third_qrt_score) {
+									$tqs = $item->home_team_third_qrt_score;
+								} else {
+									$tqs = 0;
+								}
+								if ($item->home_team_fourth_qrt_score) {
+									$ftqs = $item->home_team_fourth_qrt_score;
+								} else {
+									$ftqs = 0;
 								}
 								if ($item->home_team_overtime_score) {
 									$os = $item->home_team_overtime_score;
@@ -321,7 +402,7 @@ if ( is_home() ) { ?>
 									$os = 0;
 								}
 
-								echo $fhs + $shs + $os;
+								echo $fqs + $sqs + $tqs + $ftqs + $os;
 							}
 						} else {
 							echo '-';

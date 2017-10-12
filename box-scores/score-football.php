@@ -1,3 +1,397 @@
+<style>
+
+.text-white {
+	color: #fff;
+}
+
+@media screen and (max-width: 650px) {
+
+	#away_team_mascot, #home_team_mascot {
+		display: none;
+	}
+
+	.scoreboard {
+		display: flex;
+		flex-direction: row;
+		padding: 10px 0;
+		border-bottom: 1px solid #dddddd;
+		align-items: center;
+	}
+
+	.team-logo {
+		height: 35px;
+		width: 35px;
+		order: 1;
+		margin-bottom: 5px;
+	}
+
+	.a-team {
+		flex: 2;
+		display: flex;
+		margin-left: 10px;
+	}
+
+	.h-team {
+		flex: 2;
+		display: flex;
+		margin-right: 10px;
+	}
+
+	.details {
+		flex: 1;
+		text-align: center;
+		font-size: .8em;
+	}
+
+	.team-details {
+		flex-direction: row;
+		order: 2;
+	}
+
+	.team-details h4 {
+		font-size: .7em;
+		margin: 0;
+	}
+
+	.team-information {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex: 2;
+	}
+
+	.scoreboard .score {
+		border: none !important;
+		padding: 0 !important;
+		flex: 2 !important;
+		font-size: 1.6em !important;
+	}
+
+	.possession {
+		flex: 1;
+		font-size: .6em;
+		align-self: center;
+		text-align: center;
+	}
+
+	#tournament-title {
+		display: block;
+		width: 100%;
+		text-align: center;
+		padding: 10px 0;
+		color: #000000;
+		font-size: .75em;
+		background: #f9f9f9;
+	}
+
+}
+
+
+
+@media screen and (min-width: 651px) and (max-width: 767px) {
+
+	.scoreboard {
+		display: flex !important;
+		align-items: center;
+		text-transform: uppercase;
+		padding: 15px 0;
+		border-bottom: 1px solid #dddddd;
+	}
+
+	#tournament-title {
+		display: block;
+		width: 100%;
+		text-align: center;
+		padding: 10px 0;
+		color: #000000;
+		font-size: .75em;
+		background: #f9f9f9;
+	}
+
+	.team-information {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		flex: 2;
+	}
+
+	.a-team .team-information {
+		justify-content: flex-end;
+	}
+
+	.scoreboard .team-logo {
+		height: 35px;
+		width: 35px;
+		margin: 0 10px;
+	}
+
+	.scoreboard h4 {
+		margin: 0px;
+		line-height: 1;
+		padding: 0;
+	}
+
+	.scoreboad small {
+		line-height: 1;
+		margin: 0;
+	}
+
+	.a-team {
+		flex: 2;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+		margin-left: 10px;
+	}
+
+	.a-team .team-details {
+		text-align: right;
+		flex-direction: column !important;
+		justify-content: flex-end !important;
+	}
+
+	.a-team > .score {
+		margin: 0 10px;
+		border: none;
+	}
+
+	.details {
+		flex: 1;
+		text-align: center;
+		font-size: .8em;
+	}
+
+	.details div {
+		margin: 0;
+	}
+
+	.h-team {
+		flex: 2;
+		display: flex !important;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		margin-right: 10px;
+	}
+
+	.h-team .team-details {
+		text-align: left;
+		flex-direction: column !important;
+	}
+
+	.h-team > .score {
+		margin: 0 10px;
+		border: none;
+	}
+
+	.featured-description {
+		padding: 20px;
+	}
+
+	.possession {
+		font-size: .5em;
+	}
+
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 899px) {
+
+	#away_team_mascot, #home_team_mascot {
+		display: none;
+	}
+
+	.scoreboard {
+		display: flex;
+		flex-direction: row;
+		padding: 10px 0;
+		border-bottom: 1px solid #dddddd;
+		align-items: center;
+	}
+
+	.team-logo {
+		height: 35px;
+		width: 35px;
+		order: 1;
+		margin-bottom: 5px;
+	}
+
+	.a-team {
+		flex: 2;
+		display: flex;
+		margin-left: 10px;
+	}
+
+	.h-team {
+		flex: 2;
+		display: flex;
+		margin-right: 10px;
+	}
+
+	.details {
+		flex: 1;
+		text-align: center;
+		font-size: .8em;
+	}
+
+	.team-details {
+		flex-direction: row;
+		order: 2;
+	}
+
+	.team-details h4 {
+		font-size: .7em;
+		margin: 0;
+	}
+
+	.team-information {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex: 2;
+	}
+
+	.scoreboard .score {
+		border: none !important;
+		padding: 0 !important;
+		flex: 2 !important;
+		font-size: 1.6em !important;
+	}
+
+	.possession {
+		flex: 1;
+		font-size: .6em;
+		align-self: center;
+		text-align: center;
+	}
+
+	#tournament-title {
+		display: block;
+		width: 100%;
+		text-align: center;
+		padding: 10px 0;
+		color: #000000;
+		font-size: .75em;
+		background: #f9f9f9;
+	}
+
+}
+
+
+
+@media screen and (min-width: 900px) {
+
+	.scoreboard {
+		display: flex !important;
+		align-items: center;
+		text-transform: uppercase;
+		padding: 15px 0;
+		border-bottom: 1px solid #dddddd;
+	}
+
+	#tournament-title {
+		display: block;
+		width: 100%;
+		text-align: center;
+		padding: 10px 0;
+		color: #000000;
+		font-size: .75em;
+		background: #f9f9f9;
+	}
+
+	.team-information {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		flex: 2;
+	}
+
+	.a-team .team-information {
+		justify-content: flex-end;
+	}
+
+	.scoreboard .team-logo {
+		height: 35px;
+		width: 35px;
+		margin: 0 10px;
+	}
+
+	.scoreboard h4 {
+		margin: 0px;
+		line-height: 1;
+		padding: 0;
+	}
+
+	.scoreboad small {
+		line-height: 1;
+		margin: 0;
+	}
+
+	.a-team {
+		flex: 2;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+		margin-left: 10px;
+	}
+
+	.a-team .team-details {
+		text-align: right;
+		flex-direction: column !important;
+		justify-content: flex-end !important;
+	}
+
+	.a-team > .score {
+		margin: 0 10px;
+		border: none;
+	}
+
+	.details {
+		flex: 1;
+		text-align: center;
+		font-size: .8em;
+	}
+
+	.details div {
+		margin: 0;
+	}
+
+	.h-team {
+		flex: 2;
+		display: flex !important;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		margin-right: 10px;
+	}
+
+	.h-team .team-details {
+		text-align: left;
+		flex-direction: column !important;
+	}
+
+	.h-team > .score {
+		margin: 0 10px;
+		border: none;
+	}
+
+	.featured-description {
+		padding: 20px;
+	}
+
+	.possession {
+		font-size: .5em;
+	}
+
+}
+
+
+
+</style>
+
 <?php
 
 $id		 = get_field('event_id');
@@ -15,185 +409,77 @@ foreach( $data as $item ) { ?>
 
 <?php 
 //  Insert data into box score on the home page
-if ( is_home() ) { ?>
+if ( is_home() ) {
 
-	<div class="box-score">
+	wp_enqueue_script( 'football', get_template_directory_uri() . '/box-scores/football.js', array(), '20151215', true );
 
-		<div class="teams">
+	?>
+  
+		<div id="tournament-title"></div>
 
-			<div class="away-team">
+			<div class="scoreboard">
+								  
+				<div class="a-team">
 
-				<div class="team-details">
+					<div class="team-information">
+								    
+						<div class="team-details">
 
-					<div class="logo">
-						<img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>" alt="$item->away_team_school_name">
+							<h4 id="away_team"></h4>
+							<small id="away_team_mascot"></small>
+									      
+						</div>
+									    
+						<div class="team-logo">
+									      
+							<img id="away_team_image" />
+									      
+						</div>
+
+					</div><!--  Team Information  -->
+
+					<h1 id="away_team_final_score" class="score"></h1>
+
+					<div id="away_team_possession" class="possession"></div><!--  Possession  -->
+								    
+				</div><!--  away-team  -->
+								  
+				<div class="details">
+
+					<div id="status"></div>
+						
+					<div><span id="minutes"></span><span id="seconds"></span></div>
+								    
+				</div><!--  Details  -->
+								  
+				<div class="h-team">
+
+					<div id="home_team_possession" class="possession"></div><!--  Possession  -->
+								    
+					<h1 id="home_team_final_score" class="score"></h1>
+
+					<div class="team-information">
+								    
+						<div class="team-logo">
+									      
+							<img id="home_team_image" />
+									      
+						</div>
+									    
+						<div class="team-details">
+
+							<h4 id="home_team"></h4>
+							<small id="home_team_mascot"></small>
+									      
+						</div>
+
 					</div>
+								    
+				</div><!--  home-team  -->
+								  
+			</div><!--  Scoreboard  -->
 
-					<div class="school-name">
-
-						<h4><?php echo $item->away_team_abbreviated_name; ?></h4>
-						<h5><?php echo $item->away_team_mascot; ?></h5>
-
-					</div><!--  School Name  -->
-
-				</div><!--  Team Details  -->
-
-				<div class="score">
-
-					<?php
-						if ($item->game_status > 0) {
-							if (!$item->away_team_final_score) {
-								if ($item->away_team_first_qrt_score) {
-									$fqs = $item->away_team_first_qrt_score;
-								} else {
-									$fqs = 0;
-								}
-								if ($item->away_team_second_qrt_score) {
-									$sqs = $item->away_team_second_qrt_score;
-								} else {
-									$sqs = 0;
-								}
-								if ($item->away_team_third_qrt_score) {
-									$tqs = $item->away_team_third_qrt_score;
-								} else {
-									$tqs = 0;
-								}
-								if ($item->away_team_fourth_qrt_score) {
-									$ftqs = $item->away_team_fourth_qrt_score;
-								} else {
-									$ftqs = 0;
-								}
-								if ($item->away_team_overtime_score) {
-									$os = $item->away_team_overtime_score;
-								} else {
-									$os = 0;
-								}
-
-								echo $fqs + $sqs + $tqs + $ftqs + $os;
-
-							} else {
-								echo $item->away_team_final_score;
-							}
-						} else {
-							echo '-';
-						}
-					?>
-
-				</div><!--  Score  -->
-
-			</div><!--  Away Team  -->
-
-			<div class="home-team">
-
-				<div class="score">
-
-					<?php
-						if ($item->game_status > 0) {
-							if (!$item->home_team_final_score) {
-								if ($item->home_team_first_qrt_score) {
-									$fqs = $item->home_team_first_qrt_score;
-								} else {
-									$fqs = 0;
-								}
-								if ($item->home_team_second_qrt_score) {
-									$sqs = $item->home_team_second_qrt_score;
-								} else {
-									$sqs = 0;
-								}
-								if ($item->home_team_third_qrt_score) {
-									$tqs = $item->home_team_third_qrt_score;
-								} else {
-									$tqs = 0;
-								}
-								if ($item->home_team_fourth_qrt_score) {
-									$ftqs = $item->home_team_fourth_qrt_score;
-								} else {
-									$ftqs = 0;
-								}
-								if ($item->home_team_overtime_score) {
-									$os = $item->home_team_overtime_score;
-								} else {
-									$os = 0;
-								}
-
-								echo $fqs + $sqs + $tqs + $ftqs + $os;
-
-								} else {
-									echo $item->home_team_final_score;
-								}
-							} else {
-								echo '-';
-							}
-						?>
-
-					</div><!--  Score  -->
-
-				<div class="team-details">
-
-					<div class="logo">
-						<img src="https://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>">
-					</div>
-
-					<div class="school-name">
-
-						<h4><?php echo $item->home_team_abbreviated_name; ?></h4>
-						<h5><?php echo $item->home_team_mascot; ?></h5>
-
-					</div><!--  School Name  -->
-
-				</div><!--  Team Details  -->
-
-			</div><!--  Home Team  -->
-
-		</div><!--  Teams  -->
-
-	</div><!--  Box Score  -->
-
-	<div class="game-status">
-		<?php
-			if ($item->game_status <= 0) {
-				echo $item->time;
-			}
-			if ($item->game_status == 1) {
-				echo '<span class="game-live">1st Quarter</span>';
-			}
-			if ($item->game_status == 2) {
-				echo '<span class="game-live">2nd Quarter</span>';
-			}
-			if ($item->game_status == 3) {
-				echo '<span class="game-live">Halftime</span>';
-			}
-			if ($item->game_status == 4) {
-				echo '<span class="game-live">3rd Quarter</span>';
-			}
-			if ($item->game_status == 5) {
-				echo '<span class="game-live">4th Quarter</span>';
-			}
-			if ($item->game_status == 6) {
-				echo '<span class="game-live">Overtime</span>';
-			}
-			if ($item->game_status == 7) {
-				echo 'Final';
-			}
-		?>
-	</div><!--  Game Status  -->
-
-	<?php
-	if (!empty($item->minutes_remaining) || !empty($item->seconds_remaining)) { ?>
-		<div class="game-time">
-			<?php
-				if ($item->minutes_remaining) {
-					echo $item->minutes_remaining;
-				}
-				if ($item->seconds_remaining) {
-					echo ":" . $item->seconds_remaining;
-				}
-			?>
-		</div><!--  Game Time  -->
-
-	<?php 
-	//  Close Minutes/Seconds Remaining
-	}
+<?php
 
 //  Close is Home Page check
 } else { ?>

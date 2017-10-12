@@ -63,18 +63,24 @@ get_header(); ?>
 										
 								</div>
 
-								<div class="category"><?php echo get_the_category_list(); ?></div>
-							    
-								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-
 								<?php if( get_field('box_score') ): ?>
 
 									<?php 
-										$term = get_field('category');
+										$term 		= get_field('category');
 										$cat		= strtolower($term->name);
 										$category 	= str_replace(' ', '-', $cat);
-
 									?>
+
+									<?php if ($category == 'football') {
+
+										$id		 = get_field('event_id'); ?>
+
+										<script type="text/javascript">var id = "<?= $id ?>";</script>
+
+										<?php
+										wp_enqueue_script( 'football', get_template_directory_uri() . '/box-scores/football.js', array(), '20151215', true );
+
+									} ?>
 
 									<?php if ($term) : ?>
 
@@ -83,6 +89,10 @@ get_header(); ?>
 									<?php endif; ?>
 
 								<?php endif; ?>
+
+								<div class="category"><?php echo get_the_category_list(); ?></div>
+							    
+								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
 								<div class="text-content">
 
