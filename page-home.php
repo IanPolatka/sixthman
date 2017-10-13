@@ -257,7 +257,7 @@ get_header(); ?>
 
 						<div class="record-box">
 
-							<h1>87</h1>
+							<h1>88</h1>
 
 							<h5>KHSAA District Titles</h5>
 
