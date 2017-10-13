@@ -350,7 +350,7 @@ get_header(); ?>
                                                   <li>
                     <h4>2</h4></h1>
                     <h5>KHSAA DISTRICT TITLES</h5>                    <ul class="year">
-                      <li>1998</li><li>2016</li>                    </ul>
+                      <li>1998</li><li>2016</li><li>2017</li>                   </ul>
                   </li>
                                 
                 </ul>
