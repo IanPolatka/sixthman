@@ -65,6 +65,8 @@
 		padding: 0 !important;
 		flex: 2 !important;
 		font-size: 1.6em !important;
+		align-self: center;
+		margin-bottom: 0;
 	}
 
 	.possession {

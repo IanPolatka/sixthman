@@ -3,35 +3,6 @@
 $school_year	= get_field('school_year');
 $team_name	 	= strtolower(get_field('school_name', 'option'));
 
-
-
-//  Show Schedule Summary
-
-//  Parse out schedules
-
-$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/volleyball/schedule/'  . $school_year . '/' . $team_name . '/1');
-if( is_wp_error( $request ) ) {
-	return false; // Bail early
-}
-
-$body = wp_remote_retrieve_body( $request );
-$data = json_decode( $body );
-if( ! empty( $data ) ) { ?>
-
-	<?php
-			foreach( $data as $item ) { ?>
-
-	<p><small>Hello world</small></p>
-
-	<?php } ?>
-
-<?php
-}
-
-
-
-//  Parse out schedules
-
 $request 		= wp_safe_remote_get( 'https://6thmansports.com/api/football/schedule/' . $school_year . '/' . $team_name . '/1');
 if( is_wp_error( $request ) ) {
 	return false; // Bail early

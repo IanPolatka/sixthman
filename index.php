@@ -14,6 +14,8 @@
 
 get_header(); ?>
 
+hello world
+
 	<div class="container">
 
 	<div id="primary" class="content-area">

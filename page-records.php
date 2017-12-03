@@ -84,7 +84,7 @@ get_header(); ?>
 
 				<div class="records-total-box">
 
-					<h1>74</h1>
+					<h1>75</h1>
 
 					<h4>KHSAA Regional Championships</h4>
 
@@ -344,8 +344,8 @@ get_header(); ?>
                 <ul>
 
                                                                   <li>
-                    <h4>1</h4>                    <h5>KHSAA REGIONAL TITLES</h5>                    <ul class="year">
-                      <li>2016</li>                    </ul>
+                    <h4>2</h4>                    <h5>KHSAA REGIONAL TITLES</h5>                    <ul class="year">
+                      <li>2016</li><li>2017</li>                    </ul>
                   </li>
                                                   <li>
                     <h4>3</h4></h1>

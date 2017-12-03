@@ -41,6 +41,15 @@ function sixthman_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'featured-post-full', 800, 375, true );
+	add_image_size( 'recent-news-post-image', 300, 175, array( 'center', 'center' ) );
+
+	add_filter( 'image_size_names_choose', 'wpshout_custom_sizes' );
+	function wpshout_custom_sizes( $sizes ) {
+	    return array_merge( $sizes, array(
+	        'recent-news-post-image' => __( 'recent-news-post-image' ),
+	    ) );
+	}
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -110,7 +119,7 @@ function sixthman_fonts_url() {
 		$font_families[] = 'Titillium Web:400,400i,700,800,900';
 	}
 	if ( 'off' !== $work_sans ) {
-		$font_families[] = 'Work Sans:800';
+		$font_families[] = 'Work Sans:600,800';
 	}
 	if ( in_array( 'on', array($titillium_web, $work_sans) ) ) {
 		$query_args = array(
@@ -215,6 +224,8 @@ function sixthman_scripts() {
 	wp_enqueue_style( 'sixthman-style', get_stylesheet_uri(), array(), '20170619', '');
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'instagram', get_template_directory_uri() . '/js/instagram-feed.js', array(), '20151215', true );
 
 	//  Enqueue Font Awesome
 	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
@@ -440,4 +451,8 @@ function sixthman_search_form() { ?>
 	</form>
 
 <?php
-} ?>
+}
+
+
+
+

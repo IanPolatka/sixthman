@@ -413,29 +413,7 @@ article {
 	margin-bottom: 20px;
 }
 
-.twitter-feed {
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	background: #fff;
-	color: black;
-	padding: 20px;
-	margin-bottom: 20px;
-		.title {
-			display: flex;
-			align-self: center;
-			width: 100%;
-			text-align: center;
 
-				h4 {
-					width: 100%;
-						i {
-							color: $twitter;
-							font-size: 3em;
-						}
-				}
-
-		}
-}
 
 .sbi_photo {
 	margin-bottom: 20px;
@@ -457,51 +435,9 @@ article {
     margin-right: 0px !important;
 }
 
-.facebook-feed {
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	padding: 20px;
-	margin-bottom: 20px;
-		.title {
-			display: flex;
-			align-self: center;
-			width: 100%;
-			text-align: center;
 
-				h4 {
-					width: 100%;
-						i {
-							color: $facebook;
-							font-size: 3em;
-						}
-				}
 
-		}
-}
 
-.instagram-feed {
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	padding: 20px;
-	margin-bottom: 20px;
-		.title {
-			display: flex;
-			align-self: center;
-			width: 100%;
-			text-align: center;
-
-				h4 {
-					width: 100%;
-						i {
-							background: -webkit-gradient(linear, left top, left bottom, from(#bc2a8d), to(#fccc63));
-							-webkit-background-clip: text;
-							-webkit-text-fill-color: transparent;
-							font-size: 3em;
-						}
-				}
-
-		}
-}
 
 @media screen and (min-width: 768px) {
 	.social-media-section {
@@ -509,249 +445,23 @@ article {
 		flex-direction: row;
 		justify-content: space-between;
 	}
-	.twitter-feed {
-		width: 31%;
-	}
+
 	.ctf {
 		align-items: center;
 	}
-	.instagram-feed {
-		width: 31%;
-	}
+
 	#sb_instagram #sbi_images {
 		padding: 0px !important;
 	}
 	#sbi_images {
 		margin-top: 0px !important;
 	}
-	.facebook-feed {
-		width: 31%;
-	}
-}
-
-
-
-//  7. Featured Post - Home Page
-
-
-
-.hero-unit {
-	display: flex;
-	flex-direction: column;
-	margin: 0;
-	padding: 30px 0 0 0;
-}
-
-.hero-unit-lite-padding {
-	padding: 20px 0 0 0;
-}
-
-.featured-post {
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	margin-bottom: 20px;
-		.category ul {
-			padding: 0;
-			margin: 0;
-				li {
-					font-size: .8em;
-					font-weight: bold;
-					margin: 20px 20px 5px 20px;
-					list-style-type: none;
-						a {
-							border-bottom: none;
-						    background: $primary-color;
-							padding: 3px 5px;
-							border-radius: 2px;
-							font-size: .9em;
-							font-weight: bold;
-							margin-right: 5px;
-							text-transform: uppercase;
-								&:hover, &:active {
-									background: rgba($primary-color, .4);
-									color: black;
-								}
-						}
-				}
-		}
-		.featured-image {
-			display: block;
-			background: #eee;
-				img {
-					width: 100%;
-					max-height: auto;
-					overflow: hidden;
-					border-radius: 4px 4px 0 0;
-				}
-		}
-		p {
-			padding: 0 20px;
-		}
-		h2 {
-			padding: 0px 20px 0 20px;
-		}
-		
-		.box-score {
-			display: flex;
-		}
-		.teams {
-			display: flex;
-			width: 100%;
-			align-self: center;
-			margin: 0;
-			padding: 10px;
-		}
-		.away-team {
-			display: flex;
-			width: 50%;
-			justify-content: flex-end;
-				.team-details {
-					margin-right: 10px;
-				}
-				.logo {
-					text-align: right;
-						img {
-							justify-content: flex-end;
-						}
-				}
-				.school-name {
-					text-align: right;
-						h4 {
-							display: block;
-							margin-bottom: 3px;
-						}
-						h5 {
-							display: block;
-							margin: 0;
-							color: #ccc;
-						}
-				}
-				.score {
-					margin-right: 10px;
-				}
-		}
-		.home-team {
-			display: flex;
-			width: 50%;
-			justify-content: flex-start;
-				.team-details {
-					margin-left: 10px;
-				}
-				.logo {
-					text-align: left;
-						img {
-							justify-content: flex-start;
-						}
-				}
-				.school-name {
-					text-align: left;
-						h4 {
-							display: block;
-							margin-bottom: 3px;
-						}
-						h5 {
-							display: block;
-							margin: 0;
-							color: #ccc;
-						}
-				}
-				.score {
-					margin-left: 10px;
-				}
-
-		}
-		.team-details {
-			display: flex;
-			flex-direction: column;
-		}
-		.logo {
-			order: -1;
-			display: block;
-				img {
-					width: 35px;
-					height: 35px;
-					justify-content: flex-end;
-				}
-		}
-		.school-name {
-				h4 {
-					display: block;
-					margin-bottom: 3px;
-				}
-				h5 {
-					display: block;
-					marign-bottom: 0;
-				}
-		}
-		.score {
-			padding: 5px 10px;
-			text-align: center;
-			font-size: 2em;
-			font-weight: bold;
-			border: 1px solid #ddd;
-			float: right;
-			margin: 0;
-			align-self: center;
-			background: #fff;
-		}
-		.game-status {
-			margin: 10px;
-			text-align: center;
-			font-size: .8em;
-			font-weight: bold;
-			margin-bottom: 0;
-		}
-		.game-live {
-			color: $red;
-		}
-		.game-time {
-			text-align: center;
-			font-weight: bold;
-			color: black;
-			font-size: .8em;
-		}
-		.text-content {
-			margin-top: 20px;
-		}
-}
-
-
-
-@media screen and (min-width: 768px) {
-	.hero-unit {
-		display: flex;
-		flex-direction: row;
-		padding: 50px 0 20px 0;
-			.featured-post {
-				flex: 3;
-				margin-right: 50px;
-				margin-bottom: 0;
-			}
-			.team-details {
-				flex-direction: row;
-				align-self: center;
-			}
-			.away-team {
-				.logo {
-					order: 1;
-					margin-left: 10px;
-				}
-			}
-			.home-team {
-				.logo {
-					margin-right: 10px;
-				}
-			}
-			.score {
-				min-width: 50px;
-			}
-	}
-
-	.hero-unit-lite-padding {
-		padding: 20px 0 20px 0;
-	}
 
 }
+
+
+
+
 
 // 		.game-status {
 // 			font-weight: bold;
@@ -1002,150 +712,11 @@ article {
 
 
 
-.todays-events {
-	display: flex;
-	flex: 1;
-	// background: #fafafa;
-	border-radius: 4px;
-	padding: 0px;
-	flex-direction: row;
-	width: 100%;
-	font-size: .7em;
-	background: #f6f6f6;
-	padding: 10px;
-		.events-inner {
-			width: 100%;
-		}
-	    h4 {
-	    	width: 100%;
-	    	margin: 0 0 10px 0;
-	    	text-align: center;
-	    }
-	    p {
-	    	font-size: .8em;
-	    	padding: 0 1em;
-	    	border-bottom: 1px solid #eeeeee;
-	    	padding-bottom: 20px;
-	    	margin-bottom: 20px;
-	    		&:last-child {
-	    			border: none;
-	    		}
-	    }
-	    ul {
-	    	display: flex;
-	    	justify-content: space-between;
-	    	flex-wrap: wrap;
-	    	width: 100%;
-	    	padding: 0;
-	    	margin: 0;
-	    	list-style-type: none;
-	    		li {
-	    			width: 48%;
-	    			margin-bottom: 5px;
-	    			padding-bottom: 5px;
-	    		}
-	    }
-	    .sport-name {
-	    	background: #ddd;
-	   		display: block;
-	   		padding: 3px;
-	   		font-size: 1em;
-	    }
-	    .score {
-	    	float: right;
-	    }
-	    .team {
-	    	padding: 2px 0;
-	    }
-	    .team-logo img {
-	    	height: 20px;
-	    	width: 20px;
-	   		margin-right: 5px;
-	    }
-	    .live {
-	    	color: $red;
-	    }
-	    .game-status {
-	    	border-top: 1px solid #ddd;
-	    	text-align: right;
-	    	padding-top: 2px;
-	    }
-	    .tournament-title {
-	    	padding: 3px 0;
-	    }
-}
 
 
 
 
 
-@media screen and (min-width: 768px) {
-	.todays-events {
-		flex: 1;
-			ul {
-		    	display: flex;
-		    		li {
-		    			width: 100%;
-		    			margin-bottom: 5px;
-		    			padding-bottom: 5px;
-		    		}
-		    }
-	}
-
-}
-
-
-
-//  8. Home Page Queried Posts
-
-.recent-posts {
-	background: #f5f5f5;
-}
-
-.posts {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	margin: 20px 0;
-}
-
-.hp-post {
-	width: 48%;
-	font-size: .8em;
-	padding: 10px;
-	border-radius: 4px;
-	margin-bottom: 20px;
-	background: #ffffff;
-		h4 a {
-			text-decoration: none;
-			border-bottom: none;
-		}
-		&:active {
-			background: #eeeeee;
-		}
-		span {
-			color: #666;
-		}
-}
-
-
-
-@media screen and (min-width: 768px) {
-	.hp-post {
-		width: 23%;
-		font-size: .8em;
-		padding: 10px;
-		border-radius: 4px;
-		margin-bottom: 20px;
-			h4 a {
-				text-decoration: none;
-				border-bottom: none;
-			}
-			span {
-				color: #666;
-			}
-	}
-}
 
 
 
@@ -1570,6 +1141,809 @@ a.parent-link {
 			}
 	}
 }
+
+
+
+
+
+
+
+//  15.  Home Page Styles
+
+
+
+
+.hp-container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 601px) and (max-width: 999px) {
+  
+  .hp-container {
+    width: 75%;
+    margin: 0 auto;
+  }
+  
+}
+
+@media screen and (min-width: 1300px) {
+  
+  .hp-container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  
+  
+}
+
+
+
+
+
+.todays-events {
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+.todays-events ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.todays-events ul {
+  overflow-y: scroll;
+  align-items: stretch;
+}
+
+.todays-events ul li {
+  list-style: none;
+  display: flex;
+  border-left: 1px solid #ddd;
+  min-height: 75px;
+}
+
+.todays-events ul li a {
+  width: 250px;
+  max-width: 250px;
+  height: 100%;
+  flex-direction: column;
+  text-decoration: none;
+  font-size: .725em;
+  color: #000;
+  border-bottom: none;
+  	&:hover {
+  		color: rgba(0,0,0,.45);
+  	}
+}
+
+.todays-events ul li:first-child {
+  border: none;
+}
+
+.todays-events ul li.date {
+  display: flex;
+  min-width: 160px;
+  padding: 0px 20px;
+  font-size: .8em;
+  font-weight: bold;
+  border-left: 1px solid #ddd;
+  background: #f8f8f8;
+  text-align: center;
+}
+
+.todays-events ul li.no-events {
+  display: flex;
+  min-width: 160px;
+  padding: 0px 20px;
+  font-size: .8em;
+  font-weight: bold;
+  border-left: 1px solid #ddd;
+  text-align: center;
+  align-self: center;
+
+  	.tagline {
+	  align-self: center;
+	  text-transform: uppercase;
+	}
+
+}
+
+.todays-events ul li.date .tagline {
+  align-self: center;
+  text-transform: uppercase;
+}
+
+.todays-events ul li:last-child a {
+  border-right: 1px solid #ddd;
+}
+
+.todays-events ul li a .category {
+  color: #666;
+  background: #f8f8f8;
+  display: flex;
+  flex-direction: row;
+  padding: 6px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight:  bold;
+  text-decoration: none;
+}
+
+.todays-events ul li a .category .cat-name {
+  flex: 1;
+}
+
+.todays-events ul li a .category .time {
+  flex: 1;
+  text-align: right;
+}
+
+.todays-events .live {
+	color: red;
+}
+
+.away-team, .home-team, .todays-events ul li .host-school, .todays-events ul li .tournament-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-transform: uppercase;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.away-team {
+  margin-top: 5px;
+  margin-bottom: 3px;
+}
+
+.home-team {
+  margin-bottom: 5px;
+  margin-top: 2px;
+}
+
+.todays-events ul li .logo, .todays-events ul li .host-school {
+  height: 22px;
+  width: 22px;
+  background: #fff;
+  margin-right: 5px;
+}
+
+.todays-events ul li .host-school, .todays-events ul li .tournament-title {
+  height: 28px;
+}
+
+.todays-events ul li .logo img, .todays-events ul li .host-school img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.todays-events ul li .score {
+  justify-content: flex-end;
+  text-align: right;
+  flex: 1;
+}
+
+.todays-events ul li .record {
+  color: #999;
+}
+
+.todays-events ul li .time {
+  font-weight: bold;
+}
+
+.cross-country-title {
+  overflow: hidden;
+}
+
+.team-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+}
+
+
+
+
+
+
+
+
+.news {
+  margin-top: 40px;
+}
+
+.main-stories {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  	a {
+  		border-bottom: none;
+  	}
+}
+
+.featured-post {
+  margin-left: -2.5%;
+  margin-right: -2.5%;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+
+
+.featured-image img {
+   max-width: 100%;
+   position: relative;
+   background-size: cover;
+}
+
+.featured-post-content {
+  padding: 15px;
+
+  	h3 {
+  		margin-bottom: 10px;
+  	}
+
+  	a {
+  		border-bottom: none;
+  			&:hover {
+  				color: $primary-color;
+  			}
+  	}
+
+  	p {
+  		color: #666;
+  		margin-bottom: 0px;
+  		line-height: 1.5;
+  	}
+
+  	.post-categories {
+  		padding: 0;
+  		margin: 0 0 10px 0;
+  			li {
+  				list-style: none;
+				display: inline-block;
+				line-height: 1;
+				padding: 0;
+
+					a {
+						color: black;
+						display: block;
+						padding: 8px;
+						border-radius: 4px;
+						background: $primary-color;
+						text-transform: uppercase;
+						font-weight: 600;
+						margin-right: 5px;
+						line-height: 1;
+						border-bottom: none;
+					}
+  			}
+  	}
+}
+
+.scoreboard {
+	margin: -15px -15px 10px -15px;
+	padding: 10px;
+  	border-bottom: 1px solid #ddd;
+}
+
+.scoreboard .tournament-title {
+  background: #f8f8f8;
+  font-size: .75em;
+  text-transform: uppercase;
+  padding: 5px;
+  text-align: center;
+}
+
+.recent-news-story {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  	small {
+  		font-size: 85%;
+  		display: block;
+  		margin-bottom: 8px;
+  		font-weight: 400;
+  		text-transform: capitalize;
+  		font-family: "Titillium Web","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+  	}
+}
+
+.recent-news-story-image {
+  flex: 1;
+  margin-right: 15px;
+}
+
+.recent-news-story-image img {
+  height: auto;
+  min-width: 100%;
+  margin-bottom: 0;
+  border-radius: 4px;
+}
+
+.recent-news-story h4 {
+  margin: 0;
+  flex: 1;
+}
+
+.recent-news-story a {
+  text-decoration: none;
+  color: #000;
+  	&:hover {
+  		color: $primary-color;
+  	}
+}
+
+.recent-news-story .post-categories {
+	padding: 0;
+	margin: 0 0 10px 0;
+}
+
+.recent-news-story .post-categories li {
+  list-style: none;
+  display: inline-block;
+  line-height: 1;
+  padding: 0;
+}
+
+.recent-news-story .post-categories li a {
+  color: black;
+  display: block;
+  padding: 4px;
+  background: $primary-color;
+  font-size: .65em;
+  font-weight: 600;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  line-height: 1;
+  border-bottom: none;
+  border-radius: 2px;
+}
+
+@media screen and (min-width: 601px) {
+  
+  .featured-post {
+    margin-left: 0;
+    margin-right: 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .featured-image img {
+  	border-radius: 4px 4px 0 0;
+  	min-width: 100%;
+    position: relative;
+    background-size: cover;
+    display: block;
+    height:auto;
+    overflow: hidden;
+  }
+
+  // .recent-news-story-image {
+  // 	margin-right: 0px;
+  // 	height: 100px;
+  // 	width: 100%;
+  //   overflow: hidden;
+  //   padding:0px;
+  // 		img {
+  // 			max-width: 100%;
+  //   		background-position: 50% 50%;
+  //   		background-repeat: no-repeat;
+  //   		background-size: cover;
+  //   		overflow: hidden;
+  //   		vertical-align: baseline;
+  // 		}
+  // }
+
+
+  
+}
+
+@media screen and (min-width: 601px) and (max-width: 999px) {
+  
+  .hp-container {
+    width: 75%;
+    margin: 0 auto;
+  }
+  
+}
+
+@media screen and (min-width: 1300px) {
+  
+  .hp-container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  
+  
+}
+
+@media screen and (min-width: 768px) {
+  
+  .stories {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .recent-news-story {
+    width: 30%;
+  }
+
+  .recent-news-story {
+    padding: 0;
+    display: block;
+  }
+
+  .recent-news-story a {
+    border-bottom: none;
+  }
+
+  .recent-news-story-image {
+  	margin-right: 0;
+  	border-radius: 4px 4px 0 0;
+  		img {
+  			border-radius: 4px 4px 0 0;
+  		}
+  }
+  
+  .recent-news-story .category {
+    display: block;
+    margin-bottom: 4px;
+    font-size: .6em;
+  }
+  
+  .recent-news-story h4 {
+    padding: 10px;
+    font-size: 1em;
+  }
+
+
+
+
+  .featured-image {
+  	max-height: 300px;
+  	overflow: hidden;
+  }
+
+  
+}
+
+
+
+
+
+/*------------------------------------------------------------------
+[4. More Stories ]
+*/
+
+.more-stories {
+  padding: 0;
+  margin: 0;
+
+  	a {
+  		border-bottom: none;
+  	}
+
+}
+
+.more-stories li {
+  list-style: none;
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 30px;
+  	&:last-child {
+  		border-bottom: none;
+  	}
+}
+
+.more-stories .category {
+  min-height: 40px;
+  min-width: 40px;
+  /* background: #eee; */
+  margin-right: 20px;
+}
+
+.more-stories img {
+  height: 40px;
+  width: auto;
+}
+
+.more-stories .box {
+  height: 40px;
+  width: 40px;
+  background: #ffcc00;
+  display: flex;
+}
+
+.more-stories .box .abr {
+  margin: auto;
+  font-weight: bold;
+}
+
+.more-stories .content {
+  flex-direction: column;
+}
+
+.more-stories small {
+ display: block;
+ margin-bottom: 5px;
+ color: #666;
+}
+
+.more-stories a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  	&:hover {
+  		color: $primary-color;
+  	}
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  
+  .more-stories {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .more-stories li {
+    width: 48%;
+    margin-bottom: 20px;
+
+    	&:nth-last-child(2) {
+    		border-bottom: none;
+    	}
+
+  }
+  
+}
+
+@media screen and (min-width: 1000px) {
+  
+  .news {
+    display: flex;
+  }
+  
+  .main-stories {
+    flex: 4;
+    margin-right: 20px;
+    padding-right: 20px;
+    /* border-right: 1px solid #ddd; */
+    margin-bottom: 80px;
+  }
+  
+  .more-stories {
+    flex: 2;
+  }
+
+  .more-stories li {
+    margin-bottom: 20px;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.social-media-section {
+  padding: 40px 0;
+  border-top: 1px solid #ddd;
+  margin: 0;
+
+  	h3 {
+  		font-size: 1.15em;
+  	}
+}
+
+
+
+
+.instagram-feed {
+  margin-bottom: 20px;
+}
+
+.instagram-feed h1 {
+  display: block;
+}
+
+.normal-font {
+  font-weight: normal;
+}
+
+.instagram-feed ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.instagram-feed ul li {
+  width: 48%;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  list-style: none;
+}
+
+.instagram-feed ul li img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+
+
+.lower-social-media-section i, .instagram-feed i {
+  padding-right: 6px;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  
+  .instagram-feed ul {
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .instagram-feed ul li {
+    width: 22%;
+    background: #f5f5f5;
+  }
+  
+}
+
+
+
+.twitter-feed ul {
+  padding: 20px;
+  margin: 0 0 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.twitter-feed ul li {
+  list-style: none;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.twitter-feed ul li:last-child {
+  padding-bottom: 0;
+  margin: 0;
+  border-bottom: none;
+}
+
+.twitter-feed ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.facebook-feed ul {
+  padding: 20px;
+  margin: 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.facebook-feed ul li {
+  list-style: none;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.facebook-feed ul li:last-child {
+  padding-bottom: 0;
+  margin: 0;
+  border-bottom: none;
+}
+
+.facebook-feed ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.facebook-feed, .twitter-feed {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  
+  .lower-social-media-section {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .section {
+    width: 48%;
+  }
+  
+  .facebook-feed, .twitter-feed {
+    max-height: 300px;
+    overflow-y:auto;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 4px;
+  }
+  
+  .facebook-feed ul, .twitter-feed ul {
+    padding: 0px;
+    margin: 0;
+    border: none;
+  }
+
+}
+
+
+
+
+
+
+
+.hp-blocks {
+	display: flex;
+	flex-direction: column;
+
+		.block {
+			margin-bottom: 20px;
+		}
+
+}
+
+@media screen and (min-width: 768px) {
+	.hp-blocks {
+		flex-direction: row;
+		justify-content: space-between;
+
+			.block {
+				width: 28%;
+				margin-bottom: 0;
+			}
+
+	}
+
+}
+
+
+
+
 
 
 

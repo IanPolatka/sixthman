@@ -1,4 +1,4 @@
-<ul>
+
 
 <?php
 
@@ -39,6 +39,16 @@ $gg_request 	= wp_safe_remote_get( 'https://6thmansports.com/api/golf-girls/toda
 $gg_body 		= wp_remote_retrieve_body( $gg_request );
 $gg_data 		= json_decode( $gg_body );
 
+//  Check Boys Basketball
+$bball_request 	= wp_safe_remote_get( 'http://6thmansports.com/api/boys-basketball/todays-events/' . $team_name);
+$bball_body 	= wp_remote_retrieve_body( $bball_request );
+$bball_data 	= json_decode( $bball_body );
+
+//  Check Girls Basketball
+$gball_request 	= wp_safe_remote_get( 'http://6thmansports.com/api/girls-basketball/todays-events/' . $team_name);
+$gball_body 	= wp_remote_retrieve_body( $gball_request );
+$gball_data 	= json_decode( $gball_body );
+
 if ( 
 	empty($fball_data) &&
 	empty($bsocc_data) &&
@@ -46,10 +56,12 @@ if (
 	empty($vball_data) &&
 	empty($cc_data) &&
 	empty($bg_data) &&
-	empty($gg_data)
+	empty($gg_data) &&
+	empty($bball_data) &&
+	empty($gball_data)
    ) {
 
-	echo 'No Events Today';
+	echo '<li class="no-events"><span class="tagline">No Events Scheduled</span></li>';
 }
 
 ?>
@@ -78,6 +90,11 @@ get_template_part( 'todays-events/sports/boys-golf');
 //  Girls Golf
 get_template_part( 'todays-events/sports/girls-golf');
 
+//  Boys Basketball
+get_template_part( 'todays-events/sports/boys-basketball'); 
+
+//  Boys Basketball
+get_template_part( 'todays-events/sports/girls-basketball'); 
+
 ?>
 
-<ul>
