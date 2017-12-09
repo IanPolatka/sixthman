@@ -25,22 +25,22 @@ $body = wp_remote_retrieve_body( $request );
 $data = json_decode( $body );
 if( ! empty( $data ) ) { ?>
 
-	<ul class="record-summary">
+	<ul class="schedule-summary">
 		<li>
-			<small>Overall Record</small>
-			<h3><?php echo $data[0]->Wins; ?> - <?php echo $data[0]->Losses; ?></h3>
+			<div class="item">Overall Record</div>
+			<?php echo $data[0]->Wins; ?>-<?php echo $data[0]->Losses; ?>
 		</li>
 		<li>
-			<small>District Record</small>
-			<h3><?php echo $data[0]->DistrictWins; ?> - <?php echo $data[0]->DistrictLoses; ?></h3>
+			<div class="item">District Record</div>
+			<?php echo $data[0]->DistrictWins; ?>-<?php echo $data[0]->DistrictLoses; ?>
 		</li>
 		<li>
-			<small>Points For</small>
-			<h3><?php echo $data[0]->F; ?></h3>
+			<div class="item">Points For</div>
+			<?php echo $data[0]->F; ?>
 		</li>
 		<li>
-			<small>Points Against</small>
-			<h3><?php echo $data[0]->A; ?></h3>
+			<div class="item">Points Against</div>
+			<?php echo $data[0]->A; ?>
 		</li>
 	</ul>
 
@@ -71,9 +71,13 @@ if( ! empty( $data ) ) { ?>
 				echo '<tr>';
 					echo '<td class="logo-cell">';
 					if (strtolower($item->away_team) == strtolower($team_name)) :
-						echo '<img src="https://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
+						if ($item->home_team_logo) :
+							echo '<img src="https://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
+						endif;
 					else :
-						echo '<img src="https://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
+						if ($item->away_team_logo) :
+							echo '<img src="https://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
+						endif;
 					endif;
 					echo '</td>';
 					echo '<td>';
@@ -168,9 +172,13 @@ if( ! empty( $data ) ) { ?>
 				echo '<tr>';
 					echo '<td class="logo-cell">';
 					if (strtolower($item->away_team) == strtolower($team_name)) :
-						echo '<img src="https://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
+						if ($item->home_team_logo) :
+							echo '<img src="https://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
+						endif;
 					else :
-						echo '<img src="https://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
+						if ($item->away_team_logo) :
+							echo '<img src="https://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
+						endif;
 					endif;
 					echo '</td>';
 					echo '<td>';
@@ -261,9 +269,13 @@ if( ! empty( $data ) ) { ?>
 				echo '<tr>';
 					echo '<td class="logo-cell">';
 					if (strtolower($item->away_team) == strtolower($team_name)) :
-						echo '<img src="https://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
+						if ($item->home_team_logo) :
+							echo '<img src="https://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
+						endif;
 					else :
-						echo '<img src="https://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
+						if ($item->away_team_logo) :
+							echo '<img src="https://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
+						endif;
 					endif;
 					echo '</td>';
 					echo '<td>';
