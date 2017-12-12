@@ -17,72 +17,75 @@ $body = wp_remote_retrieve_body( $request );
 $data = json_decode( $body );
 if( ! empty( $data ) ) { ?>
 
-	<h4>Varsity Schedule</h4>
+	<h4 class="schedule-title"><?php echo $school_year; ?> Varsity Schedule</h4>
 
 	<table class="schedule-table">
-
 		<tbody>
-		
-		<?php
-		foreach( $data as $item ) { ?>
 
-			<tr>
-				<td class="schedule-date">
-					<?php
-					$source = $item->date;
-					$date = new DateTime($source);
-					?>
-					<div><?php echo $date->format('l'); ?></div>
-					<div><?php echo $date->format('M j, Y'); ?></div>
-				</td>
-				<td class="opponent">
-					<?php if ($item->tournament_title) { ?>
-						<div class="text-muted"><small><?php echo $item->tournament_title; ?></small></div>
-					<?php } ?>
-					<strong>
-						<?php 
-						if (strtolower($item->home_team) == strtolower($team_name)) { ?>
-							vs 
-							<?php 
-							if ($item->away_team_logo) { ?>
-								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>" alt="<?php echo $item->away_team ?>" title="<?php echo $item->away_team ?>">
-							<?php } else {
-								echo '&nbsp;&nbsp;&nbsp;&nbsp;';
-							} ?>
-							<?php echo $item->away_team ?>
-						<?php } else { ?>
-							@ 
-							<?php 
-							if ($item->home_team_logo) { ?>
-								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>" alt="<?php echo $item->home_team ?>" title="<?php echo $item->home_team ?>">
-							<?php } else {
-								echo '&nbsp;&nbsp;&nbsp;&nbsp;';
-							} ?>
-							<?php echo $item->home_team ?>
-						<?php } ?>
-					</strong>
-				</td>
-				<td>
-					<?php if (strtolower($item->winning_team) == strtolower($team_name)) { ?>
-						<span class="winning-text">W</span>
-						<?php if ($item->match_score) {
-							echo $item->match_score;
-						} ?>
-					<?php } elseif (strtolower($item->losing_team) == strtolower($team_name)) { ?>
-						<span class="losing-text">L</span>
-						<?php if ($item->match_score) {
-							echo $item->match_score;
-						} ?>
-					<?php } else { ?>
-						<?php echo $item->time; ?>
-					<?php } ?>
-				</td>
-			</tr>
+			<?php
+			foreach( $data as $item ) {
 
-		<?php } ?>
+				echo '<tr>';
+					echo '<td class="logo-cell">';
+					if (strtolower($item->away_team) == strtolower($team_name)) :
+						if ($item->home_team_logo) :
+							echo '<img src="https://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
+						endif;
+					else :
+						if ($item->away_team_logo) :
+							echo '<img src="https://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
+						endif;
+					endif;
+					echo '</td>';
+					echo '<td>';
+						echo '<div class="the-game-details">';
+							if ($item->tournament_title) :
+								echo '<div class="tourney">';
+
+									echo '<span class="tournament-title">';
+									echo $item->tournament_title;
+									echo '</span>';
+
+								echo '</div>';
+							endif;
+							echo '<div>';
+								if (strtolower($item->away_team) == strtolower($team_name)) :
+									echo 'at ' . '<strong>' . $item->home_team . '</strong>';
+								else :
+									echo 'vs ' . '<strong>' . $item->away_team . '</strong>';
+								endif;
+							echo '</div>';
+							echo '<div>';
+								$source = $item->date;
+								$date = new DateTime($source);
+								echo $date->format('l') . '  ' . $date->format('M j, Y'); // 31.07.2012
+							echo '</div>';
+							echo '<div>';
+								echo $item->time;
+							echo '</div>';
+						echo '</div>';
+					echo '</td>';
+					echo '<td>';
+						echo '<div class="event-results">';
+						if (strtolower($item->winning_team) == strtolower($team_name)) { ?>
+							<span class="winning-text">W</span>
+							<?php if ($item->match_score) {
+								echo $item->match_score;
+							} ?>
+						<?php } elseif (strtolower($item->losing_team) == strtolower($team_name)) { ?>
+							<span class="losing-text">L</span>
+							<?php if ($item->match_score) {
+								echo $item->match_score;
+							} ?>
+						<?php }
+						echo '</div>';
+					echo '</td>';
+				echo '</tr>';
+			
+			}
+			?>
 
 		</tbody>
-			
 	</table>
 
 <?php } ?>
@@ -101,72 +104,75 @@ $body = wp_remote_retrieve_body( $request );
 $data = json_decode( $body );
 if( ! empty( $data ) ) { ?>
 
-	<h4>Junior Varsity Schedule</h4>
+	<h4 class="schedule-title"><?php echo $school_year; ?> Junior Varsity Schedule</h4>
 
 	<table class="schedule-table">
-
 		<tbody>
-		
-		<?php
-		foreach( $data as $item ) { ?>
 
-			<tr>
-				<td class="schedule-date">
-					<?php
-					$source = $item->date;
-					$date = new DateTime($source);
-					?>
-					<div><?php echo $date->format('l'); ?></div>
-					<div><?php echo $date->format('M j, Y'); ?></div>
-				</td>
-				<td class="opponent">
-					<?php if ($item->tournament_title) { ?>
-						<div class="text-muted"><small><?php echo $item->tournament_title; ?></small></div>
-					<?php } ?>
-					<strong>
-						<?php 
-						if (strtolower($item->home_team) == strtolower($team_name)) { ?>
-							vs 
-							<?php 
-							if ($item->away_team_logo) { ?>
-								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>" alt="<?php echo $item->away_team ?>" title="<?php echo $item->away_team ?>">
-							<?php } else {
-								echo '&nbsp;&nbsp;&nbsp;&nbsp;';
-							} ?>
-							<?php echo $item->away_team ?>
-						<?php } else { ?>
-							@ 
-							<?php 
-							if ($item->home_team_logo) { ?>
-								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>" alt="<?php echo $item->home_team ?>" title="<?php echo $item->home_team ?>">
-							<?php } else {
-								echo '&nbsp;&nbsp;&nbsp;&nbsp;';
-							} ?>
-							<?php echo $item->home_team ?>
-						<?php } ?>
-					</strong>
-				</td>
-				<td>
-					<?php if (strtolower($item->winning_team) == strtolower($team_name)) { ?>
-						<span class="winning-text">W</span>
-						<?php if ($item->match_score) {
-							echo $item->match_score;
-						} ?>
-					<?php } elseif (strtolower($item->losing_team) == strtolower($team_name)) { ?>
-						<span class="losing-text">L</span>
-						<?php if ($item->match_score) {
-							echo $item->match_score;
-						} ?>
-					<?php } else { ?>
-						<?php echo $item->time; ?>
-					<?php } ?>
-				</td>
-			</tr>
+			<?php
+			foreach( $data as $item ) {
 
-		<?php } ?>
+				echo '<tr>';
+					echo '<td class="logo-cell">';
+					if (strtolower($item->away_team) == strtolower($team_name)) :
+						if ($item->home_team_logo) :
+							echo '<img src="https://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
+						endif;
+					else :
+						if ($item->away_team_logo) :
+							echo '<img src="https://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
+						endif;
+					endif;
+					echo '</td>';
+					echo '<td>';
+						echo '<div class="the-game-details">';
+							if ($item->tournament_title) :
+								echo '<div class="tourney">';
+
+									echo '<span class="tournament-title">';
+									echo $item->tournament_title;
+									echo '</span>';
+
+								echo '</div>';
+							endif;
+							echo '<div>';
+								if (strtolower($item->away_team) == strtolower($team_name)) :
+									echo 'at ' . '<strong>' . $item->home_team . '</strong>';
+								else :
+									echo 'vs ' . '<strong>' . $item->away_team . '</strong>';
+								endif;
+							echo '</div>';
+							echo '<div>';
+								$source = $item->date;
+								$date = new DateTime($source);
+								echo $date->format('l') . '  ' . $date->format('M j, Y'); // 31.07.2012
+							echo '</div>';
+							echo '<div>';
+								echo $item->time;
+							echo '</div>';
+						echo '</div>';
+					echo '</td>';
+					echo '<td>';
+						echo '<div class="event-results">';
+						if (strtolower($item->winning_team) == strtolower($team_name)) { ?>
+							<span class="winning-text">W</span>
+							<?php if ($item->match_score) {
+								echo $item->match_score;
+							} ?>
+						<?php } elseif (strtolower($item->losing_team) == strtolower($team_name)) { ?>
+							<span class="losing-text">L</span>
+							<?php if ($item->match_score) {
+								echo $item->match_score;
+							} ?>
+						<?php }
+						echo '</div>';
+					echo '</td>';
+				echo '</tr>';
+			
+			}
+			?>
 
 		</tbody>
-			
 	</table>
 
 <?php } ?>
@@ -185,66 +191,75 @@ $body = wp_remote_retrieve_body( $request );
 $data = json_decode( $body );
 if( ! empty( $data ) ) { ?>
 
-	<h4>Freshman Schedule</h4>
+	<h4 class="schedule-title"><?php echo $school_year; ?> Freshman Schedule</h4>
 
 	<table class="schedule-table">
-
 		<tbody>
-		
-		<?php
-		foreach( $data as $item ) { ?>
 
-			<tr>
-				<td class="schedule-date">
-					<?php
-					$source = $item->date;
-					$date = new DateTime($source);
-					?>
-					<div><?php echo $date->format('l'); ?></div>
-					<div><?php echo $date->format('M j, Y'); ?></div>
-				</td>
-				<td class="opponent">
-					<?php if ($item->tournament_title) { ?>
-						<div class="text-muted"><small><?php echo $item->tournament_title; ?></small></div>
-					<?php } ?>
-					<strong>
-						<?php 
-						if (strtolower($item->home_team) == strtolower($team_name)) { ?>
-							vs 
-							<?php if ($item->away_team_logo) { ?>
-								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->away_team_logo; ?>" alt="<?php echo $item->away_team ?>" title="<?php echo $item->away_team ?>">
-							<?php } ?>
-							<?php echo $item->away_team ?>
-						<?php } else { ?>
-							@
-							<?php if ($item->home_team_logo) { ?>
-								<img src="https://6thmansports.com/images/team-logos/<?php echo $item->home_team_logo; ?>" alt="<?php echo $item->home_team ?>" title="<?php echo $item->home_team ?>">
-							<?php } ?>
-							<?php echo $item->home_team ?>
-						<?php } ?>
-					</strong>
-				</td>
-				<td>
-					<?php if (strtolower($item->winning_team) == strtolower($team_name)) { ?>
-						<span class="winning-text">W</span>
-						<?php if ($item->match_score) {
-							echo $item->match_score;
-						} ?>
-					<?php } elseif (strtolower($item->losing_team) == strtolower($team_name)) { ?>
-						<span class="losing-text">L</span>
-						<?php if ($item->match_score) {
-							echo $item->match_score;
-						} ?>
-					<?php } else { ?>
-						<?php echo $item->time; ?>
-					<?php } ?>
-				</td>
-			</tr>
+			<?php
+			foreach( $data as $item ) {
 
-		<?php } ?>
+				echo '<tr>';
+					echo '<td class="logo-cell">';
+					if (strtolower($item->away_team) == strtolower($team_name)) :
+						if ($item->home_team_logo) :
+							echo '<img src="https://6thmansports.com/images/team-logos/' . $item->home_team_logo . '">';
+						endif;
+					else :
+						if ($item->away_team_logo) :
+							echo '<img src="https://6thmansports.com/images/team-logos/' . $item->away_team_logo . '">';
+						endif;
+					endif;
+					echo '</td>';
+					echo '<td>';
+						echo '<div class="the-game-details">';
+							if ($item->tournament_title) :
+								echo '<div class="tourney">';
+
+									echo '<span class="tournament-title">';
+									echo $item->tournament_title;
+									echo '</span>';
+
+								echo '</div>';
+							endif;
+							echo '<div>';
+								if (strtolower($item->away_team) == strtolower($team_name)) :
+									echo 'at ' . '<strong>' . $item->home_team . '</strong>';
+								else :
+									echo 'vs ' . '<strong>' . $item->away_team . '</strong>';
+								endif;
+							echo '</div>';
+							echo '<div>';
+								$source = $item->date;
+								$date = new DateTime($source);
+								echo $date->format('l') . '  ' . $date->format('M j, Y'); // 31.07.2012
+							echo '</div>';
+							echo '<div>';
+								echo $item->time;
+							echo '</div>';
+						echo '</div>';
+					echo '</td>';
+					echo '<td>';
+						echo '<div class="event-results">';
+						if (strtolower($item->winning_team) == strtolower($team_name)) { ?>
+							<span class="winning-text">W</span>
+							<?php if ($item->match_score) {
+								echo $item->match_score;
+							} ?>
+						<?php } elseif (strtolower($item->losing_team) == strtolower($team_name)) { ?>
+							<span class="losing-text">L</span>
+							<?php if ($item->match_score) {
+								echo $item->match_score;
+							} ?>
+						<?php }
+						echo '</div>';
+					echo '</td>';
+				echo '</tr>';
+			
+			}
+			?>
 
 		</tbody>
-			
 	</table>
 
 <?php } ?>
