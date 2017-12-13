@@ -57,7 +57,7 @@ if( ! empty( $data ) ) { ?>
 	          		<strong>
 	          	<?php } ?>
 	          	<?php echo $item->away_team; ?>
-	          	<?php if ($item->home_team_final_score > $item->away_team_final_score) { ?>
+	          	<?php if ($item->away_team_final_score > $item->home_team_final_score) { ?>
 	          		</strong>
 	          	<?php } ?>
 	          </div>
