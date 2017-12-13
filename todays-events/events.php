@@ -49,6 +49,16 @@ $gball_request 	= wp_safe_remote_get( 'http://6thmansports.com/api/girls-basketb
 $gball_body 	= wp_remote_retrieve_body( $gball_request );
 $gball_data 	= json_decode( $gball_body );
 
+//  Check Swimming
+$swim_request 	= wp_safe_remote_get( 'https://6thmansports.com/api/swimming/todays-events/' . $team_name);
+$swim_body 	= wp_remote_retrieve_body( $swim_request );
+$swim_data 	= json_decode( $swim_body );
+
+//  Check Wrestling
+$wrestle_request 	= wp_safe_remote_get( 'https://6thmansports.com/api/swimming/todays-events/' . $team_name);
+$wrestle_body 	= wp_remote_retrieve_body( $wrestle_request );
+$wrestle_data 	= json_decode( $wrestle_body );
+
 if ( 
 	empty($fball_data) &&
 	empty($bsocc_data) &&
@@ -58,7 +68,9 @@ if (
 	empty($bg_data) &&
 	empty($gg_data) &&
 	empty($bball_data) &&
-	empty($gball_data)
+	empty($gball_data) &&
+	empty($swim_data) &&
+	empty($wrestling)
    ) {
 
 	echo '<li class="no-events"><span class="tagline">No Events Scheduled</span></li>';
@@ -93,8 +105,14 @@ get_template_part( 'todays-events/sports/girls-golf');
 //  Boys Basketball
 get_template_part( 'todays-events/sports/boys-basketball'); 
 
-//  Boys Basketball
+//  Girls Basketball
 get_template_part( 'todays-events/sports/girls-basketball'); 
+
+//  Swimming
+get_template_part( 'todays-events/sports/swimming-and-diving');
+
+//  Wrestling
+get_template_part( 'todays-events/sports/wrestling');  
 
 ?>
 
