@@ -55,12 +55,12 @@ $swim_body 	= wp_remote_retrieve_body( $swim_request );
 $swim_data 	= json_decode( $swim_body );
 
 //  Check Boys Bowling
-$bbowl_request 	= wp_safe_remote_get( 'https://6thmansports.com/api/boys-bowling/todays-events/ryle');
+$bbowl_request 	= wp_safe_remote_get( 'https://6thmansports.com/api/boys-bowling/todays-events/' . $team_name);
 $bbowl_body 	= wp_remote_retrieve_body( $bbowl_request );
 $bbowl_data 	= json_decode( $bbowl_body );
 
 //  Check Girls Bowling
-$gbowl_request 	= wp_safe_remote_get( 'https://6thmansports.com/api/girls-bowling/todays-events/ryle');
+$gbowl_request 	= wp_safe_remote_get( 'https://6thmansports.com/api/girls-bowling/todays-events/' . $team_name);
 $gbowl_body 	= wp_remote_retrieve_body( $gbowl_request );
 $gbowl_data 	= json_decode( $gbowl_body );
 

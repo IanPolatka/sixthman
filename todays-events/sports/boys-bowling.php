@@ -2,7 +2,7 @@
 
 $team_name	 	= strtolower(get_field('school_name', 'option'));
 
-$request 		= wp_safe_remote_get( 'http://6thmansports.com/api/boys-bowling/todays-events/ryle');
+$request 		= wp_safe_remote_get( 'http://6thmansports.com/api/boys-bowling/todays-events/' . $team_name);
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }
