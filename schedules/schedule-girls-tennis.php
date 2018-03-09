@@ -7,7 +7,7 @@ $team_name	 	= strtolower(get_field('school_name', 'option'));
 
 //  Show Varsity Schedule
 
-$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/tennis-boys/schedule/' . $school_year . '/' . $team_name . '/1');
+$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/tennis-girls/schedule/' . $school_year . '/' . $team_name . '/1');
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }
@@ -92,7 +92,7 @@ if( ! empty( $data ) ) { ?>
 <?php
 //  Show Junior Varsity Schedule
 
-$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/tennis-boys/schedule/' . $school_year . '/' . $team_name . '/2');
+$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/tennis-girls/schedule/' . $school_year . '/' . $team_name . '/2');
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }
@@ -177,7 +177,7 @@ if( ! empty( $data ) ) { ?>
 <?php
 //  Show Junior Varsity Schedule
 
-$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/tennis-boys/schedule/' . $school_year . '/' . $team_name . '/3');
+$request 		= wp_safe_remote_get( 'https://6thmansports.com/api/tennis-girls/schedule/' . $school_year . '/' . $team_name . '/3');
 if( is_wp_error( $request ) ) {
 	return false; // Bail early
 }
